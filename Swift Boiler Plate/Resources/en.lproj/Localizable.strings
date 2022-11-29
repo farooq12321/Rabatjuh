@@ -1,0 +1,26 @@
+/*
+  Localizable.strings
+  Swift Boiler Plate
+
+  Created by Sheraz Ahmed on 27/11/2022.
+  
+*/
+
+
+// MARK: Generic
+"Success" = "Success";
+"Warning" = "Warning";
+"Error" = "Error";
+
+
+
+// MARK: Login Screen
+"Hello Again!" = "Hello Again!";
+"Welcome back you’ve been missed!" = "Welcome back you’ve been missed!";
+
+"Email" = "Email";
+"Password" = "Password";
+
+"Login" = "Login";
+"Don’t have an account?" = "Don’t have an account?";
+"Signup" = "Signup";

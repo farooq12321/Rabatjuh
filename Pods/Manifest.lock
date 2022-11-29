@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Device (3.1.2)
+  - IQKeyboardManager (6.5.10)
+  - RSFontSizes (1.2.0):
+    - Device (~> 3.1.2)
+  - SnapKit (5.6.0)
+  - SwiftyJSON (4.3.0)
+  - ToastViewSwift (1.1.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - IQKeyboardManager
+  - RSFontSizes
+  - SnapKit (~> 5.6.0)
+  - SwiftyJSON (~> 4.0)
+  - ToastViewSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Device
+    - IQKeyboardManager
+    - RSFontSizes
+    - SnapKit
+    - SwiftyJSON
+    - ToastViewSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Device: 62242076214c30fb5760174b3601cefafa70a481
+  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  RSFontSizes: 78158061f9f6121c6715f746395b1d8390fcb18b
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  ToastViewSwift: 0d48e6877fd2716690c9b559d9be13a1ec3bd2ff
+
+PODFILE CHECKSUM: 01391e0fd804e422bdad4ce26ac3a23e7f758526
+
+COCOAPODS: 1.11.3
