@@ -16,6 +16,7 @@ extension UIFont {
 
     static let labelPrimary: UIFont = .font(size: 17.0)
     static let labelSecondary: UIFont = .font(size: 17.0)
+    static let labelPreSecondary: UIFont = .font(size: 15.0)
 
 
     static let button: UIFont = .font(size: 17.0)

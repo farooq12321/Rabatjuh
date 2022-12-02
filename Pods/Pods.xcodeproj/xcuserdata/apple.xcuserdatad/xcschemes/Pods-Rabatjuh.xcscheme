@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B5A4A524995EFC7B90254E4FB975E5BD"
-               BuildableName = "ToastViewSwift.framework"
-               BlueprintName = "ToastViewSwift"
+               BlueprintIdentifier = "14E5016AC008E46DF09E574AAB106C09"
+               BuildableName = "Pods_Rabatjuh.framework"
+               BlueprintName = "Pods-Rabatjuh"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

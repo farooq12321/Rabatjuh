@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2488C6D558B485EE514706190BC036E"
-               BuildableName = "Pods_Swift_Boiler_Plate.framework"
-               BlueprintName = "Pods-Swift Boiler Plate"
+               BlueprintIdentifier = "B5A4A524995EFC7B90254E4FB975E5BD"
+               BuildableName = "ToastViewSwift.framework"
+               BlueprintName = "ToastViewSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

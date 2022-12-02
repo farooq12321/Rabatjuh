@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0E119CE7F09441C1C972EC90ABF624E6"
-               BuildableName = "RSFontSizes.framework"
-               BlueprintName = "RSFontSizes"
+               BlueprintIdentifier = "113F9E1CB32724B844C418EC0DFB76E3"
+               BuildableName = "Device.framework"
+               BlueprintName = "Device"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

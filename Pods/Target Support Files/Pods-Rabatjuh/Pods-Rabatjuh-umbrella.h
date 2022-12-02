@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Swift_Boiler_PlateVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Swift_Boiler_PlateVersionString[];
+FOUNDATION_EXPORT double Pods_RabatjuhVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RabatjuhVersionString[];
 

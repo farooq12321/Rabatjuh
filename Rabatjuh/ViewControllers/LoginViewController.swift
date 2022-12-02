@@ -12,9 +12,9 @@ import ToastViewSwift
 class LoginViewController: UIViewController {
     
     
-    // Mark: - backGroundImage
-    private lazy var backgroundImage = UIImageView.BackGroundImage(
-        name: AppString.Image.BackGroundImage
+    // MARK: - Background
+    private lazy var backgroundImage = UIImageView.Image(
+        name: "BackGroundImage"
     )
     
     
@@ -24,10 +24,12 @@ class LoginViewController: UIViewController {
     )
     
     private lazy var lblSubTitle = UILabel.Subheading(
-        text: AppString.Label.loginSubTitle
+        text: AppString.Label.loginSubTitle,
+        textColor: UIColor.HexColor(hexString: "#E0E0E0")
     )
     
-    private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical)
+    private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
+    )
     
     
     
@@ -63,12 +65,49 @@ class LoginViewController: UIViewController {
     
     
     
+    private lazy var lbldontHaveAnAccount = UILabel.Secondary(
+        text: AppString.Label.dontHaveAnAccount,
+        textColor:UIColor.heading
+    )
+    
+    private lazy var btnSignup = UIButton.Secondary(
+        title: AppString.Button.signup,
+        target: self,
+        action: #selector(signupButtonTap)
+    )
+    
+    
+    private lazy var footer1 = UIStackView(
+        arrangedSubviews: [UIView.spacer(for:.horizontal),lbldontHaveAnAccount,btnSignup,UIView.spacer(for:.horizontal)],
+        axis: .horizontal,
+//        spacing: 5.0,
+//        alignment: .center,
+        distribution: .equalSpacing
+        
+       
+    )
+    
+    
+    
+    private lazy var footerStack = UIStackView(
+        arrangedSubviews: [btnLogin,footer1],
+        axis: .vertical,
+        spacing: UIConstant.TextField.spacing
+        
+
+        
+       
+    )
+    
+    
+    
+    
     
     // MARK: - MainStack
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,bodyStack,btnLogin],
+        arrangedSubviews: [headerStack,bodyStack,footerStack],
         axis: .vertical,
         spacing: UIConstant.Default.spacing
     )
@@ -83,7 +122,6 @@ class LoginViewController: UIViewController {
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureViews()
         
     }
@@ -96,8 +134,23 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonTap(_ sender: Any) {
-     
-        self.view.endEditing(true)
+        let vc = HomeViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true,completion: nil)
+       
+       self.view.endEditing(true)
+    
+}
+
+
+   
+    
+    @objc private func signupButtonTap(){
+        let vc = RegisterViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true,completion: nil)
+       
+       self.view.endEditing(true)
       
     }
     
@@ -113,6 +166,7 @@ class LoginViewController: UIViewController {
 // Setup Views
 private extension LoginViewController {
     func configureViews() {
+        
         view.addSubview(backgroundImage)
         view.addSubview(mainStack)
         
@@ -120,12 +174,13 @@ private extension LoginViewController {
     }
     
     func activateConstrains() {
+       
         backgroundImage.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         mainStack.snp.makeConstraints { make in
-            
-            make.left.right.top.equalTo(view.layoutMarginsGuide)
+            make.top.equalTo(view.layoutMarginsGuide).offset(40)
+            make.left.right.equalTo(view.layoutMarginsGuide)
             
         }
     }

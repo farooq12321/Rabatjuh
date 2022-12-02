@@ -6,3 +6,11 @@
 //
 
 import Foundation
+struct Resturant{
+    let resturantImage:String
+    let resturantName:String
+    let resturantDistance: String
+    let resturantDiscription:String
+    
+    
+}

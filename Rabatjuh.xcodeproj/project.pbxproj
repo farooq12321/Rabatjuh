@@ -8,14 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
-		37CF57E95DEA9B0A74849246 /* Pods_Swift_Boiler_Plate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A27FB15AD5A1CE718DD060 /* Pods_Swift_Boiler_Plate.framework */; };
+		1840C23929362D570045999D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C23829362D570045999D /* RegisterViewController.swift */; };
+		1840C23E29363A4E0045999D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
+		185AE9D22939E1E100B745A9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AE9D12939E1E100B745A9 /* SearchBar.swift */; };
+		185AE9D5293A07B700B745A9 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AE9D4293A07B700B745A9 /* MenuCollectionViewCell.swift */; };
+		185AE9D8293A0B0C00B745A9 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AE9D7293A0B0C00B745A9 /* Restaurant.swift */; };
+		185AE9E3293A201C00B745A9 /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AE9E2293A201C00B745A9 /* ProductDetailHeaderView.swift */; };
+		185FD3212937198B009D7274 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD3202937198B009D7274 /* SplashViewController.swift */; };
+		185FD329293736A6009D7274 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD328293736A6009D7274 /* TableView.swift */; };
+		185FD33229375F41009D7274 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33129375F41009D7274 /* ProductViewController.swift */; };
+		185FD33529375F76009D7274 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33429375F76009D7274 /* ProductCollectionViewCell.swift */; };
+		185FD33B293761FC009D7274 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33A293761FC009D7274 /* CollectionView.swift */; };
+		185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33E29376B9F009D7274 /* ReviewsViewController.swift */; };
+		185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */; };
+		18FECEC829386C9C00857885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC729386C9C00857885 /* HomeViewController.swift */; };
+		18FECECB29386CEC00857885 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECECA29386CEC00857885 /* HomeTableViewCell.swift */; };
+		18FECF092938C2DA00857885 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF082938C2DA00857885 /* Product.swift */; };
+		18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF0C2938C2EC00857885 /* Restaurants.swift */; };
+		18FECF102938C2F800857885 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF0F2938C2F800857885 /* Reviews.swift */; };
+		18FECF132938C33100857885 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF122938C33100857885 /* ProductTableViewCell.swift */; };
+		18FECF192938DCE800857885 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF182938DCE800857885 /* HomeHeaderView.swift */; };
+		543C645EBD8F138C596ACDEC /* Pods_Rabatjuh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A694FCAC8D3CB8177B77341F /* Pods_Rabatjuh.framework */; };
 		606AD9832935DD5B00131937 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606AD9822935DD5B00131937 /* Regex.swift */; };
 		E2A58BEB29335E99009268C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A58BEA29335E99009268C8 /* AppDelegate.swift */; };
 		E2A58BED29335E99009268C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A58BEC29335E99009268C8 /* SceneDelegate.swift */; };
 		E2A58BEF29335E99009268C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A58BEE29335E99009268C8 /* LoginViewController.swift */; };
-		E2A58BF229335E99009268C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF029335E99009268C8 /* Main.storyboard */; };
-		E2A58BF429335E9B009268C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
-		E2A58BF729335E9B009268C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF529335E9B009268C8 /* LaunchScreen.storyboard */; };
 		E2B4D078293363C80024345B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2B4D07A293363C80024345B /* Localizable.strings */; };
 		E2B4D07F293368010024345B /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4D07E293368010024345B /* Key.swift */; };
 		E2B4D081293368190024345B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B4D080293368190024345B /* Color.swift */; };
@@ -36,18 +53,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.debug.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.debug.xcconfig"; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		1840C23829362D570045999D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		185AE9D12939E1E100B745A9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		185AE9D4293A07B700B745A9 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		185AE9D7293A0B0C00B745A9 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		185AE9E2293A201C00B745A9 /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
+		185FD3202937198B009D7274 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		185FD328293736A6009D7274 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		185FD33129375F41009D7274 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		185FD33429375F76009D7274 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCollectionViewCell.swift; path = Rabatjuh/ViewControllers/ProductCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		185FD33A293761FC009D7274 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		185FD33E29376B9F009D7274 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
+		185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewsTableViewCell.swift; path = Rabatjuh/ViewControllers/ReviewsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		18FECEC729386C9C00857885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18FECECA29386CEC00857885 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = Rabatjuh/ViewControllers/HomeTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		18FECF082938C2DA00857885 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		18FECF0C2938C2EC00857885 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		18FECF0F2938C2F800857885 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		18FECF122938C33100857885 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		18FECF182938DCE800857885 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		606AD9822935DD5B00131937 /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		755E8BD9C204F36676454E12 /* Pods-Swift Boiler Plate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Boiler Plate.debug.xcconfig"; path = "Target Support Files/Pods-Swift Boiler Plate/Pods-Swift Boiler Plate.debug.xcconfig"; sourceTree = "<group>"; };
 		7DE3FBCB8F817F88C2A46A31 /* Pods-Swift Boiler Plate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Boiler Plate.release.xcconfig"; path = "Target Support Files/Pods-Swift Boiler Plate/Pods-Swift Boiler Plate.release.xcconfig"; sourceTree = "<group>"; };
-		89A27FB15AD5A1CE718DD060 /* Pods_Swift_Boiler_Plate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Boiler_Plate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2A58BE729335E99009268C8 /* Swift Boiler Plate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Boiler Plate.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9671CDDE0E6F7D4DD0B68BAF /* Pods-Rabatjuh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.release.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.release.xcconfig"; sourceTree = "<group>"; };
+		A694FCAC8D3CB8177B77341F /* Pods_Rabatjuh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabatjuh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2A58BE729335E99009268C8 /* Rabatjuh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rabatjuh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A58BEA29335E99009268C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2A58BEC29335E99009268C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2A58BEE29335E99009268C8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E2A58BF129335E99009268C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2A58BF329335E9B009268C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E2A58BF629335E9B009268C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2A58BF829335E9B009268C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2B4D079293363C80024345B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E2B4D07B293363D90024345B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -74,13 +110,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37CF57E95DEA9B0A74849246 /* Pods_Swift_Boiler_Plate.framework in Frameworks */,
+				543C645EBD8F138C596ACDEC /* Pods_Rabatjuh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18FECF072938C2B900857885 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18FECF082938C2DA00857885 /* Product.swift */,
+				18FECF0C2938C2EC00857885 /* Restaurants.swift */,
+				18FECF0F2938C2F800857885 /* Reviews.swift */,
+				185AE9D7293A0B0C00B745A9 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18FECF172938DBEF00857885 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				18FECF182938DCE800857885 /* HomeHeaderView.swift */,
+				185AE9E2293A201C00B745A9 /* ProductDetailHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		606AD9842935F55000131937 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +147,7 @@
 		606AD9852935F55800131937 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				606AD9882935F57C00131937 /* Header */,
+				18FECF172938DBEF00857885 /* Header */,
 				606AD9872935F56900131937 /* CollectionView */,
 				606AD9862935F56000131937 /* TableView */,
 			);
@@ -101,6 +157,9 @@
 		606AD9862935F56000131937 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				18FECECA29386CEC00857885 /* HomeTableViewCell.swift */,
+				185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */,
+				18FECF122938C33100857885 /* ProductTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -108,21 +167,16 @@
 		606AD9872935F56900131937 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				185FD33429375F76009D7274 /* ProductCollectionViewCell.swift */,
+				185AE9D4293A07B700B745A9 /* MenuCollectionViewCell.swift */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		606AD9882935F57C00131937 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		9F7091A9814CEAE4D39EF664 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				89A27FB15AD5A1CE718DD060 /* Pods_Swift_Boiler_Plate.framework */,
+				A694FCAC8D3CB8177B77341F /* Pods_Rabatjuh.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -130,38 +184,39 @@
 		E2A58BDE29335E99009268C8 = {
 			isa = PBXGroup;
 			children = (
-				E2A58BE929335E99009268C8 /* Swift Boiler Plate */,
+				E2A58BE929335E99009268C8 /* Rabatjuh */,
 				E2A58BE829335E99009268C8 /* Products */,
 				EE22065D73735D2E54E89B09 /* Pods */,
 				9F7091A9814CEAE4D39EF664 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
+			wrapsLines = 1;
 		};
 		E2A58BE829335E99009268C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2A58BE729335E99009268C8 /* Swift Boiler Plate.app */,
+				E2A58BE729335E99009268C8 /* Rabatjuh.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2A58BE929335E99009268C8 /* Swift Boiler Plate */ = {
+		E2A58BE929335E99009268C8 /* Rabatjuh */ = {
 			isa = PBXGroup;
 			children = (
 				E2B4D07C293364970024345B /* Application */,
 				E2A58BFE29335FFC009268C8 /* Resources */,
 				E2B4D07D293367C40024345B /* Define */,
+				E2B4D0992933D1260024345B /* Constants */,
 				E2B4D0982933CFD40024345B /* Utilis */,
 				E2B4D0A22933F4A90024345B /* NetworkManager */,
 				606AD9842935F55000131937 /* Components */,
 				E2B4D08B29338A160024345B /* ViewControllers */,
 				606AD9852935F55800131937 /* Cells */,
 				E2B4D09E2933F1410024345B /* ViewModel */,
-				E2B4D0B22935A9270024345B /* Model */,
-				E2A58BF029335E99009268C8 /* Main.storyboard */,
-				E2A58BF529335E9B009268C8 /* LaunchScreen.storyboard */,
+				18FECF072938C2B900857885 /* Model */,
 			);
-			path = "Swift Boiler Plate";
+			path = Rabatjuh;
 			sourceTree = "<group>";
 		};
 		E2A58BFE29335FFC009268C8 /* Resources */ = {
@@ -190,7 +245,6 @@
 				E2B4D080293368190024345B /* Color.swift */,
 				E2B4D082293368220024345B /* Font.swift */,
 				E2B4D0902933A39B0024345B /* AppString.swift */,
-				E2B4D0B62935B0C90024345B /* Constant.swift */,
 				606AD9822935DD5B00131937 /* Regex.swift */,
 			);
 			path = Define;
@@ -207,6 +261,9 @@
 				E2B4D09C2933E5FA0024345B /* StackView.swift */,
 				E2B4D0B82935B2960024345B /* Alert.swift */,
 				1840C1EB293611A60045999D /* Image.swift */,
+				185FD328293736A6009D7274 /* TableView.swift */,
+				185FD33A293761FC009D7274 /* CollectionView.swift */,
+				185AE9D12939E1E100B745A9 /* SearchBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,7 +272,12 @@
 			isa = PBXGroup;
 			children = (
 				E2B4D09F2933F1530024345B /* Base */,
+				185FD3202937198B009D7274 /* SplashViewController.swift */,
 				E2A58BEE29335E99009268C8 /* LoginViewController.swift */,
+				1840C23829362D570045999D /* RegisterViewController.swift */,
+				18FECEC729386C9C00857885 /* HomeViewController.swift */,
+				185FD33129375F41009D7274 /* ProductViewController.swift */,
+				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,7 +295,6 @@
 			children = (
 				E2B4D08C293391E80024345B /* UserDefaults */,
 				E2B4D088293388FC0024345B /* Extensions */,
-				E2B4D0992933D1260024345B /* Constants */,
 			);
 			path = Utilis;
 			sourceTree = "<group>";
@@ -241,6 +302,7 @@
 		E2B4D0992933D1260024345B /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				E2B4D0B62935B0C90024345B /* Constant.swift */,
 				E2B4D09A2933D13C0024345B /* UIConstant.swift */,
 			);
 			path = Constants;
@@ -269,18 +331,13 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
-		E2B4D0B22935A9270024345B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		EE22065D73735D2E54E89B09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				755E8BD9C204F36676454E12 /* Pods-Swift Boiler Plate.debug.xcconfig */,
 				7DE3FBCB8F817F88C2A46A31 /* Pods-Swift Boiler Plate.release.xcconfig */,
+				0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */,
+				9671CDDE0E6F7D4DD0B68BAF /* Pods-Rabatjuh.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -288,9 +345,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2A58BE629335E99009268C8 /* Swift Boiler Plate */ = {
+		E2A58BE629335E99009268C8 /* Rabatjuh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2A58BFB29335E9B009268C8 /* Build configuration list for PBXNativeTarget "Swift Boiler Plate" */;
+			buildConfigurationList = E2A58BFB29335E9B009268C8 /* Build configuration list for PBXNativeTarget "Rabatjuh" */;
 			buildPhases = (
 				2ECF4C5BEF55942833671921 /* [CP] Check Pods Manifest.lock */,
 				E2A58BE329335E99009268C8 /* Sources */,
@@ -302,9 +359,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swift Boiler Plate";
+			name = Rabatjuh;
 			productName = "Swift Boiler Plate";
-			productReference = E2A58BE729335E99009268C8 /* Swift Boiler Plate.app */;
+			productReference = E2A58BE729335E99009268C8 /* Rabatjuh.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -322,7 +379,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E2A58BE229335E99009268C8 /* Build configuration list for PBXProject "Swift Boiler Plate" */;
+			buildConfigurationList = E2A58BE229335E99009268C8 /* Build configuration list for PBXProject "Rabatjuh" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -336,7 +393,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2A58BE629335E99009268C8 /* Swift Boiler Plate */,
+				E2A58BE629335E99009268C8 /* Rabatjuh */,
 			);
 		};
 /* End PBXProject section */
@@ -346,10 +403,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A58BF729335E9B009268C8 /* LaunchScreen.storyboard in Resources */,
+				1840C23E29363A4E0045999D /* Assets.xcassets in Resources */,
 				E2B4D078293363C80024345B /* Localizable.strings in Resources */,
-				E2A58BF429335E9B009268C8 /* Assets.xcassets in Resources */,
-				E2A58BF229335E99009268C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +426,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Swift Boiler Plate-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Rabatjuh-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,15 +439,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift Boiler Plate/Pods-Swift Boiler Plate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift Boiler Plate/Pods-Swift Boiler Plate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift Boiler Plate/Pods-Swift Boiler Plate-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -402,13 +457,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185AE9E3293A201C00B745A9 /* ProductDetailHeaderView.swift in Sources */,
+				185AE9D22939E1E100B745A9 /* SearchBar.swift in Sources */,
 				E2B4D0972933B6720024345B /* View.swift in Sources */,
+				1840C23929362D570045999D /* RegisterViewController.swift in Sources */,
+				18FECF132938C33100857885 /* ProductTableViewCell.swift in Sources */,
 				E2A58BEF29335E99009268C8 /* LoginViewController.swift in Sources */,
 				E2B4D0B92935B2960024345B /* Alert.swift in Sources */,
 				E2B4D0AF2933F79C0024345B /* NetworkManager.swift in Sources */,
+				18FECEC829386C9C00857885 /* HomeViewController.swift in Sources */,
+				18FECECB29386CEC00857885 /* HomeTableViewCell.swift in Sources */,
+				185FD33529375F76009D7274 /* ProductCollectionViewCell.swift in Sources */,
+				185FD3212937198B009D7274 /* SplashViewController.swift in Sources */,
+				18FECF092938C2DA00857885 /* Product.swift in Sources */,
+				185FD329293736A6009D7274 /* TableView.swift in Sources */,
+				18FECF102938C2F800857885 /* Reviews.swift in Sources */,
 				E2B4D07F293368010024345B /* Key.swift in Sources */,
 				E2B4D09B2933D13C0024345B /* UIConstant.swift in Sources */,
 				E2B4D083293368220024345B /* Font.swift in Sources */,
+				185FD33229375F41009D7274 /* ProductViewController.swift in Sources */,
 				1840C1EC293611A60045999D /* Image.swift in Sources */,
 				E2A58BEB29335E99009268C8 /* AppDelegate.swift in Sources */,
 				E2B4D0B72935B0C90024345B /* Constant.swift in Sources */,
@@ -417,11 +484,18 @@
 				E2B4D0912933A39C0024345B /* AppString.swift in Sources */,
 				E2B4D0A52933F5770024345B /* ServerApi.swift in Sources */,
 				E2B4D0952933B0BC0024345B /* Button.swift in Sources */,
+				185AE9D8293A0B0C00B745A9 /* Restaurant.swift in Sources */,
 				E2B4D08E293392490024345B /* UserDefaults.swift in Sources */,
+				185AE9D5293A07B700B745A9 /* MenuCollectionViewCell.swift in Sources */,
+				185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */,
+				18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */,
+				18FECF192938DCE800857885 /* HomeHeaderView.swift in Sources */,
 				E2B4D081293368190024345B /* Color.swift in Sources */,
 				606AD9832935DD5B00131937 /* Regex.swift in Sources */,
 				E2B4D08A293389350024345B /* Label.swift in Sources */,
+				185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */,
 				E2A58BED29335E99009268C8 /* SceneDelegate.swift in Sources */,
+				185FD33B293761FC009D7274 /* CollectionView.swift in Sources */,
 				E2B4D09D2933E5FA0024345B /* StackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,22 +503,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E2A58BF029335E99009268C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2A58BF129335E99009268C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E2A58BF529335E9B009268C8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E2A58BF629335E9B009268C8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		E2B4D07A293363C80024345B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -509,7 +567,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -565,7 +623,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -577,21 +635,22 @@
 		};
 		E2A58BFC29335E9B009268C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 755E8BD9C204F36676454E12 /* Pods-Swift Boiler Plate.debug.xcconfig */;
+			baseConfigurationReference = 0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q469KWY7TY;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Swift Boiler Plate/Resources/Info.plist";
+				INFOPLIST_FILE = Rabatjuh/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +658,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LeadingSpark.Swift-Boiler-Plate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,21 +667,22 @@
 		};
 		E2A58BFD29335E9B009268C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DE3FBCB8F817F88C2A46A31 /* Pods-Swift Boiler Plate.release.xcconfig */;
+			baseConfigurationReference = 9671CDDE0E6F7D4DD0B68BAF /* Pods-Rabatjuh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q469KWY7TY;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Swift Boiler Plate/Resources/Info.plist";
+				INFOPLIST_FILE = Rabatjuh/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,6 +690,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LeadingSpark.Swift-Boiler-Plate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -638,7 +700,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2A58BE229335E99009268C8 /* Build configuration list for PBXProject "Swift Boiler Plate" */ = {
+		E2A58BE229335E99009268C8 /* Build configuration list for PBXProject "Rabatjuh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2A58BF929335E9B009268C8 /* Debug */,
@@ -647,7 +709,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2A58BFB29335E9B009268C8 /* Build configuration list for PBXNativeTarget "Swift Boiler Plate" */ = {
+		E2A58BFB29335E9B009268C8 /* Build configuration list for PBXNativeTarget "Rabatjuh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2A58BFC29335E9B009268C8 /* Debug */,

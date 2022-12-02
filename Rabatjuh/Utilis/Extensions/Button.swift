@@ -38,6 +38,27 @@ extension UIButton {
         return button
     }
     
+    static func Secondary (
+        title: String = "",
+        titleColor: UIColor = .buttonPrimaryBackground,
+        imageName: String = "",
+        font: UIFont = .button,
+        target: Any? = nil,
+        action: Selector? = nil
+    ) -> UIButton {
+        let button = UIButton()
+        
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.titleLabel?.font = font
+        if let action = action {
+          button.addTarget(target, action: action, for: .touchUpInside)
+        }
+      
+        return button
+    }
+    
     
  
     

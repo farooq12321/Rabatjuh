@@ -9,15 +9,97 @@ import UIKit
 
 class ReviewsTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    
+    // MARK: - Background
+   
+    static var identifier = "ReviewsTableViewCell"
+    
+    
+    // MARK: - Body
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var userImage = UIImageView.UserImage()
+    var lblName = UILabel.Primary(
+        text:AppString.Label.userName
+    )
+    
+    var lblReviews = UILabel.Secondary(
+        text:AppString.Label.userReviews
+    )
+  
+    
+    private lazy var Stack1 = UIStackView(
+        arrangedSubviews: [userImage,lblName],
+        axis: .horizontal,
+        spacing: UIConstant.TextField.spacing
+//        alignment: .fill,
+//        distribution: .fill
+    )
+    
+    
+    
+  
+    
+    // MARK: - MainStack
+    
+    
+    private lazy var mainStack = UIStackView(
+        arrangedSubviews: [Stack1,lblReviews],
+        axis: .vertical,
+        spacing: UIConstant.TextField.spacing
+//        distribution:.fillEqually
+    )
+    
+    
+    
+    // MARK: - ViewController Life Cycle
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        configureViews()
+        
     }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
 
 }
+
+// MARK: - Extension
+
+// Setup Views
+private extension ReviewsTableViewCell {
+    func configureViews() {
+        
+        self.addSubview(mainStack)
+        activateConstrains()
+        
+    }
+    
+    func activateConstrains() {
+       
+        mainStack.snp.makeConstraints{ (make) in
+            make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
+        }
+    }
+}
+
+
+
+// MARK: - Extension
+
+
+// Setup ApiCalls
+//private extension LoginViewController {
+//    func LoginApi() {
+//
+//    }
+//
+//
+//
+//}
+
+    

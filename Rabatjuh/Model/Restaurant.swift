@@ -6,3 +6,13 @@
 //
 
 import Foundation
+struct Resturants{
+    let all:String
+    let bistro:String
+    let dinner: String
+    let buffet:String
+    let cafe:String
+    let fastfood:String
+    
+    
+}

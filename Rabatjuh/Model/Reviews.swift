@@ -6,3 +6,10 @@
 //
 
 import Foundation
+struct Review{
+    let userImage:String
+    let userName:String
+    let Reviews:String
+    
+    
+}
