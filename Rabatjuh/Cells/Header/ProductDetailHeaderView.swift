@@ -34,6 +34,10 @@ class ProductDetailHeaderView: UIView {
    
     
     
+    
+    
+    
+    
     var  lblDescription = UILabel.Subheading(
         text:AppString.Label.headerTitle,
         textColor: UIColor.heading,
