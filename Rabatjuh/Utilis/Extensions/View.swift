@@ -23,6 +23,23 @@ extension UIView {
       }
     }
     
+    static func subveiw() -> UIView{
+   
+            let view = UIView()
+            view.layer.cornerRadius = 10
+            view.layer.borderWidth = 0.05
+            view.backgroundColor = .red
+            view.snp.makeConstraints{ (make) in
+            make.height.equalTo(60)
+            make.width.equalTo(300)
+        }
+        
+            return view
+           
+               
+        
+    }
+    
     static func spacer(size: CGFloat = .greatestFiniteMagnitude, for layout: NSLayoutConstraint.Axis = .horizontal) -> UIView {
         let spacer = UIView()
         

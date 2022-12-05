@@ -29,6 +29,7 @@ extension UIColor {
     
     static let heading = UIColor(named: "Heading")!
     static let subheading = UIColor(named: "Subheading")!
+    static let subheadingcolor = UIColor.HexColor(hexString: "#E0E0E0")
     
     
     
@@ -70,8 +71,17 @@ extension UIColor {
     
     static let textfieldText = UIColor(named: "Textfield Text")!
     static let textfieldBackground = UIColor(named: "Textfield Background")!
+    static let textfieldBackGroundColor = UIColor.HexColor(hexString: "#99999E")
+    static let textfieldBackground1 = UIColor.HexColor(hexString: "#F8F8F8")
+    static let txtFieldBackGroundColor = UIColor.HexColor(hexString: "#FFFFFF")
     static let textfieldBorder = UIColor(named: "Textfield Border")!
     static let textfieldCursorTint = UIColor(named: "Textfield Cursor Tint")!
+    
+    
+    
+    //MARK: - Image
+    
+    static let ImageBackGroundColor = UIColor.HexColor(hexString: "#C3C3C1")
     
     
     
@@ -103,7 +113,7 @@ extension UIColor {
         
         
     }
-    static let subheadingcolor = UIColor(named: "#E0E0E0")!
+    //static let subheadingcolor = UIColor(named: "#E0E0E0")!
     
 }
 

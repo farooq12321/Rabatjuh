@@ -21,6 +21,11 @@
 		185FD33B293761FC009D7274 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33A293761FC009D7274 /* CollectionView.swift */; };
 		185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33E29376B9F009D7274 /* ReviewsViewController.swift */; };
 		185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */; };
+		18B80137293DC1FE00EB18A7 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80136293DC1FE00EB18A7 /* RestaurantTableViewCell.swift */; };
+		18B80141293DD19D00EB18A7 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */; };
+		18B80144293DD22600EB18A7 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80143293DD22600EB18A7 /* EditProfileViewController.swift */; };
+		18B80147293DD8D600EB18A7 /* CreateMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80146293DD8D600EB18A7 /* CreateMenuViewController.swift */; };
+		18B8014F293DE21B00EB18A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8014E293DE21B00EB18A7 /* SignUpViewController.swift */; };
 		18FECEC829386C9C00857885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC729386C9C00857885 /* HomeViewController.swift */; };
 		18FECECB29386CEC00857885 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECECA29386CEC00857885 /* HomeTableViewCell.swift */; };
 		18FECF092938C2DA00857885 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECF082938C2DA00857885 /* Product.swift */; };
@@ -67,6 +72,11 @@
 		185FD33A293761FC009D7274 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		185FD33E29376B9F009D7274 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewsTableViewCell.swift; path = Rabatjuh/ViewControllers/ReviewsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		18B80136293DC1FE00EB18A7 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		18B80143293DD22600EB18A7 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		18B80146293DD8D600EB18A7 /* CreateMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMenuViewController.swift; sourceTree = "<group>"; };
+		18B8014E293DE21B00EB18A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		18FECEC729386C9C00857885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18FECECA29386CEC00857885 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTableViewCell.swift; path = Rabatjuh/ViewControllers/HomeTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		18FECF082938C2DA00857885 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -117,6 +127,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B80149293DE18B00EB18A7 /* UserSideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				185FD3202937198B009D7274 /* SplashViewController.swift */,
+				E2A58BEE29335E99009268C8 /* LoginViewController.swift */,
+				1840C23829362D570045999D /* RegisterViewController.swift */,
+				18FECEC729386C9C00857885 /* HomeViewController.swift */,
+				185FD33129375F41009D7274 /* ProductViewController.swift */,
+				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
+				18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */,
+			);
+			path = UserSideViewController;
+			sourceTree = "<group>";
+		};
+		18B8014C293DE1C300EB18A7 /* RestaurantSideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18B80143293DD22600EB18A7 /* EditProfileViewController.swift */,
+				18B80146293DD8D600EB18A7 /* CreateMenuViewController.swift */,
+				18B8014E293DE21B00EB18A7 /* SignUpViewController.swift */,
+			);
+			path = RestaurantSideViewController;
+			sourceTree = "<group>";
+		};
 		18FECF072938C2B900857885 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +191,7 @@
 		606AD9862935F56000131937 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				18B80136293DC1FE00EB18A7 /* RestaurantTableViewCell.swift */,
 				18FECECA29386CEC00857885 /* HomeTableViewCell.swift */,
 				185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */,
 				18FECF122938C33100857885 /* ProductTableViewCell.swift */,
@@ -272,12 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				E2B4D09F2933F1530024345B /* Base */,
-				185FD3202937198B009D7274 /* SplashViewController.swift */,
-				E2A58BEE29335E99009268C8 /* LoginViewController.swift */,
-				1840C23829362D570045999D /* RegisterViewController.swift */,
-				18FECEC729386C9C00857885 /* HomeViewController.swift */,
-				185FD33129375F41009D7274 /* ProductViewController.swift */,
-				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
+				18B80149293DE18B00EB18A7 /* UserSideViewController */,
+				18B8014C293DE1C300EB18A7 /* RestaurantSideViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -458,9 +489,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				185AE9E3293A201C00B745A9 /* ProductDetailHeaderView.swift in Sources */,
+				18B80147293DD8D600EB18A7 /* CreateMenuViewController.swift in Sources */,
 				185AE9D22939E1E100B745A9 /* SearchBar.swift in Sources */,
 				E2B4D0972933B6720024345B /* View.swift in Sources */,
 				1840C23929362D570045999D /* RegisterViewController.swift in Sources */,
+				18B80141293DD19D00EB18A7 /* SideMenuViewController.swift in Sources */,
 				18FECF132938C33100857885 /* ProductTableViewCell.swift in Sources */,
 				E2A58BEF29335E99009268C8 /* LoginViewController.swift in Sources */,
 				E2B4D0B92935B2960024345B /* Alert.swift in Sources */,
@@ -479,13 +512,16 @@
 				1840C1EC293611A60045999D /* Image.swift in Sources */,
 				E2A58BEB29335E99009268C8 /* AppDelegate.swift in Sources */,
 				E2B4D0B72935B0C90024345B /* Constant.swift in Sources */,
+				18B8014F293DE21B00EB18A7 /* SignUpViewController.swift in Sources */,
 				E2B4D0932933B0B40024345B /* Textfield.swift in Sources */,
 				E2B4D0852933683D0024345B /* String.swift in Sources */,
 				E2B4D0912933A39C0024345B /* AppString.swift in Sources */,
 				E2B4D0A52933F5770024345B /* ServerApi.swift in Sources */,
+				18B80144293DD22600EB18A7 /* EditProfileViewController.swift in Sources */,
 				E2B4D0952933B0BC0024345B /* Button.swift in Sources */,
 				185AE9D8293A0B0C00B745A9 /* Restaurant.swift in Sources */,
 				E2B4D08E293392490024345B /* UserDefaults.swift in Sources */,
+				18B80137293DC1FE00EB18A7 /* RestaurantTableViewCell.swift in Sources */,
 				185AE9D5293A07B700B745A9 /* MenuCollectionViewCell.swift in Sources */,
 				185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */,
 				18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */,

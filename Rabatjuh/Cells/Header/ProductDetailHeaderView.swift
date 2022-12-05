@@ -12,65 +12,40 @@ class ProductDetailHeaderView: UIView {
     
     static var identifier = "HeaderView"
     
-    //private lazy var collectionview = UICollectionView.collectionView()
     
     // MARK: - Body
     
     var backGruondImage = UIImageView.Image(
-        name: AppString.Image.BackGroundImage,
-        cornerRadius: UIConstant.Image.cornerRadius
+        name: AppString.Image.backGroundImage
     )
     var headerImage = UIImageView.Image(
-        name: AppString.Image.colorImage,
-        cornerRadius: UIConstant.Image.cornerRadius
+        name: AppString.Image.productcolorImage
+
         
     )
     
     var  lblTitle = UILabel.Subheading(
+        text:AppString.Label.Title,
+        textColor: UIColor.heading,
+        textAlignment: .center
+    )
+    var lblDescritpion = UILabel.PreSecondary(
         text:AppString.Label.subTitle,
-        textColor: UIColor.heading,
-        numberOfLines: 1
-    )
-   
+        textColor: UIColor.HexColor(hexString: "#FFFFFF"))
+    
 
-    
-    
-    
-    
-    
-    var  lblDescription = UILabel.Subheading(
-        text:AppString.Label.headerTitle,
-        textColor: UIColor.heading,
-        numberOfLines: 1
-    )
-    
-//    private lazy var btnMenu = UIButton.Secondary(
-//        imageName: AppString.Image.btnMenu
-//    )
-//
-//    var  searchBar = UISearchBar.searchbar()
+ // MARK: - mainStack
 
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [lblTitle,lblDescription],
+        arrangedSubviews: [lblTitle,lblDescritpion],
         axis: .vertical
-//        distribution: .equalSpacing
     )
+    
+    private lazy var view = UIView.subveiw()
   
 
     
 
-    
-    // MARK: - Mainstack
-    
-    
-//
-//    private lazy var mainStack = UIStackView(
-//        arrangedSubviews: [headerStack,searchBar],
-//        axis: .vertical,
-//        spacing: UIConstant.TextField.spacing
-////        distribution: .equalSpacing
-//    )
-    
     // MARK: -  // MARK: - ViewController Life Cycle
     
     
@@ -78,7 +53,6 @@ class ProductDetailHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
-//        collectionview.backgroundColor = UIColor.black
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -87,22 +61,6 @@ class ProductDetailHeaderView: UIView {
 
 
 }
-
-//MARK: - Extension
-
-//private extension ProductDetailHeaderView {
-//    func Setup() {
-//        collectionview.dataSource = self
-//        collectionview.delegate = self
-//
-//
-//        collectionview.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
-//        collectionview.reloadData()
-//
-//
-//      }
-//
-//  }
 
 
 
@@ -115,7 +73,7 @@ private extension ProductDetailHeaderView {
         self.addSubview(backGruondImage)
         self.addSubview(headerImage)
         self.addSubview(mainStack)
-        //self.addSubview(collectionview)
+        self.addSubview(view)
         activateConstrains()
         
     }
@@ -123,13 +81,10 @@ private extension ProductDetailHeaderView {
     func activateConstrains() {
         backGruondImage.snp.makeConstraints{ (make) in
             make.left.right.top.equalToSuperview()
-//            make.height.equalTo(200)
             
     }
         headerImage.snp.makeConstraints{ (make) in
             make.left.right.top.equalTo(backGruondImage)
-            
-//            make.height.equalTo(200)
         }
         
         mainStack.snp.makeConstraints{ (make) in
@@ -138,14 +93,11 @@ private extension ProductDetailHeaderView {
             make.top.equalTo(headerImage.snp.top).offset(50)
         
     }
-//        collectionview.snp.makeConstraints{ (make) in
-//            make.left.right.equalToSuperview()
-//            make.top.equalTo(backGruondImage.snp.bottom)
-//            make.height.equalTo(50)
-//    }
+        view.snp.makeConstraints{ (make) in
+            make.centerX.equalTo(backGruondImage)
+            make.top.equalTo(backGruondImage.snp.bottom).offset(-20)
+        }
 
-    }
 }
 
-
-
+}

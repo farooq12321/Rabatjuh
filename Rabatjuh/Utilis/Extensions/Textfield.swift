@@ -41,6 +41,10 @@ extension UITextField {
         return textfiled
     }
     
+    
+    
+    
+    
     fileprivate func setPasswordToggleImage(_ button: UIButton) {
         if(isSecureTextEntry){
             button.setImage(UIImage(named: "ic_password_visible"), for: .normal)

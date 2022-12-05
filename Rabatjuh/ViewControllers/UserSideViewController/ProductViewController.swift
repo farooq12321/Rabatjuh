@@ -145,6 +145,33 @@ extension ProductViewController
 
 }
 
+// MARK: - Extension
+
+
+extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ProductData.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ProductData[section].sectionType
+
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = productTableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
+        cell.productCollectionView.tag  = indexPath.section
+        return cell
+    }
+
  // MARK: -
 
 //extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
@@ -186,4 +213,4 @@ extension ProductViewController
 //
 
 
-
+}

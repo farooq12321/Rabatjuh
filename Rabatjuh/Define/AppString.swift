@@ -48,7 +48,9 @@ struct AppString {
         static let productDiscription = "".localized
         
         static let productTitle = "Hundreds of flvours under one roof".localized
-        static let subTitle = "Gloria Jeans coffee".localized
+        static let Title = "Gloria Jeans coffee".localized
+        static let subTitle = "Chocolate Moccha - Carmalatte- valnilla Latte".localized
+        static let review = "Reviews".localized
         
         // MARK: Reviews
         //Cell
@@ -76,7 +78,24 @@ struct AppString {
         
         static let registerpassword = "Password".localized
         
+       
+        
         // MARK: Home
+        
+        //MARK: EditScreen
+        
+        static let restaurantName = "Restaurant Name".localized
+        static let restaurantTagLine = "Tag Line".localized
+        static let restaurantAddress = "Address".localized
+        static let restaurantType = "Type".localized
+        
+        //MARK: CreateMenuScreen
+        
+        static let menuName = "Name".localized
+        static let chooseMenu = "Choose Menu".localized
+        static let menuPrice = "Price".localized
+        static let menuDesciption = "Discription".localized
+        
   
         
         
@@ -99,6 +118,15 @@ struct AppString {
          static let menu = ""
         
         
+        // MARK: EditScreen
+        static let update = "Update".localized
+        
+        // MARK: CreateMenuScreen
+        static let cook = "Cook".localized
+        
+        
+        
+        
     }
     
     
@@ -114,7 +142,15 @@ struct AppString {
         
         // MARK: ProductDetail
         
-        static let BackGroundImage = "BackGroundImage".localized
+        static let backGroundImage = "HeaderBackGroundImage".localized
+        static let productcolorImage = "backGroundcolor".localized
+        
+        
+        //MARK: -   EditScreen
+        
+        static let profileImage = "profile".localized
+        static let menuImage = "MenuImage".localized
+        static let userImage = "UserImage".localized
         
         
         

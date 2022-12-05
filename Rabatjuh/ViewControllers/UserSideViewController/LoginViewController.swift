@@ -7,7 +7,6 @@
 
 import UIKit
 import SwiftyJSON
-import ToastViewSwift
 
 class LoginViewController: UIViewController {
     
@@ -16,6 +15,7 @@ class LoginViewController: UIViewController {
     private lazy var backgroundImage = UIImageView.Image(
         name: "BackGroundImage"
     )
+    
     
     
     // MARK: - Header

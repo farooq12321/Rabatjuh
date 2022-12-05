@@ -26,11 +26,12 @@ class HomeViewController: UIViewController {
     
     // MARK: - Header
 
+    lazy var headerView: HeaderView = HeaderView()
     
     // MARK: - Body
     
     private lazy var resturantTableVeiw = UITableView.TableVeiw()
-    lazy var headerView: HeaderView = HeaderView()
+    
    
     // MARK: - Footer
 
@@ -46,11 +47,7 @@ class HomeViewController: UIViewController {
         
     }
     
-   override func viewDidLayoutSubviews() {
-       super.viewDidLayoutSubviews()
-    
-    resturantTableVeiw.sizeHeaderToFit()
-   }
+  
 
 }
     // MARK: - Actions
@@ -66,10 +63,9 @@ private extension HomeViewController {
       resturantTableVeiw.delegate = self
       resturantTableVeiw.dataSource = self
         
-        resturantTableVeiw.tableHeaderView = headerView
-        //resturantTableVeiw = UITableView(frame:CGRect.zero,style: .grouped)
+//        resturantTableVeiw.tableHeaderView = headerView
       
-      resturantTableVeiw.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+      resturantTableVeiw.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
         
 //        resturantTableVeiw.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
        
@@ -104,22 +100,9 @@ private extension HomeViewController {
 
 
 
-// MARK: - Extension
+// MARK
 
-extension UITableView{
 
-func sizeHeaderToFit() {
-    if let headerView = self.tableHeaderView {
-        let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-
-        var newFrame = headerView.frame
-        newFrame.size.height = height
-        headerView.frame = newFrame
-
-        headerView.layoutIfNeeded()
-    }
- }
-}
 
 
 
@@ -132,18 +115,20 @@ func sizeHeaderToFit() {
         let headerView1 = HeaderView()
 //        headerView1.headerImage.image = UIImage(named: AppString.Image.headerImage)
 //        headerView1.lblTitle.text = ""
-        //headerView1.backgroundColor = .red
+        headerView1.backgroundColor = .white
         return headerView1
         }
     
-    
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
+    func tableView(_ tableView: UITableView,heightForHeaderInSection section: Int
+    ) -> CGFloat{
+        return 260
     }
+
+    
+
     
     
-    
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ResturantData.count
@@ -153,7 +138,7 @@ func sizeHeaderToFit() {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
-           let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier,for: indexPath) as! HomeTableViewCell
+           let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier,for: indexPath) as! RestaurantTableViewCell
             cell.restaurantImage.image = UIImage(named: ResturantData[indexPath.row].resturantImage)
             cell.lblName.text = ResturantData[indexPath.row].resturantName
             cell.lblDistance.text = ResturantData[indexPath.row].resturantDistance

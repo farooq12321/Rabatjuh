@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
         
-        let listViewController:LoginViewController = LoginViewController()
+        let listViewController:ReviewsViewController = ReviewsViewController()
 
                self.window!.makeKeyAndVisible()
         self.window!.rootViewController = listViewController;

@@ -28,11 +28,12 @@ class ReviewsViewController: UIViewController {
     
     // MARK: - Header
 
+    private let reviewsTableVeiw = UITableView.TableVeiw()
     
     
     // MARK: - Body
     
-    private let reviewsTableVeiw = UITableView.TableVeiw()
+    lazy var headerView: ProductDetailHeaderView = ProductDetailHeaderView()
 
     // MARK: - Footer
     
@@ -49,7 +50,16 @@ class ReviewsViewController: UIViewController {
         configureViews()
 
     }
-}
+    
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//     
+//     reviewsTableVeiw.sizeHeaderviewToFit()
+//    }
+
+ }
+
     
     // MARK: - Actions
     
@@ -61,6 +71,9 @@ private extension ReviewsViewController {
     func Setup() {
         reviewsTableVeiw.delegate = self
         reviewsTableVeiw.dataSource = self
+        
+//        reviewsTableVeiw.tableHeaderView = headerView
+        
         reviewsTableVeiw.register(ReviewsTableViewCell.self, forCellReuseIdentifier: ReviewsTableViewCell.identifier)
        
       }
@@ -88,11 +101,46 @@ private extension ReviewsViewController {
     }
 }
 
+
+
+// MARK: - Extension
+
+//extension UITableView{
+//
+//   func sizeHeaderviewToFit() {
+//    if let headerView = self.tableHeaderView {
+//        let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+//
+//        var newFrame = headerView.frame
+//        newFrame.size.height = height
+//        headerView.frame = newFrame
+//
+//        headerView.layoutIfNeeded()
+//    }
+// }
+//}
+
+
 // MARK: - Extension
 
 // Setup Views
  extension ReviewsViewController: UITableViewDelegate, UITableViewDataSource{
 
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = ProductDetailHeaderView()
+//        headerView1.headerImage.image = UIImage(named: AppString.Image.headerImage)
+//        headerView1.lblTitle.text = ""
+        headerView.backgroundColor = .white
+        return headerView
+        }
+    
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 250
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReviewData.count
