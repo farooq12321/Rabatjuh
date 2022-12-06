@@ -134,7 +134,7 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonTap(_ sender: Any) {
-        let vc = SideMenuViewController()
+        let vc = HomeViewController()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true,completion: nil)
        

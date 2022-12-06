@@ -174,13 +174,14 @@ private extension HomeViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = ProductViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
             vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true,completion: nil)
         } else if indexPath.row == 1 {
             let vc = ReviewsViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true,completion: nil)
-        }
+            navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
+            vc.modalPresentationStyle = .fullScreen        }
     }
  
 }
