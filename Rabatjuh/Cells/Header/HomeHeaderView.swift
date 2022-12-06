@@ -8,13 +8,14 @@
 import UIKit
 
 class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    
+    var menu_vc: SideMenuViewController!
 
     //MARK: - data
-//    var Data  = (all:"All",bistro: "bistro", dinner: "Dinner", buffet: "Buffet",cafe: "Cafe",fastfood: "FastFood")
+    var Data  = [
+        Resturants(all:"All",bistro: "bistro", dinner: "Dinner", buffet: "Buffet",cafe: "Cafe",fastfood: "FastFood")]
     
-    var items = ["All","Bistro","Dinner","Buffet","Cafe","FastFood"]
-        
-
+//    var items = ["All","Bistro","Dinner","Buffet","Cafe","FastFood"]
     
     static var identifier = "HeaderView"
     
@@ -31,6 +32,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         cornerRadius: UIConstant.Image.cornerRadius
         
     )
+   
     
     var  lblTitle = UILabel.Subheading(
         text:AppString.Label.headerTitle,
@@ -39,7 +41,9 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     )
     
     private lazy var btnMenu = UIButton.Secondary(
-        imageName: AppString.Image.btnMenu
+        imageName: AppString.Image.btnMenu,
+        target: self,
+        action: #selector(SideMenuButton)
     )
     
     var  searchBar = UISearchBar.searchbar()
@@ -50,33 +54,46 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         distribution: .equalSpacing
     )
   
-
-    
-
-    
     // MARK: - Mainstack
-    
-    
     
     private lazy var mainStack = UIStackView(
         arrangedSubviews: [headerStack,searchBar],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
-//        distribution: .equalSpacing
     )
     
     // MARK: -  // MARK: - ViewController Life Cycle
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
-        collectionview.backgroundColor = UIColor.black
+        Setup()
+        collectionview.backgroundColor = UIColor.red
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK:- Action
+
+    @objc func SideMenuButton(_ sender: Any) {
+        let vc = SideMenuViewController()
+        vc.present(vc, animated: true, completion: nil)
+        
+        if AppDelegate.menu_bool {
+            showMenu()
+        }else{
+            closeMenu()
+        }
+
+    }
+    
+    func showMenu(){
+        
+    }
+    func closeMenu(){
+        
     }
 
 
@@ -88,8 +105,7 @@ private extension HeaderView {
     func Setup() {
         collectionview.dataSource = self
         collectionview.delegate = self
-       
-        
+
         collectionview.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionview.reloadData()
 
@@ -105,7 +121,7 @@ private extension HeaderView {
 // Setup Views
 private extension HeaderView {
     func configureViews() {
-        
+      
         self.addSubview(backGruondImage)
         self.addSubview(headerImage)
         self.addSubview(mainStack)
@@ -117,20 +133,17 @@ private extension HeaderView {
     func activateConstrains() {
         backGruondImage.snp.makeConstraints{ (make) in
             make.left.right.top.equalToSuperview()
-//            make.height.equalTo(200)
-            
+
     }
         headerImage.snp.makeConstraints{ (make) in
             make.left.right.top.equalTo(backGruondImage)
-            
-//            make.height.equalTo(200)
+
         }
         
         mainStack.snp.makeConstraints{ (make) in
             make.left.equalTo(headerImage).offset(30)
             make.right.equalTo(headerImage).offset(-30)
             make.top.equalTo(headerImage.snp.top).offset(50)
-        
     }
         collectionview.snp.makeConstraints{ (make) in
             make.left.right.equalToSuperview()
@@ -141,31 +154,39 @@ private extension HeaderView {
     }
 }
 
-
 // MARK: - Extesion
 extension HeaderView {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.items.count
+    return self.Data.count
 }
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
 
     
-    cell.lblAll.text = items[indexPath.row]
-//    cell.lblBistro.text = items[indexPath.row]
-//        cell.lblDinner.text = items[indexPath.row]
-//        cell.lblBuffet.text = items[indexPath.row]
-//        cell.lblCafe.text = items[indexPath.row]
-//        cell.lblFastFood.text = items[indexPath.row]
+    cell.lblAll.text = Data[indexPath.row].all
+    cell.lblBistro.text = Data[indexPath.row].bistro
+    cell.lblDinner.text = Data[indexPath.row].dinner
+    cell.lblBuffet.text = Data[indexPath.row].buffet
+    cell.lblCafe.text = Data[indexPath.row].cafe
+    cell.lblFastFood.text = Data[indexPath.row].fastfood
+
         return cell
     
 }
-    
+//
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width/2)-3, height: (collectionView.frame.width/2)-3)
+        return CGSize(width: (collectionView.frame.size.width/2)-1, height: (collectionView.frame.size.width/2)-1)
     }
+
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGFloat {
+//        return 20.0
+//    }
+//}
+
 }
-
-
 

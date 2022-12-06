@@ -31,7 +31,10 @@ class ProductDetailHeaderView: UIView {
     )
     var lblDescritpion = UILabel.PreSecondary(
         text:AppString.Label.subTitle,
-        textColor: UIColor.HexColor(hexString: "#FFFFFF"))
+        textColor: UIColor.HexColor(hexString: "#FFFFFF"),
+        textAlignment: .center
+    )
+        
     
 
  // MARK: - mainStack
@@ -43,6 +46,68 @@ class ProductDetailHeaderView: UIView {
     
     private lazy var view = UIView.subveiw()
   
+    private lazy var lblKilometer = UILabel.PreSecondary(
+        text:AppString.Label.kilometer,
+        textColor:UIColor.buttonPrimaryBackground
+    )
+    
+    private lazy var btnDirection = UIButton.Secondary(
+        title: AppString.Button.getDirection,
+        titleColor: UIColor.labelPrimary,
+        font: UIFont.labelPreSecondary
+    )
+    
+    private lazy var stack1 = UIStackView(
+        arrangedSubviews: [lblKilometer,btnDirection],
+        axis: .vertical,
+        distribution: .equalSpacing
+    )
+    
+    
+    
+    private lazy var btnComment = UIButton.Secondary(
+        imageName: AppString.Image.commet
+    )
+    
+    private lazy var lblComment = UILabel.PreSecondary(
+        text:AppString.Label.heart,
+        textColor: UIColor.labelSecondary
+        )
+    
+    private lazy var stack2 = UIStackView(
+    arrangedSubviews: [btnComment,lblComment],
+        axis: .vertical,
+        distribution: .fillEqually
+    )
+    
+    
+    private lazy var btnHeart = UIButton.Secondary(
+        imageName: AppString.Image.heart
+    )
+    
+    private lazy var lblHeart = UILabel.PreSecondary(
+        text:AppString.Label.heart,
+        textColor: UIColor.labelSecondary
+        )
+    
+    private lazy var stack3 = UIStackView(
+    arrangedSubviews: [btnHeart,lblHeart],
+        axis: .vertical,
+        distribution: .fillEqually
+    )
+    
+    
+    private lazy var stack4 = UIStackView(
+        arrangedSubviews: [stack2,stack3],
+        axis: .horizontal,
+        spacing: UIConstant.TextField.spacing
+    )
+    
+    private lazy var stack5 = UIStackView(
+        arrangedSubviews: [stack1,stack4],
+        axis: .horizontal,
+        distribution: .equalSpacing
+    )
 
     
 
@@ -74,6 +139,11 @@ private extension ProductDetailHeaderView {
         self.addSubview(headerImage)
         self.addSubview(mainStack)
         self.addSubview(view)
+//        self.addSubview(stack1)
+//        self.addSubview(stack2)
+//        self.addSubview(stack3)
+//        self.addSubview(stack4)
+        self.addSubview(stack5)
         activateConstrains()
         
     }
@@ -95,8 +165,23 @@ private extension ProductDetailHeaderView {
     }
         view.snp.makeConstraints{ (make) in
             make.centerX.equalTo(backGruondImage)
-            make.top.equalTo(backGruondImage.snp.bottom).offset(-20)
+            make.top.equalTo(backGruondImage.snp.bottom).offset(-30)
         }
+//        stack1.snp.makeConstraints{ (make) in
+//            make.left.top.equalTo(view.layoutMarginsGuide)
+//
+//        }
+        
+//        stack4.snp.makeConstraints{ (make) in
+//            make.right.top.equalTo(view.layoutMarginsGuide)
+//        }
+//        stack3.snp.makeConstraints{ (make) in
+//            make.right.top.equalTo(view.layoutMarginsGuide)
+//        }
+        stack5.snp.makeConstraints{ (make) in
+            make.left.right.top.bottom.equalTo(view.layoutMarginsGuide)
+        }
+        
 
 }
 

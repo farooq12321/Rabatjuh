@@ -28,7 +28,7 @@ extension UIView {
             let view = UIView()
             view.layer.cornerRadius = 10
             view.layer.borderWidth = 0.05
-            view.backgroundColor = .red
+            view.backgroundColor = .white
             view.snp.makeConstraints{ (make) in
             make.height.equalTo(60)
             make.width.equalTo(300)

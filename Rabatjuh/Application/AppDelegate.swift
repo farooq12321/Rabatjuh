@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
+    static var menu_bool = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
         
-        let listViewController:ReviewsViewController = ReviewsViewController()
+        let listViewController:LoginViewController = LoginViewController()
 
                self.window!.makeKeyAndVisible()
         self.window!.rootViewController = listViewController;

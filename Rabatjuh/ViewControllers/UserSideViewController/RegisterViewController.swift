@@ -31,6 +31,11 @@ class RegisterViewController: UIViewController {
         //spacing: UIConstant.TextField.spacing
     )
     
+    private lazy var profileimage = UIImageView.Image(
+        name: AppString.Image.ProfileImage, cornerRadius:
+            UIConstant.Image.cornerRadius
+    )
+    
     // MARK: - Body
 
     //Form
@@ -112,7 +117,7 @@ class RegisterViewController: UIViewController {
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,bodyStack,footerStack],
+        arrangedSubviews: [headerStack,UIView.spacer(for:.horizontal),profileimage,UIView.spacer(for:.horizontal),bodyStack,footerStack],
         axis: .vertical,
         spacing: UIConstant.Default.spacing
     )
@@ -159,6 +164,7 @@ private extension RegisterViewController {
         
         view.addSubview(backgroundImage)
         view.addSubview(mainStack)
+        
 //        view.addSubview(footerStack)
         
         activateConstrains()

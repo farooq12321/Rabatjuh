@@ -8,10 +8,10 @@
 import Foundation
 struct Product{
     let sectionType:String
-    let productImage:String
+    let productImage:[String]
     
-    let productName:String
-    let productDescription:String
+    let productName:[String]
+    let productDescription:[String]
     
     
 }

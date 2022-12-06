@@ -14,34 +14,34 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Body
 
-    var lblAll = UILabel.Heading(
+    var lblAll = UILabel.Primary(
         text: AppString.Label.all
     )
-//    var lblBistro = UILabel.Primary(
-//        text:AppString.Label.bistro
-//    )
-//    var lblDinner = UILabel.Primary(
-//        text:AppString.Label.dinner
-//    )
-//    var lblBuffet = UILabel.Primary(
-//        text:AppString.Label.cafe
-//    )
-//    var lblCafe = UILabel.Primary(
-//        text:AppString.Label.buffet
-//    )
-//    var lblFastFood = UILabel.Primary(
-//        text:AppString.Label.fastfood
-//    )
+    var lblBistro = UILabel.Primary(
+        text:AppString.Label.bistro
+    )
+    var lblDinner = UILabel.Primary(
+        text:AppString.Label.dinner
+    )
+    var lblBuffet = UILabel.Primary(
+        text:AppString.Label.cafe
+    )
+    var lblCafe = UILabel.Primary(
+        text:AppString.Label.buffet
+    )
+    var lblFastFood = UILabel.Primary(
+        text:AppString.Label.fastfood
+    )
     
     
     // MARK: - MainStack
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [lblAll],//lblBistro,lblDinner,lblBuffet,lblCafe,lblFastFood],
+        arrangedSubviews: [lblAll,lblBistro,lblDinner,lblBuffet,lblCafe,lblFastFood],
         axis: .horizontal,
         spacing: UIConstant.TextField.spacing,
-        distribution: .equalSpacing
+        distribution: .fillEqually
 
       
     )
@@ -78,7 +78,7 @@ private extension MenuCollectionViewCell {
     func activateConstrains() {
        
         mainStack.snp.makeConstraints{ (make) in
-        make.left.right.equalTo(self.layoutMarginsGuide)
+            make.left.right.top.equalTo(self.layoutMarginsGuide)
         }
     }
 }

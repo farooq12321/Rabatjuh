@@ -7,8 +7,11 @@
 
 import UIKit
 
+
+
 class HomeViewController: UIViewController {
 
+    var menu_vc: SideMenuViewController!
     
     // MARK: - Data
     var ResturantData = [
@@ -45,12 +48,34 @@ class HomeViewController: UIViewController {
         Setup()
         configureViews()
         
+       
+        
     }
+    
+    
+    
+//    // MARK:- Action
+//
+//    @objc func SideMenuButton(_ sender: Any) {
+//        let vc = SideMenuViewController()
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true,completion: nil)
+//
+//       self.view.endEditing(true)
+//
+//    }
+//
+//    func showMenu(){
+//
+//    }
+//    func closeMenu(){
+//
+//    }
     
   
 
 }
-    // MARK: - Actions
+   
  
 
 
@@ -100,7 +125,6 @@ private extension HomeViewController {
 
 
 
-// MARK
 
 
 
@@ -153,8 +177,9 @@ private extension HomeViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true,completion: nil)
         } else if indexPath.row == 1 {
-            let viewController = ReviewsViewController()
-            navigationController?.pushViewController(viewController, animated: true)
+            let vc = ReviewsViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true,completion: nil)
         }
     }
  

@@ -52,6 +52,8 @@ struct AppString {
         static let subTitle = "Chocolate Moccha - Carmalatte- valnilla Latte".localized
         static let review = "Reviews".localized
         
+        static let kilometer = "25 km away".localized
+        
         // MARK: Reviews
         //Cell
         static let userName = "".localized
@@ -124,6 +126,10 @@ struct AppString {
         // MARK: CreateMenuScreen
         static let cook = "Cook".localized
         
+        // MARK: ProductHeader
+        
+        static let getDirection = "Get Direction".localized
+        
         
         
         
@@ -151,6 +157,10 @@ struct AppString {
         static let profileImage = "profile".localized
         static let menuImage = "MenuImage".localized
         static let userImage = "UserImage".localized
+        static let ProfileImage = "ProfileImage".localized
+        
+        //MARK:- SideMenu
+        static let logo = "logoImage".localized
         
         
         

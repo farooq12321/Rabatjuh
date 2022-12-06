@@ -7,28 +7,45 @@
 
 import UIKit
 
-class ProductViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+  // MARK: - Data
+
+var ProductData = [
+    Product(sectionType:"Deals And Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
+    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
+    Product(sectionType:"Deals And Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
+    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"])
+//    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//    Product(sectionType:"Deals And Discount",productImage:["productImage","productImage","productImage"], productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create")
+//    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//    Product(sectionType:"Deals And Discount",productImage: ["productImage","productImage","productImage"], productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create")
+
+]
+
+class ProductViewController: UIViewController{ //UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
 
     // MARK: - Data
-    var ProductData = [
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
-        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create")
-    
-    ]
+//    var ProductData = [
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create"),
+//        Product(sectionType:"Deals And Discount",productImage: "productImage", productName: "Mint Chocolate bomb", productDescription: "There are many situations when you want to create")
+//
+//    ]
     // MARK: - Background
    
     private lazy var productTableView = UITableView.TableVeiw()
     
-    private lazy var productCollectionView = UICollectionView.collectionView()
-    
     lazy var headerView: ProductDetailHeaderView = ProductDetailHeaderView()
+    
+//    //private lazy var productCollectionView = UICollectionView.collectionView()
+//    
+//    lazy var headerView: ProductDetailHeaderView = ProductDetailHeaderView()
     
     
     // MARK: - Header
@@ -49,6 +66,8 @@ class ProductViewController: UIViewController,UICollectionViewDataSource,UIColle
 
         Setup()
         configureViews()
+       // productTableView.backgroundColor = .white
+        
       
     }
 }
@@ -64,7 +83,7 @@ private extension ProductViewController {
         navigationController?.navigationBar.isHidden = true
         
         self.view.addSubview(productTableView)
-        productTableView.addSubview(productCollectionView)
+//        productTableView.addSubview(productCollectionView)
         //self.view.addSubview(productCollectionView)
 
         activateConstrains()
@@ -76,10 +95,10 @@ private extension ProductViewController {
             make.edges.equalToSuperview()
             
         }
-        productCollectionView.snp.makeConstraints{ (make) in
-            make.left.right.equalToSuperview()
-         
-        }
+//        productCollectionView.snp.makeConstraints{ (make) in
+//            make.left.right.equalToSuperview()
+//
+//        }
         
     }
 }
@@ -91,64 +110,62 @@ private extension ProductViewController {
 
 private extension ProductViewController {
     func Setup() {
-        productCollectionView.dataSource = self
-        productCollectionView.delegate = self
+//        productCollectionView.dataSource = self
+//        productCollectionView.delegate = self
        
         
-        productCollectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
-        self.view.backgroundColor = .white
-        productCollectionView.reloadData()
-        productCollectionView.backgroundColor = .white
-        productCollectionView.frame = view.bounds
+//        productCollectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+//        self.view.backgroundColor = .white
+//        productCollectionView.reloadData()
+//        productCollectionView.backgroundColor = .white
+//        productCollectionView.frame = view.bounds
+        
+        
+        
+        productTableView.delegate = self
+        productTableView.dataSource = self
+          
+  //        resturantTableVeiw.tableHeaderView = headerView
+        
+        productTableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
        
       }
 
   }
 
 
-// MARK: - Extension
 
-// Setup Views
-extension ProductViewController
-{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return ProductData.count
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:ProductCollectionViewCell.identifier,for:indexPath)as! ProductCollectionViewCell
-
-        cell.productImage.image = UIImage(named: ProductData[indexPath.row].productImage)
-        //cell.PriceLabel.text = ResturantDetails[indexPath.row].PriceLabel
-        cell.lblName.text = ProductData[indexPath.row].productName
-        cell.lblDiscription.text = ProductData[indexPath.row].productDescription
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.width/2)-3, height: (collectionView.frame.width/2)-3)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let vc = ReviewsViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true,completion: nil)
-        } 
-    }
-
-  
-    
-    
-    
-
-}
 
 // MARK: - Extension
+
 
 
 extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = ProductDetailHeaderView()
+////        headerView1.headerImage.image = UIImage(named: AppString.Image.headerImage)
+////        headerView1.lblTitle.text = ""
+//        headerView.backgroundColor = .white
+//        return headerView
+//        }
+    
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = UIColor.white
+//        let lbl = UILabel()
+//        lbl.textColor = UIColor.black
+//        lbl.text = ProductData[section].sectionType
+//        view.addSubview(lbl)
+//        return view
+//    }
+    
+    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 250
+//    }
+    
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
@@ -171,46 +188,10 @@ extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
         cell.productCollectionView.tag  = indexPath.section
         return cell
     }
-
- // MARK: -
-
-//extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
-//
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 250
-//    }
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return ProductData.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return ProductData[section].sectionType
-//
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = productTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProductTableViewCell
-//        cell.productCollectionView.tag  = indexPath.section
-//        return cell
-//    }
-//    
-//
-//}
+}
 
 // MARK: - Extension
 
 
-// Setup ApiCalls
-//private extension LoginViewController {
-//    func LoginApi() {
-//
-//    }
-//}
-//
 
 
-}
