@@ -86,12 +86,15 @@ extension UIImageView {
     static func UserImage (name:String = ""
     ) -> UIImageView
     {
+        let height = 150.0
         let imageveiw = UIImageView()
         imageveiw.image = UIImage(named: name)
         imageveiw.contentMode = .scaleAspectFill
+        imageveiw.layer.cornerRadius = CGFloat(height/2.0)
         imageveiw.clipsToBounds = true
         imageveiw.snp.makeConstraints{ (make) in
-            make.height.width.equalTo(50)
+            make.height.equalTo(height)
+            make.width.equalTo(150)
         }
         return imageveiw
     

@@ -44,6 +44,7 @@ struct AppString {
         
         // MARK: Product
         //Cell
+        
         static let productName = "".localized
         static let productDiscription = "".localized
         
@@ -115,6 +116,7 @@ struct AppString {
         
         // MARK: Signup
         
+        static let plus = "Plus".localized
         
         // MARK: Home
          static let menu = ""
@@ -138,7 +140,15 @@ struct AppString {
     
     
     struct Image {
-        // MARK: Home
+        
+         //MARK: - Login
+        
+        static let backgroundImage = "BackGroundImage".localized
+        
+        
+        //
+        
+        // MARK: -  Home
         static let heart = "heartImage".localized
         static let commet = "commentImage".localized
         static let headerImage = "backGroundImage".localized
@@ -146,10 +156,11 @@ struct AppString {
         static let btnMenu = "Menu".localized
         
         
-        // MARK: ProductDetail
+        // MARK: - ProductDetail
         
         static let backGroundImage = "HeaderBackGroundImage".localized
         static let productcolorImage = "backGroundcolor".localized
+        static let productImage = "".localized
         
         
         //MARK: -   EditScreen

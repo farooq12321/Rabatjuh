@@ -139,10 +139,6 @@ private extension ProductDetailHeaderView {
         self.addSubview(headerImage)
         self.addSubview(mainStack)
         self.addSubview(view)
-//        self.addSubview(stack1)
-//        self.addSubview(stack2)
-//        self.addSubview(stack3)
-//        self.addSubview(stack4)
         self.addSubview(stack5)
         activateConstrains()
         
@@ -167,17 +163,7 @@ private extension ProductDetailHeaderView {
             make.centerX.equalTo(backGruondImage)
             make.top.equalTo(backGruondImage.snp.bottom).offset(-30)
         }
-//        stack1.snp.makeConstraints{ (make) in
-//            make.left.top.equalTo(view.layoutMarginsGuide)
-//
-//        }
         
-//        stack4.snp.makeConstraints{ (make) in
-//            make.right.top.equalTo(view.layoutMarginsGuide)
-//        }
-//        stack3.snp.makeConstraints{ (make) in
-//            make.right.top.equalTo(view.layoutMarginsGuide)
-//        }
         stack5.snp.makeConstraints{ (make) in
             make.left.right.top.bottom.equalTo(view.layoutMarginsGuide)
         }

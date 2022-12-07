@@ -31,6 +31,8 @@ extension UIColor {
     static let subheading = UIColor(named: "Subheading")!
     static let subheadingcolor = UIColor.HexColor(hexString: "#E0E0E0")
     
+    static let searchbarcolor = UIColor.HexColor(hexString: "#424242")
+    
     
     
         

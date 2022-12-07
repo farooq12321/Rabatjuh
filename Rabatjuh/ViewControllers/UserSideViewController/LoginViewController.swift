@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
-        name: "BackGroundImage"
+        name:AppString.Image.backgroundImage
     )
     
     
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     
     private lazy var lblSubTitle = UILabel.Subheading(
         text: AppString.Label.loginSubTitle,
-        textColor: UIColor.HexColor(hexString: "#E0E0E0")
+        textColor: UIColor.subheadingcolor
     )
     
     private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
@@ -80,9 +80,7 @@ class LoginViewController: UIViewController {
     private lazy var footer1 = UIStackView(
         arrangedSubviews: [UIView.spacer(for:.horizontal),lbldontHaveAnAccount,btnSignup,UIView.spacer(for:.horizontal)],
         axis: .horizontal,
-//        spacing: 5.0,
-//        alignment: .center,
-        distribution: .equalSpacing
+        distribution: .fillEqually
         
        
     )

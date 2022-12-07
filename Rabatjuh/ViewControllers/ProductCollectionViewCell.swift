@@ -17,7 +17,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Body
 
-    var productImage = UIImageView.Image()
+    var productImage = UIImageView.Image(
+        name: AppString.Image.productImage)
     var lblName = UILabel.Primary(
         text:AppString.Label.productName
     )
@@ -33,7 +34,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         arrangedSubviews: [productImage,lblName,lblDiscription],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing,
-        //distribution: .equalSpacing
         distribution:.fill
     )
     

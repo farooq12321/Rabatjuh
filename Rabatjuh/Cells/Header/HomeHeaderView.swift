@@ -7,15 +7,15 @@
 
 import UIKit
 
-class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     var menu_vc: SideMenuViewController!
 
     //MARK: - data
     var Data  = [
         Resturants(all:"All",bistro: "bistro", dinner: "Dinner", buffet: "Buffet",cafe: "Cafe",fastfood: "FastFood")]
-    
-//    var items = ["All","Bistro","Dinner","Buffet","Cafe","FastFood"]
+
+    //MARK: - Header
     
     static var identifier = "HeaderView"
     
@@ -51,6 +51,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     private lazy var headerStack = UIStackView(
         arrangedSubviews: [lblTitle,btnMenu],
         axis: .horizontal,
+        spacing: UIConstant.TextField.spacing,
         distribution: .equalSpacing
     )
   
@@ -66,9 +67,12 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+   
+        
         configureViews()
         Setup()
-        collectionview.backgroundColor = UIColor.red
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -178,15 +182,11 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         return cell
     
 }
-//
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width/2)-1, height: (collectionView.frame.size.width/2)-1)
+        return CGSize(width: (collectionView.frame.size.width/2)-1, height: (collectionView.frame.size.width/2)-2)
     }
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGFloat {
-//        return 20.0
-//    }
-//}
 
 }
 

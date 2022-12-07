@@ -13,7 +13,7 @@ class ProductTableViewCell: UITableViewCell {
     
     // MARK: - Body
 
-   lazy var productCollectionView = UICollectionView.collectionView()
+    lazy var productCollectionView = UICollectionView.collectionView(direction: UICollectionView.ScrollDirection.vertical)
     
 
     
@@ -28,9 +28,6 @@ class ProductTableViewCell: UITableViewCell {
         
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
-        
-//        self.productCollectionView.backgroundColor = UIColor.white
-        
         productCollectionView.reloadData()
         
         configureViews()
@@ -97,10 +94,11 @@ extension ProductTableViewCell: UICollectionViewDelegate,UICollectionViewDataSou
 
         return cell
     }
+    
  
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: (collectionView.frame.size.width/4)-3, height: (collectionView.frame.size.width/4)-3)
-//      }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.size.width/2)-3, height: (collectionView.frame.size.width/2)-3)
+      }
     
     
 
@@ -110,38 +108,4 @@ extension ProductTableViewCell: UICollectionViewDelegate,UICollectionViewDataSou
 
 
 
-
-
-
-// Setup Views
-//extension ProductViewController
-//{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//      return ProductData.count
-//
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:ProductCollectionViewCell.identifier,for:indexPath)as! ProductCollectionViewCell
-//
-//        cell.productImage.image = UIImage(named: ProductData[indexPath.row].productImage[indexPath.row])
-//        //cell.PriceLabel.text = ResturantDetails[indexPath.row].PriceLabel
-//        cell.lblName.text = ProductData[indexPath.row].productName
-//        cell.lblDiscription.text = ProductData[indexPath.row].productDescription
-//        return cell
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: (collectionView.frame.width/2)-3, height: (collectionView.frame.width/2)-3)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            let vc = ReviewsViewController()
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true,completion: nil)
-//        }
-//    }
-
-  
     

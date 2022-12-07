@@ -31,8 +31,6 @@ class ReviewsTableViewCell: UITableViewCell {
         arrangedSubviews: [userImage,lblName],
         axis: .horizontal,
         spacing: UIConstant.TextField.spacing
-//        alignment: .fill,
-//        distribution: .fill
     )
     
     
@@ -46,7 +44,6 @@ class ReviewsTableViewCell: UITableViewCell {
         arrangedSubviews: [Stack1,lblReviews],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
-//        distribution:.fillEqually
     )
     
     

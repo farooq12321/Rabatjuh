@@ -54,24 +54,6 @@ class HomeViewController: UIViewController {
     
     
     
-//    // MARK:- Action
-//
-//    @objc func SideMenuButton(_ sender: Any) {
-//        let vc = SideMenuViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: true,completion: nil)
-//
-//       self.view.endEditing(true)
-//
-//    }
-//
-//    func showMenu(){
-//
-//    }
-//    func closeMenu(){
-//
-//    }
-    
   
 
 }
@@ -91,9 +73,7 @@ private extension HomeViewController {
 //        resturantTableVeiw.tableHeaderView = headerView
       
       resturantTableVeiw.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
-        
-//        resturantTableVeiw.register(HeaderView.self, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
-       
+ 
       }
 
   }
@@ -137,8 +117,6 @@ private extension HomeViewController {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView1 = HeaderView()
-//        headerView1.headerImage.image = UIImage(named: AppString.Image.headerImage)
-//        headerView1.lblTitle.text = ""
         headerView1.backgroundColor = .white
         return headerView1
         }

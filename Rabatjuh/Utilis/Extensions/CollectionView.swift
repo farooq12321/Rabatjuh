@@ -8,11 +8,15 @@
 import UIKit
 extension UICollectionView{
     
-    static func collectionView() -> UICollectionView{
+    static func collectionView(
+        direction:UICollectionView.ScrollDirection = .horizontal,
+        lineSpacing:CGFloat = 1.0,
+        interitemspacing:CGFloat = 1.0
+    ) -> UICollectionView{
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
+        layout.scrollDirection = direction
+        layout.minimumLineSpacing = lineSpacing
+        layout.minimumInteritemSpacing = interitemspacing
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         return collection

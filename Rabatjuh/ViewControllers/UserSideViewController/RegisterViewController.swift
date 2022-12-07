@@ -12,7 +12,7 @@ class RegisterViewController: UIViewController {
     // Mark: - backGroundImage
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
-        name: "BackGroundImage"
+        name: AppString.Image.backgroundImage
     )
     
     
@@ -24,17 +24,19 @@ class RegisterViewController: UIViewController {
     
     private lazy var lblSubTitle = UILabel.Subheading(
         text: AppString.Label.regsiterSubTitle,
-        textColor: UIColor.HexColor(hexString: "#E0E0E0")
+        textColor: UIColor.subheadingcolor
     )
     
     private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
-        //spacing: UIConstant.TextField.spacing
     )
     
-    private lazy var profileimage = UIImageView.Image(
-        name: AppString.Image.ProfileImage, cornerRadius:
-            UIConstant.Image.cornerRadius
+    private lazy var profileimage = UIImageView.UserImage(
+        name: AppString.Image.ProfileImage
     )
+    
+    private lazy var btnPlus = UIButton.Secondary(
+        imageName:AppString.Button.plus
+        )
     
     // MARK: - Body
 
@@ -93,8 +95,6 @@ class RegisterViewController: UIViewController {
     private lazy var footer1 = UIStackView(
         arrangedSubviews: [UIView.spacer(for:.horizontal),lblAlready,btnLogin,UIView.spacer(for:.horizontal)],
          axis: .horizontal,
-//        spacing: UIConstant.TextField.spacing,
-//        distribution: .equalSpacing
          alignment: .center,
          distribution: .fillEqually
        
@@ -117,7 +117,7 @@ class RegisterViewController: UIViewController {
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,UIView.spacer(for:.horizontal),profileimage,UIView.spacer(for:.horizontal),bodyStack,footerStack],
+        arrangedSubviews: [headerStack,bodyStack,footerStack],
         axis: .vertical,
         spacing: UIConstant.Default.spacing
     )
@@ -164,6 +164,9 @@ private extension RegisterViewController {
         
         view.addSubview(backgroundImage)
         view.addSubview(mainStack)
+        view.addSubview(profileimage)
+        view.addSubview(btnPlus)
+        
         
 //        view.addSubview(footerStack)
         
@@ -179,10 +182,15 @@ private extension RegisterViewController {
             make.left.right.equalTo(view.layoutMarginsGuide)
             
         }
-//        footerStack.snp.makeConstraints{ (make) in
-//            make.centerX.equalToSuperview()
-//            make.top.equalTo(mainStack.snp.bottom)
-//        }
+        profileimage.snp.makeConstraints{ (make) in
+            make.centerX.equalTo(backgroundImage)
+            make.top.equalTo(headerStack.snp.bottom).offset(20)
+            make.bottom.equalTo(bodyStack.snp.top).offset(-20)
+        }
+        btnPlus.snp.makeConstraints{ (make) in
+            make.left.equalTo(profileimage.snp.right).offset(-20)
+            make.top.equalTo(profileimage.snp.bottom).offset(-50)
+        }
     }
 }
 

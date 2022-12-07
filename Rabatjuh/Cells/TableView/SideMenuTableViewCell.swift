@@ -80,18 +80,6 @@ private extension SideMenuTableViewCell {
 
 
 
-// MARK: - Extension
-
-
-// Setup ApiCalls
-//private extension LoginViewController {
-//    func LoginApi() {
-//
-//    }
-//
-//
-//
-//}
 
 
 
