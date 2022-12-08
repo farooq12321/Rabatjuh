@@ -83,13 +83,14 @@ private extension ProductViewController {
 
 private extension ProductViewController {
     func Setup() {
+        
+        productTableView.register(Product2TableViewCell.self, forCellReuseIdentifier: Product2TableViewCell.identifier)
+       
+        
 
-        
-        
         productTableView.delegate = self
         productTableView.dataSource = self
         
-        productTableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
        
       }
 
@@ -104,26 +105,56 @@ private extension ProductViewController {
 
 extension ProductViewController:UITableViewDelegate,UITableViewDataSource{
     
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
-    }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 30
+//    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = .red
+//
+//        return view
+//    }
+
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 350
+//    }
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return ProductData.count
+//    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = ProductDetailHeaderView()
+        headerView.backgroundColor = .white
+        return headerView
+        }
+    
+    func tableView(_ tableView: UITableView,heightForHeaderInSection section: Int
+    ) -> CGFloat{
+        return 240
+    }
+
+    
+
+    
+//    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return ProductData[section].sectionType
+//
+//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ProductData.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ProductData[section].sectionType
-
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = productTableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
+        let cell = productTableView.dequeueReusableCell(withIdentifier: Product2TableViewCell.identifier, for: indexPath) as! Product2TableViewCell
         cell.productCollectionView.tag  = indexPath.section
+//        cell.product = ProductData[indexPath.row]
+        cell.lblHeader.text = ProductData[indexPath.row].sectionType
         return cell
     }
 }

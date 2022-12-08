@@ -18,12 +18,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
     // MARK: - Body
 
     var productImage = UIImageView.Image(
-        name: AppString.Image.productImage)
+        name: AppString.Image.productImage,
+        cornerRadius: UIConstant.Image.cornerRadius)
+    
     var lblName = UILabel.Primary(
         text:AppString.Label.productName
     )
     var lblDiscription = UILabel.Secondary(
-        text:AppString.Label.productDiscription
+        text:AppString.Label.productDiscription,
+        numberOfLines: 0
     )
    
     
@@ -62,7 +65,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 private extension ProductCollectionViewCell {
     func configureViews() {
         
-        self.addSubview(mainStack)
+        contentView.addSubview(mainStack)
         activateConstrains()
         
     }
@@ -70,7 +73,7 @@ private extension ProductCollectionViewCell {
     func activateConstrains() {
        
         mainStack.snp.makeConstraints{ (make) in
-        make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
+        make.edges.equalTo(self.layoutMarginsGuide)
         }
     }
 }

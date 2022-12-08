@@ -8,12 +8,13 @@
 import UIKit
 
 class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+
+    
     
     var menu_vc: SideMenuViewController!
 
     //MARK: - data
-    var Data  = [
-        Resturants(all:"All",bistro: "bistro", dinner: "Dinner", buffet: "Buffet",cafe: "Cafe",fastfood: "FastFood")]
+    var Data  = ["All", "bistro", "Dinner", "Buffet","Cafe", "FastFood"]
 
     //MARK: - Header
     
@@ -23,27 +24,31 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     // MARK: - Body
     
+    
+    
+   
+    
     var backGruondImage = UIImageView.Image(
         name: AppString.Image.headerImage,
         cornerRadius: UIConstant.Image.cornerRadius
     )
+    
     var headerImage = UIImageView.Image(
         name: AppString.Image.colorImage,
         cornerRadius: UIConstant.Image.cornerRadius
         
     )
-   
+    
+
     
     var  lblTitle = UILabel.Subheading(
         text:AppString.Label.headerTitle,
         textColor: UIColor.heading,
-        numberOfLines: 2
+        numberOfLines: 0
     )
     
     private lazy var btnMenu = UIButton.Secondary(
-        imageName: AppString.Image.btnMenu,
-        target: self,
-        action: #selector(SideMenuButton)
+        imageName: AppString.Image.btnMenu
     )
     
     var  searchBar = UISearchBar.searchbar()
@@ -58,7 +63,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     // MARK: - Mainstack
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,searchBar],
+        arrangedSubviews: [headerStack,searchBar,collectionview],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
     )
@@ -72,6 +77,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         
         configureViews()
         Setup()
+        
 
     }
 
@@ -80,18 +86,94 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     }
     
     // MARK:- Action
-
-    @objc func SideMenuButton(_ sender: Any) {
-        let vc = SideMenuViewController()
-        vc.present(vc, animated: true, completion: nil)
-        
-        if AppDelegate.menu_bool {
-            showMenu()
-        }else{
-            closeMenu()
-        }
-
-    }
+    
+    
+    
+//    func slideMenuItemSelectedAtIndex(_ index: Int32) {
+////        let topViewController : UIViewController = self.navigationController!.topViewController!
+////        print("View Controller is : \(topViewController) \n", terminator: "")
+//        switch(index){
+//        case 0:
+//            print("Home\n", terminator: "")
+////
+////            self.openViewControllerBasedOnClass(HomeViewController)
+////
+////
+////            break
+//        case 1:
+//            print("Play\n", terminator: "")
+////
+////            self.openViewControllerBasedOnIdentifier("PlayVC")
+//
+//            break
+//        default:
+//            print("default\n", terminator: "")
+//        }
+//    }
+    
+//    func openViewControllerBasedOnIdentifier(_ strIdentifier:String){
+//        let destViewController : UIViewController = self.instantiateViewController(withIdentifier: strIdentifier)
+//
+//        let topViewController : UIViewController = self.navigationController!.topViewController!
+//
+//        if (topViewController.restorationIdentifier! == destViewController.restorationIdentifier!){
+//            print("Same VC")
+//        } else {
+//            self.navigationController!.pushViewController(destViewController, animated: true)
+//        }
+//    }
+    
+//    @objc func onSlideMenuButtonPressed(_ sender : UIButton){
+//        if (sender.tag == 10)
+//        {
+//            // To Hide Menu If it already there
+//            self.slideMenuItemSelectedAtIndex(-1);
+//
+//            sender.tag = 0;
+//
+//            let viewMenuBack : UIView = self.subviews.last!
+//
+//            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+//                var frameMenu : CGRect = viewMenuBack.frame
+//                frameMenu.origin.x = -1 * UIScreen.main.bounds.size.width
+//                viewMenuBack.frame = frameMenu
+//                viewMenuBack.layoutIfNeeded()
+//                viewMenuBack.backgroundColor = UIColor.clear
+//                }, completion: { (finished) -> Void in
+//                    viewMenuBack.removeFromSuperview()
+//            })
+//
+//            return
+//        }
+//
+//        sender.isEnabled = false
+//        sender.tag = 10
+//
+////    @objc func SideMenuButton(_ sender: UIButton) {
+//        let menuVC = SideMenuViewController()
+//        menuVC.present(menuVC, animated: true, completion: nil)
+//
+//        menuVC.btnMenu = sender
+//        menuVC.delegate = self
+//        self.addSubview(menuVC.view)
+////        self.addChild(menuVC)
+//        menuVC.view.layoutIfNeeded()
+//
+//
+//        menuVC.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+//
+//        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+//            menuVC.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+//            sender.isEnabled = true
+//            }, completion:nil)
+//
+////        if AppDelegate.menu_bool {
+////            showMenu()
+////        }else{
+////            closeMenu()
+////        }
+//
+//    }
     
     func showMenu(){
         
@@ -107,10 +189,11 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
 
 private extension HeaderView {
     func Setup() {
+        
+        collectionview.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionview.dataSource = self
         collectionview.delegate = self
 
-        collectionview.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionview.reloadData()
 
        
@@ -129,7 +212,6 @@ private extension HeaderView {
         self.addSubview(backGruondImage)
         self.addSubview(headerImage)
         self.addSubview(mainStack)
-        self.addSubview(collectionview)
         activateConstrains()
         
     }
@@ -145,13 +227,12 @@ private extension HeaderView {
         }
         
         mainStack.snp.makeConstraints{ (make) in
-            make.left.equalTo(headerImage).offset(30)
-            make.right.equalTo(headerImage).offset(-30)
-            make.top.equalTo(headerImage.snp.top).offset(50)
+            make.left.right.equalTo(self.layoutMarginsGuide)
+            make.top.equalTo(headerImage.snp.top).offset(60)
     }
+        
+        
         collectionview.snp.makeConstraints{ (make) in
-            make.left.right.equalToSuperview()
-            make.top.equalTo(backGruondImage.snp.bottom)
             make.height.equalTo(50)
     }
 
@@ -161,31 +242,19 @@ private extension HeaderView {
 // MARK: - Extesion
 extension HeaderView {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+    
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.Data.count
+    return Data.count
 }
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
 
-    
-    cell.lblAll.text = Data[indexPath.row].all
-    cell.lblBistro.text = Data[indexPath.row].bistro
-    cell.lblDinner.text = Data[indexPath.row].dinner
-    cell.lblBuffet.text = Data[indexPath.row].buffet
-    cell.lblCafe.text = Data[indexPath.row].cafe
-    cell.lblFastFood.text = Data[indexPath.row].fastfood
-
+    cell.lblCategory.text = Data[indexPath.row]
+   
         return cell
     
 }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width/2)-1, height: (collectionView.frame.size.width/2)-2)
-    }
 
 
 }

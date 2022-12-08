@@ -10,6 +10,7 @@
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
 		1840C23929362D570045999D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C23829362D570045999D /* RegisterViewController.swift */; };
 		1840C23E29363A4E0045999D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
+		1844A7D92941BE07008315B7 /* Product2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1844A7D82941BE07008315B7 /* Product2TableViewCell.swift */; };
 		184D23DE293F055B000A8CDD /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */; };
 		184D23E1293F08A7000A8CDD /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23E0293F08A7000A8CDD /* SideMenu.swift */; };
 		184D23E4293F1194000A8CDD /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23E3293F1194000A8CDD /* SideMenuHeaderView.swift */; };
@@ -61,6 +62,7 @@
 		0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.debug.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.debug.xcconfig"; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1840C23829362D570045999D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1844A7D82941BE07008315B7 /* Product2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product2TableViewCell.swift; sourceTree = "<group>"; };
 		184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		184D23E0293F08A7000A8CDD /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		184D23E3293F1194000A8CDD /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */,
 				18FECF122938C33100857885 /* ProductTableViewCell.swift */,
 				184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */,
+				1844A7D82941BE07008315B7 /* Product2TableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */,
 				E2A58BED29335E99009268C8 /* SceneDelegate.swift in Sources */,
 				185FD33B293761FC009D7274 /* CollectionView.swift in Sources */,
+				1844A7D92941BE07008315B7 /* Product2TableViewCell.swift in Sources */,
 				E2B4D09D2933E5FA0024345B /* StackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

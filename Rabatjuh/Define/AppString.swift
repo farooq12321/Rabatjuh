@@ -16,6 +16,8 @@ struct AppString {
         static let loginTitle = "Hello Again!".localized
         static let loginSubTitle = "Welcome back you’ve been missed!".localized
         static let dontHaveAnAccount = "Don’t have an account?".localized
+        static let txtemail = "Email".localized
+        static let txtPassword = "Password".localized
         
         
         // MARK: Signup

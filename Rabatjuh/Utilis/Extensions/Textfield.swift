@@ -12,10 +12,14 @@ extension UITextField {
     static func Primary (
         placeholder: String,
         font: UIFont = .textfieldPrimary,
-        textColor: UIColor = .textfieldText,
-        backgroundColor: UIColor = .textfieldBackground,
+        textColor: UIColor = .heading,
+//        textColor: UIColor = .textfieldText,
+        //backgroundColor: UIColor = .textfieldBackground,
+//        bordercolor : UIColor = .textfieldBorder,
+        backgroundColor: UIColor = .clear,
         tintColor: UIColor = .textfieldCursorTint,
         borderStyle: BorderStyle = .roundedRect,
+        cornerRadius: CGFloat = UIConstant.TextField.cornerRadius,
         height: CGFloat = UIConstant.TextField.height,
         isPassword: Bool = false
         
@@ -23,8 +27,18 @@ extension UITextField {
         let textfiled = UITextField()
       
         
-        textfiled.placeholder = placeholder
+        //textfiled.placeholder = placeholder
         textfiled.textColor = textColor
+        
+        textfiled.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+//        let txtfiled = UIColor.textfieldBorder
+//        textfiled.layer.borderColor = txtfiled.cgColor
+        textfiled.layer.borderColor = UIColor.textfieldBorder.cgColor
+        textfiled.layer.borderWidth = 0.7
+        textfiled.layer.cornerRadius = cornerRadius
         textfiled.backgroundColor = backgroundColor
         textfiled.tintColor = tintColor
         textfiled.borderStyle = borderStyle

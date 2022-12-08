@@ -91,6 +91,20 @@ extension UIColor {
     
 }
 
+
+//extension CGColor {
+//
+//
+//    //static let textfieldBorder = CGColor(named: "Textfield Border")!
+//    static let textfieldBorder  = CGColor(colorSpace:, components: <#T##UnsafePointer<CGFloat>#>)
+//
+//    // MARK: - Generaic
+//
+//
+//
+//}
+    
+
     // MARK: - Hex Color
 extension UIColor {
     

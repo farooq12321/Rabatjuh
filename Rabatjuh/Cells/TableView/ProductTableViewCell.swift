@@ -13,9 +13,25 @@ class ProductTableViewCell: UITableViewCell {
     
     // MARK: - Body
 
-    lazy var productCollectionView = UICollectionView.collectionView(direction: UICollectionView.ScrollDirection.vertical)
-    
+//   lazy var productCollectionView = UICollectionView.collectionView(direction: UICollectionView.ScrollDirection.horizontal)
+//
+     
+    let productCollectionView: UICollectionView = {
+            
+            let layout = UICollectionViewFlowLayout()
+                layout.scrollDirection = .horizontal
 
+            
+            let collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
+            collection.translatesAutoresizingMaskIntoConstraints = false
+            collection.backgroundColor = .clear
+            
+            collection.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+             
+                
+                return collection
+            
+        }()
     
     
     // MARK: - ViewController Life Cycle
@@ -23,12 +39,11 @@ class ProductTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-
-        productCollectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+//        productCollectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         
         productCollectionView.dataSource = self
         productCollectionView.delegate = self
-        productCollectionView.reloadData()
+//        productCollectionView.reloadData()
         
         configureViews()
         
@@ -58,7 +73,7 @@ class ProductTableViewCell: UITableViewCell {
 // Setup Views
 private extension ProductTableViewCell {
     func configureViews() {
-        self.addSubview(productCollectionView)
+        contentView.addSubview(productCollectionView)
         activateConstrains()
     
       
@@ -77,28 +92,26 @@ private extension ProductTableViewCell {
 
 // MARK: - Extension
 
-extension ProductTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension ProductTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource{
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ProductData[productCollectionView.tag].productImage.count
+        print("1234")
+        return 5
     }
 
-
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        print("####")
         let cell = productCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
-        cell.productImage.image = UIImage(named:ProductData [productCollectionView.tag].productImage[indexPath.row])
-        cell.lblName.text = ProductData[productCollectionView.tag].productName[indexPath.row]
-        cell.lblDiscription.text = ProductData[productCollectionView.tag].productDescription[indexPath.row]
-
+       
         return cell
     }
     
  
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width/2)-3, height: (collectionView.frame.size.width/2)-3)
-      }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: (collectionView.frame.size.width/2)-3, height: (collectionView.frame.size.width/2)-3)
+//      }
     
     
 

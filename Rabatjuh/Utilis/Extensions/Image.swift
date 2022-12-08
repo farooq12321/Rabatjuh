@@ -86,7 +86,7 @@ extension UIImageView {
     static func UserImage (name:String = ""
     ) -> UIImageView
     {
-        let height = 150.0
+        let height = 120.0
         let imageveiw = UIImageView()
         imageveiw.image = UIImage(named: name)
         imageveiw.contentMode = .scaleAspectFill
@@ -94,7 +94,7 @@ extension UIImageView {
         imageveiw.clipsToBounds = true
         imageveiw.snp.makeConstraints{ (make) in
             make.height.equalTo(height)
-            make.width.equalTo(150)
+            make.width.equalTo(120)
         }
         return imageveiw
     

@@ -17,7 +17,10 @@ extension UICollectionView{
         layout.scrollDirection = direction
         layout.minimumLineSpacing = lineSpacing
         layout.minimumInteritemSpacing = interitemspacing
+        layout.estimatedItemSize.width = 25
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        collection.backgroundColor = .clear
         
         return collection
     }

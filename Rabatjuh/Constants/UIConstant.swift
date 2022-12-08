@@ -32,6 +32,7 @@ struct UIConstant {
   
   enum TextField {
     static let height: CGFloat = 45.0
+    static let cornerRadius: CGFloat = 10.0
     static let spacing: CGFloat = 15
   }
 }

@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Header
     private lazy var lblTitle = UILabel.Heading(
-        text: AppString.Label.loginTitle
+        text: AppString.Label.loginTitle,
+        backgroundColor: .clear
     )
     
     private lazy var lblSubTitle = UILabel.Subheading(
@@ -38,7 +39,8 @@ class LoginViewController: UIViewController {
     
     //Form
     private lazy var txtEmail = UITextField.Primary(
-        placeholder: AppString.Textfield.email
+       placeholder: AppString.Textfield.email
+//        textColor: UIColor.subheading
     )
     
     private lazy var txtPassword = UITextField.Primary(

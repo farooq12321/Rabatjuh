@@ -188,8 +188,8 @@ private extension RegisterViewController {
             make.bottom.equalTo(bodyStack.snp.top).offset(-20)
         }
         btnPlus.snp.makeConstraints{ (make) in
-            make.left.equalTo(profileimage.snp.right).offset(-20)
-            make.top.equalTo(profileimage.snp.bottom).offset(-50)
+            make.left.equalTo(profileimage.snp.right).offset(-25)
+            make.top.equalTo(profileimage.snp.bottom).offset(-30)
         }
     }
 }
