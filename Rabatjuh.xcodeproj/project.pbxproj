@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181A87AC294368AB005686B7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */; };
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
 		1840C23929362D570045999D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C23829362D570045999D /* RegisterViewController.swift */; };
 		1840C23E29363A4E0045999D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		185AE9E3293A201C00B745A9 /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185AE9E2293A201C00B745A9 /* ProductDetailHeaderView.swift */; };
 		185FD3212937198B009D7274 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD3202937198B009D7274 /* SplashViewController.swift */; };
 		185FD329293736A6009D7274 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD328293736A6009D7274 /* TableView.swift */; };
-		185FD33229375F41009D7274 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33129375F41009D7274 /* ProductViewController.swift */; };
 		185FD33529375F76009D7274 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33429375F76009D7274 /* ProductCollectionViewCell.swift */; };
 		185FD33B293761FC009D7274 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33A293761FC009D7274 /* CollectionView.swift */; };
 		185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33E29376B9F009D7274 /* ReviewsViewController.swift */; };
@@ -60,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.debug.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.debug.xcconfig"; sourceTree = "<group>"; };
+		181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1840C23829362D570045999D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1844A7D82941BE07008315B7 /* Product2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product2TableViewCell.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		185AE9E2293A201C00B745A9 /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
 		185FD3202937198B009D7274 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		185FD328293736A6009D7274 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		185FD33129375F41009D7274 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		185FD33429375F76009D7274 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCollectionViewCell.swift; path = Rabatjuh/ViewControllers/ProductCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		185FD33A293761FC009D7274 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		185FD33E29376B9F009D7274 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 				E2A58BEE29335E99009268C8 /* LoginViewController.swift */,
 				1840C23829362D570045999D /* RegisterViewController.swift */,
 				18FECEC729386C9C00857885 /* HomeViewController.swift */,
-				185FD33129375F41009D7274 /* ProductViewController.swift */,
+				181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */,
 				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
 				18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */,
 			);
@@ -504,10 +504,10 @@
 				E2B4D09B2933D13C0024345B /* UIConstant.swift in Sources */,
 				E2B4D083293368220024345B /* Font.swift in Sources */,
 				184D23E1293F08A7000A8CDD /* SideMenu.swift in Sources */,
-				185FD33229375F41009D7274 /* ProductViewController.swift in Sources */,
 				1840C1EC293611A60045999D /* Image.swift in Sources */,
 				E2A58BEB29335E99009268C8 /* AppDelegate.swift in Sources */,
 				E2B4D0B72935B0C90024345B /* Constant.swift in Sources */,
+				181A87AC294368AB005686B7 /* RestaurantDetailViewController.swift in Sources */,
 				E2B4D0932933B0B40024345B /* Textfield.swift in Sources */,
 				E2B4D0852933683D0024345B /* String.swift in Sources */,
 				E2B4D0912933A39C0024345B /* AppString.swift in Sources */,

@@ -133,6 +133,8 @@ private extension HomeViewController {
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        
         return ResturantData.count
         
 }
@@ -151,7 +153,7 @@ private extension HomeViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let vc = ProductViewController()
+            let vc = RestaurantDetailViewController()
             navigationController?.pushViewController(vc, animated: true)
             self.present(vc, animated: true, completion: nil)
             vc.modalPresentationStyle = .fullScreen

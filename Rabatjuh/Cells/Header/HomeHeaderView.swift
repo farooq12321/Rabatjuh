@@ -7,11 +7,12 @@
 
 import UIKit
 
-class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UITextFieldDelegate{
 
     
     
     var menu_vc: SideMenuViewController!
+    
 
     //MARK: - data
     var Data  = ["All", "bistro", "Dinner", "Buffet","Cafe", "FastFood"]
@@ -40,9 +41,11 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     )
     
 
+    var view = UIView.veiw()
     
     var  lblTitle = UILabel.Subheading(
         text:AppString.Label.headerTitle,
+        font: .boldSystemFont(ofSize: 20),
         textColor: UIColor.heading,
         numberOfLines: 0
     )
@@ -51,7 +54,9 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         imageName: AppString.Image.btnMenu
     )
     
-    var  searchBar = UISearchBar.searchbar()
+    var  searchBar = UITextField.search(
+        placeholder: AppString.Textfield.search
+    )
 
     private lazy var headerStack = UIStackView(
         arrangedSubviews: [lblTitle,btnMenu],
@@ -84,6 +89,19 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if let text = textField.text{
+//        filterText(text+string)
+//        }
+//        return true
+//    }
+//
+//    func filterText(_ query:String?){
+//        print("\(query)")
+//
+//    }
     
     // MARK:- Action
     
@@ -193,6 +211,8 @@ private extension HeaderView {
         collectionview.register(MenuCollectionViewCell.self, forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         collectionview.dataSource = self
         collectionview.delegate = self
+        
+        searchBar.delegate = self
 
         collectionview.reloadData()
 
@@ -228,7 +248,7 @@ private extension HeaderView {
         
         mainStack.snp.makeConstraints{ (make) in
             make.left.right.equalTo(self.layoutMarginsGuide)
-            make.top.equalTo(headerImage.snp.top).offset(60)
+            make.top.equalTo(headerImage.snp.top).offset(70)
     }
         
         
@@ -251,11 +271,51 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
 
     cell.lblCategory.text = Data[indexPath.row]
-   
-        return cell
+    
+    return cell
     
 }
+    
+//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+//        if let cell = collectionview.cellForItem(at: indexPath) as? MenuCollectionViewCell
+//        {
+//            cell.lblCategory.textColor = .yellow
+//        }
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+//        if let cell = collectionview.cellForItem(at: indexPath) as? MenuCollectionViewCell
+//
+//        {
+//            cell.lblCategory.textColor = .clear
+//        }
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
+            cell.lblCategory.textColor = UIColor.selectMenuColor
+//            cell.lblCategory.font = UIFont.subheading
 
+        }
+        
+}
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        if let cell = collectionview.cellForItem(at: indexPath) as?MenuCollectionViewCell{
+//            cell.hideview()
+//        }
+//    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
+            cell.lblCategory.textColor = UIColor.labelSecondary
+            //cell.lblCategory.font = UIFont.labelSecondary
+        }
+    }
+    
+    
 
 }
 

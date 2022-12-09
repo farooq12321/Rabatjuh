@@ -37,14 +37,19 @@ extension UIView {
             return view
     }
     
-    static func veiw() -> UIView{
+    static func veiw(
+        borderwidth:CGFloat = 0.0,
+        height:CGFloat = 0.0,
+        backgroundcolor:UIColor = UIColor.white
+    ) -> UIView{
    
             let view = UIView()
 //            view.layer.cornerRadius = 10
 //            view.layer.borderWidth = 0.05
-            view.backgroundColor = .white
+            view.backgroundColor = backgroundcolor
+        view.layer.borderWidth = borderwidth
             view.snp.makeConstraints{ (make) in
-            make.height.equalTo(30)
+            make.height.equalTo(height)
 //            make.width.equalTo(300)
         }
         

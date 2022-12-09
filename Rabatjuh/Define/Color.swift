@@ -33,12 +33,15 @@ extension UIColor {
     
     static let searchbarcolor = UIColor.HexColor(hexString: "#424242")
     
+    static let selectMenuColor = UIColor.HexColor(hexString: "#F5B64D")
+    
     
     
         
     // MARK: - Label
     
     static let labelPrimary = UIColor(named: "Label Primary")!
+    static let primary = UIColor.HexColor(hexString: "#262223")
     static let labelSecondary = UIColor(named: "Label Secondary")!
     
     

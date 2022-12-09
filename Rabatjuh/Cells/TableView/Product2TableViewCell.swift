@@ -19,9 +19,11 @@ class Product2TableViewCell: UITableViewCell {
 //        }
 //    }
     
-    var view = UIView.veiw()
+    var view = UIView.veiw(
+        height:30.0
+    )
     var lblHeader = UILabel.Primary(
-        font:UIFont.subheading
+        font:UIFont.boldSystemFont(ofSize: 20)
     )
     
 

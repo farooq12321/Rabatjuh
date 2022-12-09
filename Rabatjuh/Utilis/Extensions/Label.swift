@@ -22,6 +22,8 @@ extension UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.font = font
+       // label.font = .boldSystemFont(ofSize: 25.0)
+        
         label.textColor = textColor
         label.backgroundColor = backgroundColor
         label.numberOfLines = numberOfLines

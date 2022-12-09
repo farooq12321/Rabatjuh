@@ -40,6 +40,14 @@ extension UITextField {
         textfiled.layer.borderWidth = 0.7
         textfiled.layer.cornerRadius = cornerRadius
         textfiled.backgroundColor = backgroundColor
+        
+//        textfiled.leftViewMode = UITextField.ViewMode.always
+//        let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+//        let image = UIImage(named: "heartImage")
+//        imageView.image = image
+//        textfiled.leftView = imageView
+        
+        
         textfiled.tintColor = tintColor
         textfiled.borderStyle = borderStyle
         textfiled.isSecureTextEntry = isPassword
@@ -88,6 +96,62 @@ extension UITextField {
     @IBAction func togglePasswordView(_ sender: Any) {
         self.isSecureTextEntry = !self.isSecureTextEntry
         setPasswordToggleImage(sender as! UIButton)
+    }
+    
+    
+    
+    
+    
+    static func search (
+        placeholder: String,
+        font: UIFont = .textfieldPrimary,
+        textColor: UIColor = .labelPrimary,
+        backgroundColor: UIColor = .heading,
+        tintColor: UIColor = .textfieldCursorTint,
+        borderStyle: BorderStyle = .roundedRect,
+        cornerRadius: CGFloat = UIConstant.TextField.cornerRadius,
+        height: CGFloat = UIConstant.TextField.height,
+        isPassword: Bool = false
+        
+    ) -> UITextField {
+        let textfiled = UITextField()
+        textfiled.textColor = textColor
+        textfiled.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
+        textfiled.layer.borderColor = UIColor.textfieldBorder.cgColor
+        textfiled.layer.borderWidth = 0.7
+        textfiled.layer.cornerRadius = cornerRadius
+        textfiled.backgroundColor = backgroundColor
+        
+        textfiled.leftViewMode = UITextField.ViewMode.always
+        let contentview = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+        
+        let imageicon = UIImageView()
+        
+        contentview.addSubview(imageicon)
+        
+        imageicon.image = UIImage(named: "Seach")
+
+        imageicon.frame = CGRect(x: 10, y: -1, width: 20, height: 20)
+        textfiled.leftView = contentview
+//        imageView.frame = CGRect(x: 10, y: 0, width: 20, height: 20)
+        textfiled.leftViewMode = .always
+        textfiled.clearButtonMode = .whileEditing
+        
+        
+        
+        
+        textfiled.tintColor = tintColor
+        textfiled.borderStyle = borderStyle
+        textfiled.clearsOnBeginEditing = false
+        textfiled.clearsOnInsertion = false
+       
+        textfiled.snp.makeConstraints { make in
+            make.height.equalTo(height)
+        }
+        return textfiled
     }
     
     

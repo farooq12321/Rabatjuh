@@ -26,6 +26,7 @@ class ProductDetailHeaderView: UIView {
     
     var  lblTitle = UILabel.Subheading(
         text:AppString.Label.Title,
+        font: .boldSystemFont(ofSize: 20),
         textColor: UIColor.heading,
         textAlignment: .center
     )

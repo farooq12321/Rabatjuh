@@ -94,6 +94,8 @@ struct AppString {
         static let restaurantAddress = "Address".localized
         static let restaurantType = "Type".localized
         
+        static let search = "Search here....."
+        
         //MARK: CreateMenuScreen
         
         static let menuName = "Name".localized

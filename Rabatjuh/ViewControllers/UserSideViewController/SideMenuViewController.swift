@@ -37,6 +37,7 @@ class SideMenuViewController: UIViewController {
     var delegate : SlideMenuDelegate?
     
     // MARK: - Header
+    
 
     lazy var headerView: SideMenuHeaderView = SideMenuHeaderView()
     
