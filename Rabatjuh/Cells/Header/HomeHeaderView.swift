@@ -68,7 +68,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     // MARK: - Mainstack
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,searchBar,collectionview],
+        arrangedSubviews: [headerStack,searchBar],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
     )
@@ -232,6 +232,8 @@ private extension HeaderView {
         self.addSubview(backGruondImage)
         self.addSubview(headerImage)
         self.addSubview(mainStack)
+        self.addSubview(collectionview)
+        
         activateConstrains()
         
     }
@@ -248,11 +250,15 @@ private extension HeaderView {
         
         mainStack.snp.makeConstraints{ (make) in
             make.left.right.equalTo(self.layoutMarginsGuide)
-            make.top.equalTo(headerImage.snp.top).offset(70)
+            //make.top.equalTo(headerImage.snp.top).offset(70)
+            make.bottom.equalTo(backGruondImage.snp.bottom).offset(-20)
+            //make.bottom.equalTo(self.layoutMarginsGuide).offset(-20)
     }
         
         
         collectionview.snp.makeConstraints{ (make) in
+            make.left.right.equalTo(mainStack)
+            make.top.equalTo(mainStack.snp.bottom).offset(20)
             make.height.equalTo(50)
     }
 
