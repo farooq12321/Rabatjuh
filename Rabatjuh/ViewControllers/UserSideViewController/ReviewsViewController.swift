@@ -32,10 +32,40 @@ class ReviewsViewController: UIViewController {
     
     
     // MARK: - Body
-    
-    lazy var headerView: ProductDetailHeaderView = ProductDetailHeaderView()
+
 
     // MARK: - Footer
+    
+    private let footerView = UIView.veiw(
+        height: UIConstant.veiw.height,
+        backgroundcolor: UIColor.viewbackgroungColor,
+        cornerradius:UIConstant.veiw.cornerradius
+    )
+    
+    var userImage = UIImageView.UserImage(
+        name: AppString.Image.user,
+        height: UIConstant.image.height,
+        width: UIConstant.image.width
+    )
+    
+    private lazy var txtReview = UITextField.Primary(
+       placeholder: AppString.Textfield.review,
+        font: UIFont.subheading,
+        textColor: UIColor.subheading
+    
+    )
+    
+    
+    
+    var btnaddreview = UIButton.PreSecondary(backgroundColor: UIColor.buttonSecondaryBackground, cornerRadius: UIConstant.Button.btnsecondaryCornerRaidus,
+        imageName: AppString.Image.addreview
+    )
+    
+    private lazy var Footerstack = UIStackView(arrangedSubviews: [userImage,txtReview,btnaddreview],
+     axis: .horizontal,
+     spacing: UIConstant.TextField.spacing
+     
+    )
     
 
     // MARK: - Variables
@@ -66,6 +96,7 @@ private extension ReviewsViewController {
         reviewsTableVeiw.dataSource = self
         
         reviewsTableVeiw.register(ReviewsTableViewCell.self, forCellReuseIdentifier: ReviewsTableViewCell.identifier)
+        reviewsTableVeiw.separatorStyle = .singleLine
        
       }
 
@@ -77,8 +108,11 @@ private extension ReviewsViewController {
 private extension ReviewsViewController {
     func configureViews() {
         
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         self.view.addSubview(reviewsTableVeiw)
+        self.view.addSubview(footerView)
+        footerView.addSubview(Footerstack)
+
 
         activateConstrains()
     }
@@ -88,7 +122,18 @@ private extension ReviewsViewController {
             make.edges.equalToSuperview()
          
         }
-        
+        footerView.snp.makeConstraints{ (make) in
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+         
+        }
+    
+        Footerstack.snp.makeConstraints{ (make) in
+            
+            make.left.right.top.equalTo(footerView.layoutMarginsGuide)
+            make.bottom.equalToSuperview().offset(-10)
+        }
+
     }
 }
 
@@ -97,19 +142,7 @@ private extension ReviewsViewController {
 // Setup Views
  extension ReviewsViewController: UITableViewDelegate, UITableViewDataSource{
 
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ProductDetailHeaderView()
-        headerView.backgroundColor = .white
-        return headerView
-        }
-    
-    
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 250
-    }
-    
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ReviewData.count
@@ -121,6 +154,7 @@ private extension ReviewsViewController {
             cell.userImage.image = UIImage(named: ReviewData[indexPath.row].userImage)
             cell.lblName.text = ReviewData[indexPath.row].userName
             cell.lblReviews.text = ReviewData[indexPath.row].Reviews
+            cell.selectionStyle = .none
             return cell
      }
 }

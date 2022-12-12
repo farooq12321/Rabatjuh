@@ -29,7 +29,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
     private lazy var mainStack = UIStackView(
         arrangedSubviews: [lblCategory],
         axis: .horizontal,
-//        spacing: UIConstant.TextField.spacing,
         distribution: .fill
 
       
@@ -48,51 +47,6 @@ class MenuCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder) isn not available")
         }
-    
-    
-  
-//    func showview(){
-//        self.view.alpha = 1.0
-//    }
-//    func hideview(){
-//        self.view.alpha = 0.0
-//    }
-    
-    
-    
-//    override var isSelected: Bool {
-//        didSet{
-//            if self.isSelected {
-//                UIView.animate(withDuration: 0.3) {
-////
-//
-//                    self.backgroundColor = UIColor.systemGray4
-////                    self.layer.borderWidth = 1
-////                    self.layer.borderColor = UIColor.red.cgColor
-//                    self.layer.cornerRadius = 10.0
-//
-//
-//
-//                }
-//            }
-//            else {
-//                UIView.animate(withDuration: 0.3) {
-////
-//                    self.backgroundColor = UIColor.clear
-//                    self.layer.borderWidth = 0.0
-//                    self.layer.borderColor = UIColor.clear.cgColor
-//
-//
-//
-//                }
-//            }
-//        }
-   // }
-//    
- 
-
-    
-    
 
 }
 

@@ -23,6 +23,8 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     private lazy var collectionview = UICollectionView.collectionView()
     
+    var selectedIndex = 0
+    
     // MARK: - Body
     
     
@@ -249,16 +251,17 @@ private extension HeaderView {
         }
         
         mainStack.snp.makeConstraints{ (make) in
-            make.left.right.equalTo(self.layoutMarginsGuide)
-            //make.top.equalTo(headerImage.snp.top).offset(70)
-            make.bottom.equalTo(backGruondImage.snp.bottom).offset(-20)
-            //make.bottom.equalTo(self.layoutMarginsGuide).offset(-20)
+            make.left.right.equalTo(headerImage.layoutMarginsGuide)
+            make.left.equalTo(UIConstant.Default.leftmargin)
+            make.right.equalTo(UIConstant.Default.rightmargin)
+            make.bottom.equalTo(backGruondImage.snp.bottom).offset(-40)
+            
     }
         
         
         collectionview.snp.makeConstraints{ (make) in
             make.left.right.equalTo(mainStack)
-            make.top.equalTo(mainStack.snp.bottom).offset(20)
+            make.top.equalTo(backGruondImage.snp.bottom)
             make.height.equalTo(50)
     }
 
@@ -278,46 +281,31 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
     cell.lblCategory.text = Data[indexPath.row]
     
+    
+//    if selectedIndex == indexPath.item{
+//        cell.underlineBarView.backgroundColor = #colorLiteral(red: 0.1921568627, green: 0.2, blue: 0.3333333333, alpha: 1)
+//        }else{
+//            cell.underlineBarView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        }
+    
     return cell
     
 }
-    
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        if let cell = collectionview.cellForItem(at: indexPath) as? MenuCollectionViewCell
-//        {
-//            cell.lblCategory.textColor = .yellow
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        if let cell = collectionview.cellForItem(at: indexPath) as? MenuCollectionViewCell
-//
-//        {
-//            cell.lblCategory.textColor = .clear
-//        }
-//    }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
             cell.lblCategory.textColor = UIColor.selectMenuColor
-//            cell.lblCategory.font = UIFont.subheading
+        
 
         }
         
 }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if let cell = collectionview.cellForItem(at: indexPath) as?MenuCollectionViewCell{
-//            cell.hideview()
-//        }
-//    }
-    
+
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
             cell.lblCategory.textColor = UIColor.labelSecondary
-            //cell.lblCategory.font = UIFont.labelSecondary
         }
     }
     

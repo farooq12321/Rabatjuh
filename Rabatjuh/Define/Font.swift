@@ -11,12 +11,17 @@ import RSFontSizes
 
 extension UIFont {
 
-    static let heading: UIFont = .font(size: 25.0)
+    //static let heading: UIFont = .font(size: 25.0)
+    
+    static let heading: UIFont = .boldSystemFont(ofSize: 25.0)
+    
     static let subheading: UIFont = .font(size: 20.0)
 
     static let labelPrimary: UIFont = .font(size: 17.0)
     static let labelSecondary: UIFont = .font(size: 17.0)
     static let labelPreSecondary: UIFont = .font(size: 15.0)
+    
+   
 
 
     static let button: UIFont = .font(size: 17.0)

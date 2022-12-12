@@ -41,6 +41,10 @@ extension UIButton {
     static func Secondary (
         title: String = "",
         titleColor: UIColor = .buttonPrimaryBackground,
+//        backgroundColor: UIColor = .buttonPrimaryBackground,
+//        cornerRadius: CGFloat = UIConstant.Button.btnsecondaryCornerRaidus,
+//        height:CGFloat = UIConstant.Button.height,
+//        width:CGFloat = UIConstant.Button.width,
         imageName: String = "",
         font: UIFont = .button,
         target: Any? = nil,
@@ -50,10 +54,53 @@ extension UIButton {
         
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
+//        button.backgroundColor = backgroundColor
+//        button.layer.cornerRadius = cornerRadius
         button.setImage(UIImage(named: imageName), for: .normal)
         button.titleLabel?.font = font
         if let action = action {
           button.addTarget(target, action: action, for: .touchUpInside)
+        }
+//
+//        button.snp.makeConstraints { make in
+//            make.height.equalTo(height)
+//            make.width.equalTo(width)
+//        }
+      
+        return button
+    }
+    
+    
+    
+    
+    
+    static func PreSecondary (
+        title: String = "",
+        titleColor: UIColor = .buttonPrimaryBackground,
+        backgroundColor: UIColor = .buttonPrimaryBackground,
+        cornerRadius: CGFloat = UIConstant.Button.btnsecondaryCornerRaidus,
+        height:CGFloat = UIConstant.Button.height,
+        width:CGFloat = UIConstant.Button.width,
+        imageName: String = "",
+        font: UIFont = .button,
+        target: Any? = nil,
+        action: Selector? = nil
+    ) -> UIButton {
+        let button = UIButton()
+        
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.layer.cornerRadius = cornerRadius
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.titleLabel?.font = font
+        if let action = action {
+          button.addTarget(target, action: action, for: .touchUpInside)
+        }
+        
+        button.snp.makeConstraints { make in
+            make.height.equalTo(height)
+            make.width.equalTo(width)
         }
       
         return button

@@ -23,9 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         
         let listViewController:LoginViewController = LoginViewController()
+//        let navigationController:UINavigationController = UINavigationController(rootViewController: listViewController);
 
                self.window!.makeKeyAndVisible()
         self.window!.rootViewController = listViewController;
+//        self.window!.rootViewController = navigationController;
 
  
         

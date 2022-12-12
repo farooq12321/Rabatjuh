@@ -13,12 +13,17 @@ struct UIConstant {
   enum Default {
       static let margin: CGFloat = 16.0
       static let spacing: CGFloat = 25.0
+      static let leftmargin: CGFloat = 16.0
+      static let rightmargin:CGFloat = -16.0
+    
   }
     
   
   enum Button {
     static let cornerRadius: CGFloat = 10.0
     static let height: CGFloat = 50.0
+    static let width:CGFloat = 50.0
+    static let btnsecondaryCornerRaidus: CGFloat = height/2.0
   }
     
     enum Image {
@@ -35,4 +40,24 @@ struct UIConstant {
     static let cornerRadius: CGFloat = 10.0
     static let spacing: CGFloat = 15
   }
+    
+    enum stackView {
+        static let spacing: CGFloat = 2.0
+    }
+    
+    enum veiw {
+        static let height:CGFloat = 70.0
+        static let cornerradius:CGFloat = 15.0
+        static let viewheight:CGFloat = 30.0
+        
+    }
+    
+    enum image {
+        static let profileimageheight:CGFloat = 120
+        static let profileimagewidth:CGFloat = 120
+        
+        static let height:CGFloat = 50
+        static let width:CGFloat = 50
+        static let CornerRaidus: CGFloat = height/2.0
+    }
 }

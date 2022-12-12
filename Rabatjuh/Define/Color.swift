@@ -28,11 +28,8 @@ extension UIColor {
     // MARK: - Heading
     
     static let heading = UIColor(named: "Heading")!
-    static let subheading = UIColor(named: "Subheading")!
-    static let subheadingcolor = UIColor.HexColor(hexString: "#E0E0E0")
-    
+    static let subheading = UIColor.HexColor(hexString: "#E0E0E0")
     static let searchbarcolor = UIColor.HexColor(hexString: "#424242")
-    
     static let selectMenuColor = UIColor.HexColor(hexString: "#F5B64D")
     
     
@@ -41,7 +38,6 @@ extension UIColor {
     // MARK: - Label
     
     static let labelPrimary = UIColor(named: "Label Primary")!
-    static let primary = UIColor.HexColor(hexString: "#262223")
     static let labelSecondary = UIColor(named: "Label Secondary")!
     
     
@@ -54,7 +50,9 @@ extension UIColor {
     static let buttonPrimaryForeground = UIColor(named: "Button Primary Foreground")!
     
     //Secondary
-    static let buttonSecondaryBackground = UIColor(named: "Button Secondary Background")!
+    //static let buttonSecondaryBackground = UIColor(named: "Button Secondary Background")!
+    
+    static let buttonSecondaryBackground = UIColor.HexColor(hexString: "#F5B64D")
     static let buttonSecondaryForeground = UIColor(named: "Button Secondary Foreground")!
     static let buttonSecondaryBorder = UIColor(named: "Button Secondary Border")
     
@@ -76,9 +74,6 @@ extension UIColor {
     
     static let textfieldText = UIColor(named: "Textfield Text")!
     static let textfieldBackground = UIColor(named: "Textfield Background")!
-    static let textfieldBackGroundColor = UIColor.HexColor(hexString: "#99999E")
-    static let textfieldBackground1 = UIColor.HexColor(hexString: "#F8F8F8")
-    static let txtFieldBackGroundColor = UIColor.HexColor(hexString: "#FFFFFF")
     static let textfieldBorder = UIColor(named: "Textfield Border")!
     static let textfieldCursorTint = UIColor(named: "Textfield Cursor Tint")!
     
@@ -90,23 +85,16 @@ extension UIColor {
     
     
     
+    //MARK: - Image
+    
+    static let viewbackgroungColor = UIColor.HexColor(hexString: "#2B2B2D")
+    
+    
+    
     
     
 }
 
-
-//extension CGColor {
-//
-//
-//    //static let textfieldBorder = CGColor(named: "Textfield Border")!
-//    static let textfieldBorder  = CGColor(colorSpace:, components: <#T##UnsafePointer<CGFloat>#>)
-//
-//    // MARK: - Generaic
-//
-//
-//
-//}
-    
 
     // MARK: - Hex Color
 extension UIColor {
@@ -132,7 +120,6 @@ extension UIColor {
         
         
     }
-    //static let subheadingcolor = UIColor(named: "#E0E0E0")!
     
 }
 

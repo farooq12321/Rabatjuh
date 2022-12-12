@@ -13,9 +13,6 @@ extension UITextField {
         placeholder: String,
         font: UIFont = .textfieldPrimary,
         textColor: UIColor = .heading,
-//        textColor: UIColor = .textfieldText,
-        //backgroundColor: UIColor = .textfieldBackground,
-//        bordercolor : UIColor = .textfieldBorder,
         backgroundColor: UIColor = .clear,
         tintColor: UIColor = .textfieldCursorTint,
         borderStyle: BorderStyle = .roundedRect,
@@ -25,29 +22,16 @@ extension UITextField {
         
     ) -> UITextField {
         let textfiled = UITextField()
-      
-        
-        //textfiled.placeholder = placeholder
         textfiled.textColor = textColor
         
         textfiled.attributedPlaceholder = NSAttributedString(
             string: placeholder,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
         )
-//        let txtfiled = UIColor.textfieldBorder
-//        textfiled.layer.borderColor = txtfiled.cgColor
         textfiled.layer.borderColor = UIColor.textfieldBorder.cgColor
         textfiled.layer.borderWidth = 0.7
         textfiled.layer.cornerRadius = cornerRadius
         textfiled.backgroundColor = backgroundColor
-        
-//        textfiled.leftViewMode = UITextField.ViewMode.always
-//        let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
-//        let image = UIImage(named: "heartImage")
-//        imageView.image = image
-//        textfiled.leftView = imageView
-        
-        
         textfiled.tintColor = tintColor
         textfiled.borderStyle = borderStyle
         textfiled.isSecureTextEntry = isPassword
@@ -70,6 +54,7 @@ extension UITextField {
     fileprivate func setPasswordToggleImage(_ button: UIButton) {
         if(isSecureTextEntry){
             button.setImage(UIImage(named: "ic_password_visible"), for: .normal)
+            button.tintColor = .red
         }else{
             button.setImage(UIImage(named: "ic_password_invisible"), for: .normal)
         }
@@ -87,8 +72,6 @@ extension UITextField {
         }
         
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-    
-          
         button.addTarget(self, action: #selector(self.togglePasswordView), for: .touchUpInside)
         self.rightView = button
         self.rightViewMode = .always
@@ -136,7 +119,6 @@ extension UITextField {
 
         imageicon.frame = CGRect(x: 10, y: -1, width: 20, height: 20)
         textfiled.leftView = contentview
-//        imageView.frame = CGRect(x: 10, y: 0, width: 20, height: 20)
         textfiled.leftViewMode = .always
         textfiled.clearButtonMode = .whileEditing
         

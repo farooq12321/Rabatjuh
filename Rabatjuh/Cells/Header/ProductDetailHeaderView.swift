@@ -32,7 +32,7 @@ class ProductDetailHeaderView: UIView {
     )
     var lblDescritpion = UILabel.PreSecondary(
         text:AppString.Label.subTitle,
-        textColor: UIColor.HexColor(hexString: "#FFFFFF"),
+        textColor: UIColor.subheading,
         textAlignment: .center
     )
         
@@ -67,7 +67,9 @@ class ProductDetailHeaderView: UIView {
     
     
     private lazy var btnComment = UIButton.Secondary(
-        imageName: AppString.Image.commet
+        imageName: AppString.Image.commet,
+        target: self,
+        action: #selector(viewReviews)
     )
     
     private lazy var lblComment = UILabel.PreSecondary(
@@ -124,6 +126,18 @@ class ProductDetailHeaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+    // MARK: - Actions
+    
+    @objc
+    func viewReviews(_ sender: Any) {
+      //let vc = ReviewsViewController()
+        
+    
+    
+}
 
 
 }

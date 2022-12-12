@@ -14,9 +14,7 @@ class RegisterViewController: UIViewController {
     private lazy var backgroundImage = UIImageView.Image(
         name: AppString.Image.backgroundImage
     )
-    
-    
-    
+
     // MARK: - Header
     private lazy var lblTitle = UILabel.Heading(
         text: AppString.Label.regsiterTitle
@@ -24,14 +22,16 @@ class RegisterViewController: UIViewController {
     
     private lazy var lblSubTitle = UILabel.Subheading(
         text: AppString.Label.regsiterSubTitle,
-        textColor: UIColor.subheadingcolor
+        textColor: UIColor.subheading
     )
     
     private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
     )
     
     private lazy var profileimage = UIImageView.UserImage(
-        name: AppString.Image.ProfileImage
+        name: AppString.Image.ProfileImage,
+        height:UIConstant.image.profileimageheight,
+        width: UIConstant.image.profileimagewidth
     )
     
     private lazy var btnPlus = UIButton.Secondary(
@@ -91,33 +91,21 @@ class RegisterViewController: UIViewController {
     
     
     
-    
     private lazy var footer1 = UIStackView(
-        arrangedSubviews: [UIView.spacer(for:.horizontal),lblAlready,btnLogin,UIView.spacer(for:.horizontal)],
-         axis: .horizontal,
-         alignment: .center,
-         distribution: .fillEqually
+        arrangedSubviews: [lblAlready,btnLogin],
+        axis: .horizontal,
+        spacing: UIConstant.TextField.spacing,
+        distribution: .fill
+        
        
     )
-    
-    
-    
-    private lazy var footerStack = UIStackView(
-        arrangedSubviews: [btnSignUp,footer1],
-        axis: .vertical,
-        spacing: UIConstant.TextField.spacing
-       
-    )
-    
-    
-    
     
     
     // MARK: - MainStack
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [headerStack,bodyStack,footerStack],
+        arrangedSubviews: [headerStack,bodyStack,btnSignUp],
         axis: .vertical,
         spacing: UIConstant.Default.spacing
     )
@@ -164,11 +152,10 @@ private extension RegisterViewController {
         
         view.addSubview(backgroundImage)
         view.addSubview(mainStack)
+        view.addSubview(footer1)
         view.addSubview(profileimage)
         view.addSubview(btnPlus)
-        
-        
-//        view.addSubview(footerStack)
+
         
         activateConstrains()
     }
@@ -181,6 +168,10 @@ private extension RegisterViewController {
             make.top.equalTo(view.layoutMarginsGuide).offset(40)
             make.left.right.equalTo(view.layoutMarginsGuide)
             
+        }
+        footer1.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(mainStack.snp.bottom)
         }
         profileimage.snp.makeConstraints{ (make) in
             make.centerX.equalTo(backgroundImage)

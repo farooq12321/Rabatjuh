@@ -17,7 +17,11 @@ class ReviewsTableViewCell: UITableViewCell {
     
     // MARK: - Body
 
-    var userImage = UIImageView.UserImage()
+    var userImage = UIImageView.UserImage(
+        cornerRadius: UIConstant.image.CornerRaidus,
+        height: UIConstant.image.height,
+        width: UIConstant.image.width
+    )
     var lblName = UILabel.Primary(
         text:AppString.Label.userName
     )

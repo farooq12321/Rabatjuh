@@ -45,17 +45,27 @@ class HomeViewController: UIViewController {
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        self.navigationController?.navigationBar.isHidden = true
+        
         Setup()
         configureViews()
-        
-       
-        
+
     }
     
     
-    
-  
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+   
 }
    
  
@@ -69,10 +79,8 @@ private extension HomeViewController {
     func Setup() {
       resturantTableVeiw.delegate = self
       resturantTableVeiw.dataSource = self
-        
-//        resturantTableVeiw.tableHeaderView = headerView
-      
       resturantTableVeiw.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
+    
  
       }
 
@@ -82,9 +90,6 @@ private extension HomeViewController {
 
 // MARK: - Extension
 
-
-
-// Setup Views
 private extension HomeViewController {
     func configureViews() {
         
@@ -105,11 +110,6 @@ private extension HomeViewController {
 
 
 
-
-
-
-
-
 // MARK: - Extension
 
  extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -126,12 +126,6 @@ private extension HomeViewController {
         return 260
     }
 
-    
-
-    
-    
-   
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
         
@@ -147,21 +141,21 @@ private extension HomeViewController {
             cell.lblName.text = ResturantData[indexPath.row].resturantName
             cell.lblDistance.text = ResturantData[indexPath.row].resturantDistance
             cell.lblDiscrption.text = ResturantData[indexPath.row].resturantDiscription
+            cell.selectionStyle = .none
+        
+        
             return cell
     
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+
             let vc = RestaurantDetailViewController()
-            navigationController?.pushViewController(vc, animated: true)
-            self.present(vc, animated: true, completion: nil)
-            vc.modalPresentationStyle = .fullScreen
-        } else if indexPath.row == 1 {
-            let vc = ReviewsViewController()
-            navigationController?.pushViewController(vc, animated: true)
-            self.present(vc, animated: true, completion: nil)
-            vc.modalPresentationStyle = .fullScreen        }
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+            
     }
  
 }

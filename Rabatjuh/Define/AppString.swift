@@ -103,6 +103,10 @@ struct AppString {
         static let menuPrice = "Price".localized
         static let menuDesciption = "Discription".localized
         
+        //MARK: - Reviews
+        
+        static let review = "Share your thought.....".localized
+        
   
         
         
@@ -162,8 +166,8 @@ struct AppString {
         
         // MARK: - ProductDetail
         
-        static let backGroundImage = "HeaderBackGroundImage".localized
-        static let productcolorImage = "backGroundcolor".localized
+        static let backGroundImage = "HeaderBackGroundImage"
+        static let productcolorImage = "backGroundcolor"
         static let productImage = "".localized
         
         
@@ -176,6 +180,13 @@ struct AppString {
         
         //MARK:- SideMenu
         static let logo = "logoImage".localized
+        
+        
+        //MARK: - reviews
+        
+        static let user = "userImage"
+        static let addreview = "Addreview"
+        
         
         
         

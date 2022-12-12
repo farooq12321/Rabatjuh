@@ -14,6 +14,7 @@ extension UITableView{
         
         table.estimatedRowHeight = 44.0
         table.rowHeight = UITableView.automaticDimension
+    
         
         table.separatorStyle = UITableViewCell.SeparatorStyle.none
         return table

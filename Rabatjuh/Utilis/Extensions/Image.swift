@@ -11,91 +11,47 @@ extension UIImageView {
     
     static func Image (
         name:String = "",
-        cornerRadius:CGFloat = 0.0
-//        backgroundcolor:UIColor = .HexColor(hexString: "")
-//        height:CGFloat = CGFloat(),
-//        width:CGFloat = CGFloat()
+        cornerRadius:CGFloat = 0.0,
+        height:CGFloat = 0.0,
+        width:CGFloat = 0.0
     ) -> UIImageView {
         let imageveiw = UIImageView()
         imageveiw.image = UIImage(named: name)
         imageveiw.contentMode = .scaleAspectFill
         imageveiw.layer.cornerRadius = cornerRadius
-        //imageveiw.backgroundColor = backgroundcolor
+        imageveiw.clipsToBounds = true
 //        imageveiw.snp.makeConstraints{ (make) in
 //            make.height.equalTo(height)
 //            make.width.equalTo(width)
 //        }
-        imageveiw.clipsToBounds = true
         return imageveiw
         
     }
-    
-//    static func ProfileImage (name:String = ""
-//    ) -> UIImageView
-//    {
-//        let imageveiw = UIImageView()
-//        imageveiw.image = UIImage(named: name)
-//        imageveiw.contentMode = .scaleAspectFill
-//
-//        imageveiw.clipsToBounds = true
-//        imageveiw.snp.makeConstraints{ (make) in
-//            make.height.width.equalTo(100)
-//        }
-//        return imageveiw
-//
-//
-//
-//
-//    }
-    
-//    static func logoImage (name:String = ""
-//    ) -> UIImageView
-//    {
-//        let imageveiw = UIImageView()
-//        imageveiw.image = UIImage(named: name)
-//        imageveiw.contentMode = .scaleToFill
-//        imageveiw.clipsToBounds = true
-//        imageveiw.snp.makeConstraints{ (make) in
-//            make.height.width.equalTo(200)
-//        }
-//        return imageveiw
-//
-//
-//
-//
-//    }
-    
-//    static func Image (name:String = ""
-//    ) -> UIImageView
-//    {
-//        let imageveiw = UIImageView()
-//        imageveiw.image = UIImage(named: name)
-//        imageveiw.contentMode = .scaleToFill
-//        imageveiw.clipsToBounds = true
-////        imageveiw.snp.makeConstraints{ (make) in
-////            make.height.equalTo(200)
-////        }
-////        imageveiw.layer.cornerRadius = 10.0
-//        return imageveiw
-//
-//
-//
-//
-//    }
-    
-    static func UserImage (name:String = ""
+
+    static func UserImage (
+        name:String = "",
+        cornerRadius:CGFloat = 0.0,
+        height:CGFloat = 0.0,
+        width:CGFloat = 0.0
     ) -> UIImageView
     {
-        let height = 120.0
+        //let height = 120.0
+        
+        //let height = 40.0
         let imageveiw = UIImageView()
         imageveiw.image = UIImage(named: name)
         imageveiw.contentMode = .scaleAspectFill
-        imageveiw.layer.cornerRadius = CGFloat(height/2.0)
+        imageveiw.layer.cornerRadius = cornerRadius
         imageveiw.clipsToBounds = true
         imageveiw.snp.makeConstraints{ (make) in
             make.height.equalTo(height)
-            make.width.equalTo(120)
+            make.width.equalTo(width)
         }
+        
+//        imageveiw.snp.makeConstraints{ (make) in
+//            make.height.equalTo(height)
+//            make.width.equalTo(40)
+//        }
         return imageveiw
     
 }

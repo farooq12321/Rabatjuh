@@ -28,13 +28,18 @@ class ProductCollectionViewCell: UICollectionViewCell {
         text:AppString.Label.productDiscription,
         numberOfLines: 0
     )
+    
+    private lazy var bodystack = UIStackView(arrangedSubviews: [lblName,lblDiscription],
+    axis: .vertical,
+    spacing: UIConstant.stackView.spacing,
+    distribution: .fill
+    )
    
     
     // MARK: - MainStack
     
-    
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [productImage,lblName,lblDiscription],
+        arrangedSubviews: [productImage,bodystack],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing,
         distribution:.fill
