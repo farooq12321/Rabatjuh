@@ -133,7 +133,12 @@ class ProductDetailHeaderView: UIView {
     
     @objc
     func viewReviews(_ sender: Any) {
-      //let vc = ReviewsViewController()
+       let vc = ReviewsViewController()
+       vc.modalPresentationStyle = .fullScreen
+       
+    
+    
+        
         
     
     

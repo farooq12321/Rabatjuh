@@ -131,7 +131,7 @@ private extension ReviewsViewController {
         Footerstack.snp.makeConstraints{ (make) in
             
             make.left.right.top.equalTo(footerView.layoutMarginsGuide)
-            make.bottom.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-20)
         }
 
     }

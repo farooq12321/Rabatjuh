@@ -12,9 +12,13 @@ class RegisterViewController: UIViewController {
     // Mark: - backGroundImage
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
-        name: AppString.Image.backgroundImage
+        name: AppString.Image.backImage
     )
-
+    private lazy var bgImage = UIImageView.Image(
+        name: AppString.Image.bgImage
+    )
+    
+    
     // MARK: - Header
     private lazy var lblTitle = UILabel.Heading(
         text: AppString.Label.regsiterTitle
@@ -57,9 +61,7 @@ class RegisterViewController: UIViewController {
         placeholder: AppString.Textfield.registerpassword,
         isPassword: true
     )
-    
-    
-    
+
     private lazy var bodyStack = UIStackView(
         arrangedSubviews: [txtName,txtEmail,txtSchool,txtPassword],
         axis: .vertical,
@@ -80,25 +82,30 @@ class RegisterViewController: UIViewController {
     
     private lazy var lblAlready = UILabel.Secondary(
         text: AppString.Label.alreadyHaveAnAccount,
-        textColor: UIColor.heading
+        textColor: UIColor.heading,
+        numberOfLines: 1,
+        textAlignment: .left
     )
     
-    private lazy var btnLogin = UIButton.Secondary(
+    private lazy var btnLogin = UIButton.PreSecondary(
         title: AppString.Button.login,
+        backgroundColor: .clear,
+        cornerRadius: UIConstant.Button.btnPresecondayCornerRaidus,
+        width: UIConstant.Button.btnsecondayHeight,
         target: self,
         action: #selector(loginButtonTap)
     )
     
-    
-    
     private lazy var footer1 = UIStackView(
         arrangedSubviews: [lblAlready,btnLogin],
         axis: .horizontal,
-        spacing: UIConstant.TextField.spacing,
+        alignment: .fill,
         distribution: .fill
         
        
     )
+    
+    
     
     
     // MARK: - MainStack
@@ -121,10 +128,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        
+ 
     }
     
-
     // MARK: - Actions
     
     @objc
@@ -136,43 +142,38 @@ class RegisterViewController: UIViewController {
         self.view.endEditing(true)
       
     }
-    
-    
-    
 }
-
-
-
 
 // MARK: - Extension
 
 // Setup Views
 private extension RegisterViewController {
     func configureViews() {
-        
         view.addSubview(backgroundImage)
+        view.addSubview(bgImage)
         view.addSubview(mainStack)
-        view.addSubview(footer1)
         view.addSubview(profileimage)
         view.addSubview(btnPlus)
-
-        
+        view.addSubview(footer1)
         activateConstrains()
     }
     
     func activateConstrains() {
+ 
         backgroundImage.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        bgImage.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+        
         mainStack.snp.makeConstraints { make in
             make.top.equalTo(view.layoutMarginsGuide).offset(40)
             make.left.right.equalTo(view.layoutMarginsGuide)
             
         }
-        footer1.snp.makeConstraints{ (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(mainStack.snp.bottom)
-        }
+
         profileimage.snp.makeConstraints{ (make) in
             make.centerX.equalTo(backgroundImage)
             make.top.equalTo(headerStack.snp.bottom).offset(20)
@@ -181,6 +182,11 @@ private extension RegisterViewController {
         btnPlus.snp.makeConstraints{ (make) in
             make.left.equalTo(profileimage.snp.right).offset(-25)
             make.top.equalTo(profileimage.snp.bottom).offset(-30)
+        }
+        
+        footer1.snp.makeConstraints{ (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(mainStack.snp.bottom)
         }
     }
 }

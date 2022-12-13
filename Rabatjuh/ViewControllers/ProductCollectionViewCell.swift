@@ -26,7 +26,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     )
     var lblDiscription = UILabel.Secondary(
         text:AppString.Label.productDiscription,
-        numberOfLines: 0
+        numberOfLines: 2
     )
     
     private lazy var bodystack = UIStackView(arrangedSubviews: [lblName,lblDiscription],

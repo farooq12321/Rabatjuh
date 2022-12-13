@@ -35,9 +35,7 @@ extension UIImageView {
         width:CGFloat = 0.0
     ) -> UIImageView
     {
-        //let height = 120.0
-        
-        //let height = 40.0
+      
         let imageveiw = UIImageView()
         imageveiw.image = UIImage(named: name)
         imageveiw.contentMode = .scaleAspectFill
@@ -48,10 +46,6 @@ extension UIImageView {
             make.width.equalTo(width)
         }
         
-//        imageveiw.snp.makeConstraints{ (make) in
-//            make.height.equalTo(height)
-//            make.width.equalTo(40)
-//        }
         return imageveiw
     
 }

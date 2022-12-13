@@ -13,7 +13,11 @@ class LoginViewController: UIViewController {
     
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
-        name:AppString.Image.backgroundImage
+        name:AppString.Image.backImage
+    )
+    
+    private lazy var bgImage = UIImageView.Image(
+        name: AppString.Image.bgImage
     )
     
     
@@ -68,11 +72,17 @@ class LoginViewController: UIViewController {
     
     private lazy var lbldontHaveAnAccount = UILabel.Secondary(
         text: AppString.Label.dontHaveAnAccount,
-        textColor:UIColor.heading
+        textColor:UIColor.heading,
+        numberOfLines: 1,
+        textAlignment: .left
+        
     )
     
-    private lazy var btnSignup = UIButton.Secondary(
+    private lazy var btnSignup = UIButton.PreSecondary(
         title: AppString.Button.signup,
+        backgroundColor: .clear,
+        cornerRadius: UIConstant.Button.btnPresecondayCornerRaidus,
+        width: UIConstant.Button.btnsecondayHeight,
         target: self,
         action: #selector(signupButtonTap)
     )
@@ -81,12 +91,13 @@ class LoginViewController: UIViewController {
     private lazy var footer1 = UIStackView(
         arrangedSubviews: [lbldontHaveAnAccount,btnSignup],
         axis: .horizontal,
-        spacing: UIConstant.TextField.spacing,
         alignment: .fill,
         distribution: .fill
         
        
     )
+    
+   
     
 
     // MARK: - MainStack
@@ -157,6 +168,7 @@ private extension LoginViewController {
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(backgroundImage)
+        view.addSubview(bgImage)
         view.addSubview(mainStack)
         view.addSubview(footer1)
         
@@ -168,6 +180,11 @@ private extension LoginViewController {
         backgroundImage.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        bgImage.snp.makeConstraints{ (make) in
+            make.edges.equalToSuperview()
+        }
+//       
+        
         mainStack.snp.makeConstraints { make in
             make.top.equalTo(view.layoutMarginsGuide).offset(40)
             make.left.right.equalTo(view.layoutMarginsGuide)

@@ -49,30 +49,19 @@ class HomeViewController: UIViewController {
         
         
         self.navigationController?.navigationBar.isHidden = true
-        
         Setup()
         configureViews()
 
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
-
-    
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
-    
-   
 }
    
- 
-
-
-
-
 // MARK: - Extension
 
 private extension HomeViewController {
@@ -80,10 +69,7 @@ private extension HomeViewController {
       resturantTableVeiw.delegate = self
       resturantTableVeiw.dataSource = self
       resturantTableVeiw.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
-    
- 
       }
-
   }
 
 

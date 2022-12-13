@@ -13,14 +13,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     static var identifier = "ProductCollectionViewCell"
     
     // MARK: - Body
-
-    var view = UIView.veiw(
-        height:1.0,
-        backgroundcolor: UIColor.red
-    )
     
     var lblCategory = UILabel.Secondary(
-//        text: "Lorum Ipsum"
     )
     
     // MARK: - MainStack

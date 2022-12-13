@@ -26,7 +26,7 @@ extension UITextField {
         
         textfiled.attributedPlaceholder = NSAttributedString(
             string: placeholder,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.placeHolder]
         )
         textfiled.layer.borderColor = UIColor.textfieldBorder.cgColor
         textfiled.layer.borderWidth = 0.7

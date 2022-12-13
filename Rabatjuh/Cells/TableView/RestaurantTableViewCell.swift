@@ -40,13 +40,17 @@ class RestaurantTableViewCell: UITableViewCell {
          )
         private lazy var Stack2 = UIStackView(arrangedSubviews: [Stack1,lblDiscrption], axis: .vertical)
         
-        private lazy var btnHeart = UIButton.Secondary(imageName:"heartImage")
+    private lazy var btnHeart = UIButton.Secondary(
+        imageName:AppString.Image.heart
+    )
         private lazy var lblHeart = UILabel.Secondary(
             text:AppString.Label.heart
             )
         private lazy var Stack3 = UIStackView(arrangedSubviews: [btnHeart,lblHeart], axis: .vertical)
         
-        private lazy var btnComments = UIButton.Secondary(imageName:"commentImage")
+    private lazy var btnComments = UIButton.Secondary(
+        imageName:AppString.Image.commet
+    )
         private lazy var lblComments = UILabel.Secondary(
             text:AppString.Label.comments
         )

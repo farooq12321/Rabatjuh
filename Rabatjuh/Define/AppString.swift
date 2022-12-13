@@ -128,6 +128,8 @@ struct AppString {
         
         // MARK: Home
          static let menu = ""
+        static let btnHeart = "heartImage"
+        static let btnComment = "commentImage"
         
         
         // MARK: EditScreen
@@ -151,7 +153,10 @@ struct AppString {
         
          //MARK: - Login
         
-        static let backgroundImage = "BackGroundImage".localized
+        static let backgroundImage = "BackGroundImage"
+        
+        static let backImage = "backImage"
+        static let bgImage = "bgImage"
         
         
         //

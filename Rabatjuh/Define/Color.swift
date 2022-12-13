@@ -76,12 +76,15 @@ extension UIColor {
     static let textfieldBackground = UIColor(named: "Textfield Background")!
     static let textfieldBorder = UIColor(named: "Textfield Border")!
     static let textfieldCursorTint = UIColor(named: "Textfield Cursor Tint")!
+    static let placeHolder = UIColor.HexColor(hexString: "#99999E")
     
     
     
     //MARK: - Image
     
     static let ImageBackGroundColor = UIColor.HexColor(hexString: "#C3C3C1")
+    
+    static let bgcolor = UIColor.HexColor(hexString: "#313236")
     
     
     

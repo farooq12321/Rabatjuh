@@ -24,6 +24,8 @@ struct UIConstant {
     static let height: CGFloat = 50.0
     static let width:CGFloat = 50.0
     static let btnsecondaryCornerRaidus: CGFloat = height/2.0
+    static let btnsecondayHeight:CGFloat = 60.0
+    static let btnPresecondayCornerRaidus:CGFloat = 0.0
   }
     
     enum Image {
@@ -43,10 +45,11 @@ struct UIConstant {
     
     enum stackView {
         static let spacing: CGFloat = 2.0
+       
     }
     
     enum veiw {
-        static let height:CGFloat = 70.0
+        static let height:CGFloat = 80.0
         static let cornerradius:CGFloat = 15.0
         static let viewheight:CGFloat = 30.0
         
