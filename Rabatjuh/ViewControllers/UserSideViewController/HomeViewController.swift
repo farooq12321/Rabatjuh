@@ -59,7 +59,13 @@ class HomeViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+    
+        
+//        self.navigationController?.navigationBar.backItem?.title = ""
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
     }
+    
 }
    
 // MARK: - Extension

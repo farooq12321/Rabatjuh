@@ -46,10 +46,9 @@ class RestaurantDetailViewController: UIViewController {
             Setup()
             configureViews()
             
-          
+            navigationItem.title = "Restaurant Detail"
+                
         }
-    
-    
     }
 
         // MARK: - Actions

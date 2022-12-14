@@ -38,6 +38,12 @@ class RegisterViewController: UIViewController {
         width: UIConstant.image.profileimagewidth
     )
     
+//    private lazy var userimage = UIImageView.UserImage(
+//        name:"user",
+//        height:UIConstant.image.height,
+//        width: UIConstant.image.width
+//    )
+    
     private lazy var btnPlus = UIButton.Secondary(
         imageName:AppString.Button.plus
         )
@@ -153,6 +159,7 @@ private extension RegisterViewController {
         view.addSubview(bgImage)
         view.addSubview(mainStack)
         view.addSubview(profileimage)
+//        profileimage.addSubview(userimage)
         view.addSubview(btnPlus)
         view.addSubview(footer1)
         activateConstrains()
@@ -179,6 +186,9 @@ private extension RegisterViewController {
             make.top.equalTo(headerStack.snp.bottom).offset(20)
             make.bottom.equalTo(bodyStack.snp.top).offset(-20)
         }
+//        userimage.snp.makeConstraints{ (make) in
+//            make.left.right.top.bottom.equalTo(profileimage.layoutMarginsGuide)
+//        }
         btnPlus.snp.makeConstraints{ (make) in
             make.left.equalTo(profileimage.snp.right).offset(-25)
             make.top.equalTo(profileimage.snp.bottom).offset(-30)

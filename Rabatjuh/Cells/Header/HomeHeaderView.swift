@@ -15,7 +15,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
 
     //MARK: - data
-    var Data  = ["All", "bistro", "Dinner", "Buffet","Cafe", "FastFood"]
+    var Data  = ["All", "Bistro", "Dinner", "Buffet","Cafe", "FastFood"]
 
     //MARK: - Header
     

@@ -158,6 +158,10 @@ struct AppString {
         static let backImage = "backImage"
         static let bgImage = "bgImage"
         
+        //MARK: - Register
+        
+        static let person = "person"
+        
         
         //
         

@@ -77,7 +77,7 @@ class ProductDetailTableViewCell: UITableViewCell {
         
         view.addSubview(lblHeader)
         lblHeader.snp.makeConstraints{ (make) in
-            make.left.equalTo(view.layoutMarginsGuide)
+            make.left.equalTo(UIConstant.Default.leftmargin)
             make.top.equalTo(view.layoutMarginsGuide)
         }
         

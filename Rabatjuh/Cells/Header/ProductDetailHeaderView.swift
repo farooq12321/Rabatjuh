@@ -9,7 +9,6 @@ import UIKit
 
 class ProductDetailHeaderView: UIView {
 
-    
     static var identifier = "HeaderView"
     
     
@@ -131,16 +130,10 @@ class ProductDetailHeaderView: UIView {
     
     // MARK: - Actions
     
-    @objc
-    func viewReviews(_ sender: Any) {
+    
+    @objc func viewReviews(_ sender: Any) {
        let vc = ReviewsViewController()
        vc.modalPresentationStyle = .fullScreen
-       
-    
-    
-        
-        
-    
     
 }
 
