@@ -28,7 +28,19 @@ class ReviewsTableViewCell: UITableViewCell {
     
     var lblReviews = UILabel.Secondary(
         text:AppString.Label.userReviews
+       
     )
+    
+   var lblDate = UILabel.Secondary(
+       text:AppString.Label.date,
+       textColor: UIColor.buttonPrimaryBackground,
+       textAlignment: .right
+    )
+    
+    private lazy var stack2 = UIStackView(arrangedSubviews: [lblReviews,lblDate],
+    axis: .vertical,
+    spacing: UIConstant.stackView.spacing
+   )
   
     
     private lazy var Stack1 = UIStackView(
@@ -45,7 +57,7 @@ class ReviewsTableViewCell: UITableViewCell {
     
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [Stack1,lblReviews],
+        arrangedSubviews: [Stack1,stack2],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
     )
@@ -76,6 +88,7 @@ private extension ReviewsTableViewCell {
     func configureViews() {
         
         self.addSubview(mainStack)
+        //self.addSubview(lblDate)
         activateConstrains()
         
     }
@@ -85,6 +98,10 @@ private extension ReviewsTableViewCell {
         mainStack.snp.makeConstraints{ (make) in
             make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
         }
+//        lblDate.snp.makeConstraints{ (make) in
+//            make.right.equalTo(self.layoutMarginsGuide)
+//            make.top.equalTo(mainStack.snp.bottom)
+//        }
     }
 }
 

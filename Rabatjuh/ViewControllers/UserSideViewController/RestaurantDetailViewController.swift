@@ -18,14 +18,22 @@ var ProductData = [
 
 ]
 
-class RestaurantDetailViewController: UIViewController {
+class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewDelegate {
+    
+    
+    func didTapButton() {
+//        self.navigationController?.pushViewController(ReviewsViewController(), animated: true)
+        print("button tAP 2")
+        let vc = ReviewsViewController()
+        self.present(vc, animated: true, completion: nil)
+    }
+//
 
         // MARK: - Background
        
         private lazy var productTableView = UITableView.TableVeiw()
         
-        lazy var headerView: ProductDetailHeaderView = ProductDetailHeaderView(
-        )
+       
 
         // MARK: - Header
 
@@ -45,6 +53,7 @@ class RestaurantDetailViewController: UIViewController {
 
             Setup()
             configureViews()
+            
             
             navigationItem.title = "Restaurant Detail"
                 
@@ -74,6 +83,20 @@ class RestaurantDetailViewController: UIViewController {
     }
 
 
+//class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewDelegate {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        myView.delegate = self
+//    }
+//
+//    func didTapButton() {
+//        self.navigationController?.pushViewController(someVc, animated: true)
+//    }
+//
+//}
+
+
 
 
     // MARK: - Extension
@@ -101,9 +124,14 @@ class RestaurantDetailViewController: UIViewController {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 300
         }
+        
+        
+        
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let headerView = ProductDetailHeaderView()
-            headerView.backgroundColor = .white
+            
+            
+            headerView.delegate = self
             return headerView
             }
         
@@ -123,13 +151,13 @@ class RestaurantDetailViewController: UIViewController {
             cell.lblHeader.text = ProductData[indexPath.row].sectionType
             return cell
         }
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row == 0 {
-            let vc = ReviewsViewController()
-            self.present(vc, animated: true, completion: nil)
-            vc.modalPresentationStyle = .fullScreen        }
-    }
+//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        if indexPath.row == 0 {
+//            let vc = ReviewsViewController()
+//            self.present(vc, animated: true, completion: nil)
+//            vc.modalPresentationStyle = .fullScreen        }
+//    }
     }
 
 

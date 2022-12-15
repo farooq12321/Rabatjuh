@@ -188,8 +188,7 @@ private extension LoginViewController {
         }
         bgImage.snp.makeConstraints{ (make) in
             make.edges.equalToSuperview()
-        }
-//       
+        }    
         
         mainStack.snp.makeConstraints { make in
             make.top.equalTo(view.layoutMarginsGuide).offset(40)

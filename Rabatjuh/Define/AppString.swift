@@ -61,6 +61,7 @@ struct AppString {
         //Cell
         static let userName = "".localized
         static let userReviews = "".localized
+        static let date = "".localized
         
         
         

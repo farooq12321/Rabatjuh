@@ -7,9 +7,22 @@
 
 import UIKit
 
+protocol ProductDetailHeaderViewDelegate {
+    func didTapButton()
+}
+
+
 class ProductDetailHeaderView: UIView {
 
     static var identifier = "HeaderView"
+    
+    var delegate: ProductDetailHeaderViewDelegate?
+
+    @objc func didbuttonTapComment() {
+        print("buttonTap 1")
+            delegate?.didTapButton()
+        }
+
     
     
     // MARK: - Body
@@ -68,10 +81,11 @@ class ProductDetailHeaderView: UIView {
     private lazy var btnComment = UIButton.Secondary(
         imageName: AppString.Image.commet,
         target: self,
-        action: #selector(viewReviews)
+        action: #selector(didbuttonTapComment)
+
     )
     
-    private lazy var lblComment = UILabel.PreSecondary(
+    lazy var lblComment = UILabel.PreSecondary(
         text:AppString.Label.heart,
         textColor: UIColor.labelSecondary
         )
@@ -131,14 +145,21 @@ class ProductDetailHeaderView: UIView {
     // MARK: - Actions
     
     
-    @objc func viewReviews(_ sender: Any) {
-       let vc = ReviewsViewController()
-       vc.modalPresentationStyle = .fullScreen
+//    @objc func viewReviews(_ sender: Any) {
+//       let vc = ReviewsViewController()
+//       vc.modalPresentationStyle = .fullScreen
+//
+    
+    
+        
+//        func didTapButton() {
+//                self.navigationController?.pushViewController(ReviewsViewController, animated: true)
+//            }
     
 }
 
 
-}
+
 
 
 
@@ -148,6 +169,7 @@ class ProductDetailHeaderView: UIView {
 private extension ProductDetailHeaderView {
     func configureViews() {
         
+        self.backgroundColor = .white
         self.addSubview(backGruondImage)
         self.addSubview(headerImage)
         self.addSubview(mainStack)

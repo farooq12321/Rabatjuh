@@ -10,6 +10,7 @@ struct Review{
     let userImage:String
     let userName:String
     let Reviews:String
+    let Date:String
     
     
 }

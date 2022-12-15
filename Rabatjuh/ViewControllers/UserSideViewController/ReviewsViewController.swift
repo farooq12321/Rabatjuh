@@ -12,15 +12,15 @@ class ReviewsViewController: UIViewController {
     
     // MARK: - Data
     var ReviewData = [
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."),
-        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.")
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022"),
+        Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022")
     ]
 
     // MARK: - Background
@@ -54,6 +54,8 @@ class ReviewsViewController: UIViewController {
         textColor: UIColor.subheading
     
     )
+    
+
     
     
     
@@ -154,6 +156,7 @@ private extension ReviewsViewController {
             cell.userImage.image = UIImage(named: ReviewData[indexPath.row].userImage)
             cell.lblName.text = ReviewData[indexPath.row].userName
             cell.lblReviews.text = ReviewData[indexPath.row].Reviews
+        cell.lblDate.text =  ReviewData[indexPath.row].Date
             cell.selectionStyle = .none
             return cell
      }

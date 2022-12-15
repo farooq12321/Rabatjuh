@@ -76,10 +76,6 @@ private extension ProductCollectionViewCell {
     }
     
     func activateConstrains() {
-       
-//        mainStack.snp.makeConstraints{ (make) in
-//        make.edges.equalTo(self.layoutMarginsGuide)
-//        }
         
         mainStack.snp.makeConstraints{ (make) in
         make.left.equalTo(UIConstant.Default.leftmargin)
