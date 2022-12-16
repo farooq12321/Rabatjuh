@@ -11,6 +11,7 @@ struct Resturant{
     let resturantName:String
     let resturantDistance: String
     let resturantDiscription:String
+    let discount:String
     
     
 }

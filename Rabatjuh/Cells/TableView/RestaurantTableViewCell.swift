@@ -17,6 +17,18 @@ class RestaurantTableViewCell: UITableViewCell {
         var restaurantImage = UIImageView.Image(
             cornerRadius: UIConstant.Image.cornerRadius
         )
+    
+    var lblDiscount = UILabel.primary(
+        text:AppString.Label.discount,
+        textColor: UIColor.heading,
+        backgroundColor: UIColor.dicountLabelBackground,
+        textAlignment: .center,
+        height:UIConstant.Label.labelHeight,
+        width:UIConstant.Label.labelWidth,
+        cornerRadius:UIConstant.TextField.cornerRadius
+       
+    
+    )
         
         var lblName = UILabel.Primary(
             text: AppString.Label.restaurantName,
@@ -64,6 +76,8 @@ class RestaurantTableViewCell: UITableViewCell {
         private lazy var Stack6 = UIStackView(arrangedSubviews: [restaurantImage,Stack5,], axis: .horizontal,
             spacing: UIConstant.TextField.spacing
         )
+    
+   
 
         
         // MARK: - MainStack
@@ -84,6 +98,8 @@ class RestaurantTableViewCell: UITableViewCell {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
             
             configureViews()
+
+           
             
         }
         required init?(coder: NSCoder) {
@@ -104,7 +120,9 @@ class RestaurantTableViewCell: UITableViewCell {
         func configureViews() {
             
             self.addSubview(mainStack)
+            self.addSubview(lblDiscount)
             activateConstrains()
+            
             
         }
         
@@ -112,6 +130,10 @@ class RestaurantTableViewCell: UITableViewCell {
            
             mainStack.snp.makeConstraints{ (make) in
                 make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
+            }
+            lblDiscount.snp.makeConstraints{ (make) in
+                make.left.equalTo(restaurantImage)
+                make.top.equalTo(restaurantImage.layoutMarginsGuide).offset(10)
             }
         }
     }

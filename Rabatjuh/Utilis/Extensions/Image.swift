@@ -24,6 +24,12 @@ extension UIImageView {
 //            make.height.equalTo(height)
 //            make.width.equalTo(width)
 //        }
+        
+//        imageveiw.layer.masksToBounds = true
+//        imageveiw.layer.cornerRadius = cornerRadius
+//        imageveiw.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+
+        
         return imageveiw
         
     }

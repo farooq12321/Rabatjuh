@@ -61,12 +61,12 @@ class ProductDetailHeaderView: UIView {
   
     private lazy var lblKilometer = UILabel.PreSecondary(
         text:AppString.Label.kilometer,
-        textColor:UIColor.buttonPrimaryBackground
+        textColor:UIColor.labelPrimary
     )
     
     private lazy var btnDirection = UIButton.Secondary(
         title: AppString.Button.getDirection,
-        titleColor: UIColor.labelPrimary,
+        titleColor: UIColor.buttonPrimaryBackground,
         font: UIFont.labelPreSecondary
     )
     

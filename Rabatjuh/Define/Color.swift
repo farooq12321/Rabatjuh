@@ -39,6 +39,7 @@ extension UIColor {
     
     static let labelPrimary = UIColor(named: "Label Primary")!
     static let labelSecondary = UIColor(named: "Label Secondary")!
+    static let dicountLabelBackground = UIColor.HexColor(hexString: "#C9AA77")
     
     
     

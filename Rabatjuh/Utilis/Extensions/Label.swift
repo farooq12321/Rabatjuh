@@ -59,6 +59,9 @@ extension UILabel {
         backgroundColor: UIColor = .clear,
         numberOfLines: Int = 0,
         textAlignment: NSTextAlignment = .left
+//        height:CGFloat = 0.0,
+//        width:CGFloat = 0.0
+        
     ) -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +71,10 @@ extension UILabel {
         label.backgroundColor = backgroundColor
         label.numberOfLines = numberOfLines
         label.textAlignment = textAlignment
+//        label.snp.makeConstraints{ (make) in
+//            make.height.equalTo(height)
+//            make.width.equalTo(width)
+//        }
         
         
         return label
@@ -116,4 +123,43 @@ extension UILabel {
     
     
     
+    static func primary (
+        text: String = "",
+        font: UIFont = .labelPrimary,
+        textColor: UIColor = .labelPrimary,
+        backgroundColor: UIColor = .clear,
+        numberOfLines: Int = 0,
+        textAlignment: NSTextAlignment = .left,
+        height:CGFloat = 0.0,
+        width:CGFloat = 0.0,
+        cornerRadius: CGFloat = 0.0
+        
+    ) -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = text
+        label.font = font
+        label.textColor = textColor
+        label.backgroundColor = backgroundColor
+        label.numberOfLines = numberOfLines
+        label.textAlignment = textAlignment
+        label.snp.makeConstraints{ (make) in
+            make.height.equalTo(height)
+            make.width.equalTo(width)
+        }
+        
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = cornerRadius
+        label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+
+        //label.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
+        
+        return label
+    }
+    
+    
+    
 }
+

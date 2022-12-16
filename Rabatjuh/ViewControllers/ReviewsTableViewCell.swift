@@ -41,10 +41,17 @@ class ReviewsTableViewCell: UITableViewCell {
     axis: .vertical,
     spacing: UIConstant.stackView.spacing
    )
+    
+    
+    private lazy var NameStack = UIStackView(
+        arrangedSubviews: [UIView.spacer(for: .vertical),lblName],
+        axis: .vertical,
+        distribution: .equalSpacing
+    )
   
     
     private lazy var Stack1 = UIStackView(
-        arrangedSubviews: [userImage,lblName],
+        arrangedSubviews: [userImage,NameStack],
         axis: .horizontal,
         spacing: UIConstant.TextField.spacing
     )

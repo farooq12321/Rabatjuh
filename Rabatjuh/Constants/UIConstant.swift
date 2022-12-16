@@ -63,4 +63,8 @@ struct UIConstant {
         static let width:CGFloat = 50
         static let CornerRaidus: CGFloat = height/2.0
     }
+    enum Label {
+        static let labelHeight: CGFloat = 40
+        static let labelWidth: CGFloat = 100
+    }
 }

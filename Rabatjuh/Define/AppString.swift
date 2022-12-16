@@ -31,6 +31,7 @@ struct AppString {
         static let restaurantName = "".localized
         static let restaurantDistance = "".localized
         static let restaurantDiscription = "".localized
+        static let discount = "".localized
         
         static let all = "All".localized
         static let bistro = "Bistro".localized
