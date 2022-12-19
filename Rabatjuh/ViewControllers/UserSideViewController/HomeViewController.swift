@@ -7,11 +7,14 @@
 
 import UIKit
 
-
+protocol HomeViewControllerDelegate: AnyObject{
+    func didTapMenuButton()
+}
 
 class HomeViewController: UIViewController {
 
-    var menu_vc: SideMenuViewController!
+    weak var delegate: HomeViewControllerDelegate?
+    
     
     // MARK: - Data
     var ResturantData = [
@@ -25,6 +28,8 @@ class HomeViewController: UIViewController {
     ]
 
     // MARK: - Background
+    
+    
 
     
     // MARK: - Header

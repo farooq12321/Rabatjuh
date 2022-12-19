@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     // Mark: - backGroundImage
     // MARK: - Background
@@ -29,23 +29,23 @@ class RegisterViewController: UIViewController {
         textColor: UIColor.subheading
     )
     
-    private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
+    private lazy var headerStack = UIStackView(
+        arrangedSubviews: [lblTitle,lblSubTitle],
+        axis: .vertical
     )
     
     private lazy var profileimage = UIImageView.UserImage(
         name: AppString.Image.ProfileImage,
+        cornerRadius: UIConstant.image.profileimageCornerRadius,
         height:UIConstant.image.profileimageheight,
         width: UIConstant.image.profileimagewidth
     )
+   
     
-//    private lazy var userimage = UIImageView.UserImage(
-//        name:"user",
-//        height:UIConstant.image.height,
-//        width: UIConstant.image.width
-//    )
-    
-    private lazy var btnPlus = UIButton.Secondary(
-        imageName:AppString.Button.plus
+    private lazy var btnImageBrowse = UIButton.Secondary(
+        imageName:AppString.Button.plus,
+        target: self,
+        action: #selector(BrowseButtonType)
         )
     
     // MARK: - Body
@@ -136,6 +136,13 @@ class RegisterViewController: UIViewController {
         configureViews()
  
     }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        profileimage.image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)
+        profileimage.image = profileimage.image?.scaledImage(withSize: CGSize(width: UIConstant.image.profileimagewidth, height: UIConstant.image.profileimageheight))
+  
+        dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Actions
     
@@ -148,6 +155,42 @@ class RegisterViewController: UIViewController {
         self.view.endEditing(true)
       
     }
+    
+    @objc
+    func BrowseButtonType(_ sender: Any)
+    {
+        
+            let imagep = UIImagePickerController()
+            imagep.delegate = self
+            imagep.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagep.allowsEditing = false
+            self.present(imagep,animated: true)
+            {
+            }
+    }
+}
+
+  //MARK: - Extension
+
+extension UIImage {
+    
+    func scaledImage(withSize size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
+        return UIGraphicsGetImageFromCurrentImageContext()!
+    }
+   
+    
+    func scaleImageToFitSize(size: CGSize) -> UIImage {
+        let aspect = self.size.width / self.size.height
+        if size.width / aspect <= size.height {
+            return scaledImage(withSize: CGSize(width: size.width, height: size.width / aspect))
+        } else {
+            return scaledImage(withSize: CGSize(width: size.height * aspect, height: size.height))
+        }
+}
+    
 }
 
 // MARK: - Extension
@@ -159,8 +202,7 @@ private extension RegisterViewController {
         view.addSubview(bgImage)
         view.addSubview(mainStack)
         view.addSubview(profileimage)
-//        profileimage.addSubview(userimage)
-        view.addSubview(btnPlus)
+        view.addSubview(btnImageBrowse)
         view.addSubview(footer1)
         activateConstrains()
     }
@@ -186,10 +228,8 @@ private extension RegisterViewController {
             make.top.equalTo(headerStack.snp.bottom).offset(20)
             make.bottom.equalTo(bodyStack.snp.top).offset(-20)
         }
-//        userimage.snp.makeConstraints{ (make) in
-//            make.left.right.top.bottom.equalTo(profileimage.layoutMarginsGuide)
-//        }
-        btnPlus.snp.makeConstraints{ (make) in
+        
+        btnImageBrowse.snp.makeConstraints{ (make) in
             make.left.equalTo(profileimage.snp.right).offset(-25)
             make.top.equalTo(profileimage.snp.bottom).offset(-30)
         }

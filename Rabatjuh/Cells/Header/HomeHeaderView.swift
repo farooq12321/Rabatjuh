@@ -7,11 +7,14 @@
 
 import UIKit
 
+protocol HeaderViewDelegate {
+    func didTapMenuButton()
+}
+
 class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UITextFieldDelegate{
 
     
-    
-    var menu_vc: SideMenuViewController!
+   
     
 
     //MARK: - data
@@ -23,7 +26,13 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     private lazy var collectionview = UICollectionView.collectionView()
     
-    var selectedIndex = 0
+    var delegate: HeaderViewDelegate?
+
+    @objc func didTapMenuButton()
+        {
+          delegate?.didTapMenuButton()
+        print("123")
+           }
     
     // MARK: - Body
     
@@ -53,7 +62,9 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     )
     
     private lazy var btnMenu = UIButton.Secondary(
-        imageName: AppString.Image.btnMenu
+        imageName: AppString.Image.btnMenu,
+        target: self,
+        action: #selector(didTapMenuButton)
     )
     
     var  searchBar = UITextField.search(
@@ -163,7 +174,7 @@ private extension HeaderView {
         
         collectionview.snp.makeConstraints{ (make) in
             make.left.right.equalTo(mainStack)
-            make.top.equalTo(backGruondImage.snp.bottom)
+            make.top.equalTo(backGruondImage.snp.bottom).offset(-5)
             make.height.equalTo(50)
     }
 
@@ -181,7 +192,8 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
 
-             cell.lblCategory.text = Data[indexPath.row]
+        cell.lblCategory.text = Data[indexPath.row]
+        cell.view.isHidden = true
              return cell
     
 }
@@ -190,6 +202,12 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
             cell.lblCategory.textColor = UIColor.selectMenuColor
+            cell.view.isHidden = false
+            
+            if indexPath.row == 0 {
+            cell.lblCategory.textColor = UIColor.selectMenuColor
+            }
+
         
 
         }
@@ -200,6 +218,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
             cell.lblCategory.textColor = UIColor.labelSecondary
+            cell.view.isHidden = true
         }
     }
     

@@ -43,14 +43,23 @@ class ProductDetailTableViewCell: UITableViewCell {
     
    
     
+//
+//  lazy var mainStackViewContainer : UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [view,productCollectionView])
+//        stackView.axis = .vertical
+//
+//
+//
+//        return stackView
+//    }()
     
-    lazy var mainStackViewContainer : UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [view,productCollectionView])
-        stackView.axis = .vertical
-        
-        
-        return stackView
-    }()
+
+    lazy var mainStackViewContainer  = UIStackView(
+        arrangedSubviews: [view,productCollectionView],
+        axis: .vertical,
+        spacing: UIConstant.TextField.spacing
+    )
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

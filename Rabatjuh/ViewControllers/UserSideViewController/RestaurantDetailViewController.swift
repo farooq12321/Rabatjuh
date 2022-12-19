@@ -22,8 +22,6 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
     
     
     func didTapButton() {
-//        self.navigationController?.pushViewController(ReviewsViewController(), animated: true)
-        print("button tAP 2")
         let vc = ReviewsViewController()
         self.present(vc, animated: true, completion: nil)
     }
@@ -83,31 +81,12 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
     }
 
 
-//class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewDelegate {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        myView.delegate = self
-//    }
-//
-//    func didTapButton() {
-//        self.navigationController?.pushViewController(someVc, animated: true)
-//    }
-//
-//}
-
-
-
-
     // MARK: - Extension
 
     private extension RestaurantDetailViewController {
         func Setup() {
             
             productTableView.register(ProductDetailTableViewCell.self, forCellReuseIdentifier: ProductDetailTableViewCell.identifier)
-           
-            
-
             productTableView.delegate = self
             productTableView.dataSource = self
             
@@ -151,13 +130,7 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
             cell.lblHeader.text = ProductData[indexPath.row].sectionType
             return cell
         }
-//        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        if indexPath.row == 0 {
-//            let vc = ReviewsViewController()
-//            self.present(vc, animated: true, completion: nil)
-//            vc.modalPresentationStyle = .fullScreen        }
-//    }
+
     }
 
 

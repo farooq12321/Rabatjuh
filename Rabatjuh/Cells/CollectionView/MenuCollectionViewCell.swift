@@ -16,12 +16,20 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     var lblCategory = UILabel.Secondary(
     )
+    var view = UIView.veiw(
+        height:UIConstant.veiw.viewhieght,
+    backgroundcolor: .black,
+        cornerradius:UIConstant.veiw.viewCornerRadius
+    )
     
     // MARK: - MainStack
     
+    private lazy var stack = UIStackView(arrangedSubviews: [lblCategory,view],
+    axis: .vertical
+    )
     
     private lazy var mainStack = UIStackView(
-        arrangedSubviews: [lblCategory],
+        arrangedSubviews: [stack],
         axis: .horizontal,
         distribution: .fill
 
