@@ -13,6 +13,8 @@ protocol SideMenuViewControllerDelegate: AnyObject {
 
 class SideMenuViewController: UIViewController {
 
+    lazy var sideMenuheaderView: SideMenuHeaderView = SideMenuHeaderView()
+    
     static var identifier = "SideMenuViewController"
     // MARK: - Data
 //    var SideMenuData = [
@@ -67,9 +69,6 @@ class SideMenuViewController: UIViewController {
     
     private lazy var sideMenuTableView = UITableView.TableVeiw()
     
-     var btnMenu = UIButton.Secondary()
-    
-   
     // MARK: - Footer
 
 
@@ -106,6 +105,7 @@ private extension SideMenuViewController {
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
         sideMenuTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        sideMenuTableView.backgroundColor = .white
        
 
       
@@ -139,7 +139,7 @@ private extension SideMenuViewController {
         sideMenuTableView.snp.makeConstraints{ (make) in
             make.right.top.bottom.equalTo(view.layoutMarginsGuide)
             make.left.equalTo(view.layoutMarginsGuide).offset(60)
-         
+//
         }
         
     }
@@ -151,6 +151,18 @@ private extension SideMenuViewController {
 
 
 extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = SideMenuHeaderView()
+        headerView.backgroundColor = .white
+        return headerView
+        }
+    
+    func tableView(_ tableView: UITableView,heightForHeaderInSection section: Int
+    ) -> CGFloat{
+        return 200
+    }
 
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return MenuOption.allCases.count
@@ -162,6 +174,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.imageView?.image = UIImage(named: MenuOption.allCases[indexPath.row].imageName)
      cell.textLabel?.textColor = .black
     cell.imageView?.tintColor = .white
+    cell.selectionStyle = .none
     return cell
 }
 func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -29,6 +29,18 @@ class ProductCollectionViewCell: UICollectionViewCell {
         numberOfLines: 2
     )
     
+    var lblPrice = UILabel.primary(
+        text:AppString.Label.productPrice,
+        textColor: UIColor.heading,
+        backgroundColor: UIColor.priceLabel,
+        textAlignment: .center,
+        height:UIConstant.Label.priceLabelHeight,
+        width:UIConstant.Label.pricelabelWidth,
+        cornerRadius:UIConstant.TextField.cornerRadius,
+        maskedCorners: UIConstant.Label.Corner
+       
+    )
+    
     private lazy var bodystack = UIStackView(arrangedSubviews: [lblName,lblDiscription],
     axis: .vertical,
     spacing: UIConstant.stackView.spacing,
@@ -71,6 +83,7 @@ private extension ProductCollectionViewCell {
     func configureViews() {
         
         contentView.addSubview(mainStack)
+        contentView.addSubview(lblPrice)
         activateConstrains()
         
     }
@@ -80,6 +93,11 @@ private extension ProductCollectionViewCell {
         mainStack.snp.makeConstraints{ (make) in
         make.left.equalTo(UIConstant.Default.leftmargin)
         make.right.equalTo(UIConstant.Default.rightmargin)
+        }
+        
+        lblPrice.snp.makeConstraints{ (make) in
+            make.right.equalTo(productImage.layoutMarginsGuide)
+            make.top.equalTo(productImage.layoutMarginsGuide)
         }
     }
 }

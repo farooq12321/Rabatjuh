@@ -121,6 +121,7 @@ extension ProductDetailTableViewCell: UICollectionViewDataSource,UICollectionVie
         cell.productImage.image = UIImage(named:ProductData [productCollectionView.tag].productImage[indexPath.row])
         cell.lblName.text = ProductData[productCollectionView.tag].productName[indexPath.row]
         cell.lblDiscription.text = ProductData[collectionView.tag].productDescription[indexPath.row]
+        cell.lblPrice.text = ProductData[productCollectionView.tag].productPrice[indexPath.row]
             
             return cell
        

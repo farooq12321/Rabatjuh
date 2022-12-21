@@ -121,12 +121,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         
-//        let gradiantlayer = CAGradientLayer()
-//        gradiantlayer.frame = view.bounds
-//        gradiantlayer.colors = [UIColor.HexColor(hexString: "#313236").cgColor]
-//        backgroundImage.layer.addSublayer(gradiantlayer)
-        //view.layer.addSublayer(gradiantlayer)
-        
     }
     
     
@@ -137,10 +131,10 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonTap(_ sender: Any) {
-        let vc = HomeViewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        self.present(nvc, animated: true,completion: nil)
+        let vc = ContainerViewController()
+        //let nvc = UINavigationController(rootViewController: vc)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true,completion: nil)
        
        self.view.endEditing(true)
     

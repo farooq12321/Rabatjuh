@@ -8,30 +8,32 @@
 import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject{
-    func didTapMenuButton()
+    func didTapSideMenuButton() 
+   
+    
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HeaderViewDelegate {
+    func didTapMenuButton() {
+       
+        
+        delegate?.didTapSideMenuButton()
+    }
+    
 
     weak var delegate: HomeViewControllerDelegate?
-    
     
     // MARK: - Data
     var ResturantData = [
         Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
+        Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:""),
         Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
-        Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
-        Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
+        Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:""),
         Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
         Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF")
 
     ]
 
-    // MARK: - Background
-    
-    
-
-    
     // MARK: - Header
 
     lazy var headerView: HeaderView = HeaderView()
@@ -39,19 +41,14 @@ class HomeViewController: UIViewController {
     // MARK: - Body
     
     private lazy var resturantTableVeiw = UITableView.TableVeiw()
-    
-   
-    // MARK: - Footer
-
-
-    // MARK: - Variables
-    
   
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        let containerVC = ContainerViewController()
+        containerVC.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
         Setup()
@@ -64,12 +61,9 @@ class HomeViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-    
-        
-//        self.navigationController?.navigationBar.backItem?.title = ""
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+      
     }
+    
     
 }
    
@@ -113,9 +107,10 @@ private extension HomeViewController {
 
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView1 = HeaderView()
-        headerView1.backgroundColor = .white
-        return headerView1
+        let headerView = HeaderView()
+        headerView.backgroundColor = .white
+        headerView.delegate = self
+        return headerView
         }
     
     func tableView(_ tableView: UITableView,heightForHeaderInSection section: Int
@@ -138,10 +133,18 @@ private extension HomeViewController {
             cell.lblName.text = ResturantData[indexPath.row].resturantName
             cell.lblDistance.text = ResturantData[indexPath.row].resturantDistance
             cell.lblDiscrption.text = ResturantData[indexPath.row].resturantDiscription
+        
+        if ResturantData[indexPath.row].discount.isEmpty == true
+        {
+            cell.lblDiscount.isHidden = true
+        }
+        else
+        {
             cell.lblDiscount.text = ResturantData[indexPath.row].discount
-            cell.selectionStyle = .none
-        
-        
+            cell.lblDiscount.isHidden = false
+            
+        }
+          cell.selectionStyle = .none
             return cell
     
         }
@@ -161,15 +164,7 @@ private extension HomeViewController {
 
 
 
-// MARK: - Extension
 
 
-// Setup ApiCalls
-//private extension LoginViewController {
-//    func LoginApi() {
-//
-//    }
-//}
-//
 
 

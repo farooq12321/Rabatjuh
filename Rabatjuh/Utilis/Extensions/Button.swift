@@ -71,6 +71,40 @@ extension UIButton {
     }
     
     
+    static func secondary (
+        title: String = "",
+        titleColor: UIColor = .buttonPrimaryBackground,
+        height:CGFloat = UIConstant.Button.height,
+        width:CGFloat = UIConstant.Button.width,
+        imageName: String = "",
+        font: UIFont = .button,
+        target: Any? = nil,
+        action: Selector? = nil
+    ) -> UIButton {
+        let button = UIButton()
+        
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(titleColor, for: .normal)
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.titleLabel?.font = font
+        if let action = action {
+          button.addTarget(target, action: action, for: .touchUpInside)
+        }
+        
+        button.snp.makeConstraints{ (make) in
+            make.width.equalTo(width)
+        }
+        
+        
+        let spacing: CGFloat = 10.0
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: spacing);
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0);
+        
+
+        return button
+    }
+    
+    
     
     
     

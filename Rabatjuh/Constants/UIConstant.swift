@@ -70,5 +70,12 @@ struct UIConstant {
     enum Label {
         static let labelHeight: CGFloat = 40
         static let labelWidth: CGFloat = 100
+        static let priceLabelHeight: CGFloat = 25.0
+        static let pricelabelWidth: CGFloat = 50.0
+        static let maskedCorner: CACornerMask = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        static let Corner: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        
     }
+    
+
 }

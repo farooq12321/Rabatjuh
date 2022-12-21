@@ -28,11 +28,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     var delegate: HeaderViewDelegate?
 
-    @objc func didTapMenuButton()
-        {
-          delegate?.didTapMenuButton()
-        print("123")
-           }
+   
     
     // MARK: - Body
     
@@ -61,10 +57,11 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         numberOfLines: 0
     )
     
-    private lazy var btnMenu = UIButton.Secondary(
+    private lazy var btnMenu = UIButton.secondary(
+        width:UIConstant.Button.width,
         imageName: AppString.Image.btnMenu,
         target: self,
-        action: #selector(didTapMenuButton)
+        action: #selector(btnMenuPressed)
     )
     
     var  searchBar = UITextField.search(
@@ -72,10 +69,11 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     )
 
     private lazy var headerStack = UIStackView(
-        arrangedSubviews: [lblTitle,btnMenu],
+        arrangedSubviews: [btnMenu,lblTitle],
         axis: .horizontal,
-        spacing: UIConstant.TextField.spacing,
+        alignment: .fill,
         distribution: .equalSpacing
+//
     )
   
     // MARK: - Mainstack
@@ -83,7 +81,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     private lazy var mainStack = UIStackView(
         arrangedSubviews: [headerStack,searchBar],
         axis: .vertical,
-        spacing: UIConstant.TextField.spacing
+        spacing: UIConstant.Default.spacing
     )
     
     // MARK: -  // MARK: - ViewController Life Cycle
@@ -95,10 +93,9 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         
         configureViews()
         Setup()
-        
-        
-
+  
     }
+
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -107,12 +104,12 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     // MARK:- Action
     
 
-    func showMenu(){
-        
-    }
-    func closeMenu(){
-        
-    }
+    
+    
+    @objc func btnMenuPressed()
+        {
+          delegate?.didTapMenuButton()
+           }
 
 
 }
@@ -129,8 +126,7 @@ private extension HeaderView {
         searchBar.delegate = self
 
         collectionview.reloadData()
-
-       
+  
       }
 
   }
@@ -194,21 +190,21 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 
         cell.lblCategory.text = Data[indexPath.row]
         cell.view.isHidden = true
+    
+    if (indexPath.row == 0){
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+        cell.lblCategory.textColor = UIColor.selectMenuColor
+        cell.view.isHidden = false
+        }
+    
              return cell
     
 }
 
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
             cell.lblCategory.textColor = UIColor.selectMenuColor
             cell.view.isHidden = false
-            
-            if indexPath.row == 0 {
-            cell.lblCategory.textColor = UIColor.selectMenuColor
-            }
-
-        
 
         }
         

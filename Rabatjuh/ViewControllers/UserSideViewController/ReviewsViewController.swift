@@ -23,16 +23,9 @@ class ReviewsViewController: UIViewController {
         Review(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",Date:"12-12-2022")
     ]
 
-    // MARK: - Background
-
-    
-    // MARK: - Header
-
-    private let reviewsTableVeiw = UITableView.TableVeiw()
-    
-    
     // MARK: - Body
 
+    private let reviewsTableVeiw = UITableView.TableVeiw()
 
     // MARK: - Footer
     
@@ -110,7 +103,6 @@ private extension ReviewsViewController {
 private extension ReviewsViewController {
     func configureViews() {
         
-//        navigationController?.navigationBar.isHidden = true
         self.view.addSubview(reviewsTableVeiw)
         self.view.addSubview(footerView)
         footerView.addSubview(Footerstack)
@@ -164,17 +156,6 @@ private extension ReviewsViewController {
 
 
 
-
-// MARK: - Extension
-
-
-// Setup ApiCalls
-//private extension LoginViewController {
-//    func LoginApi() {
-//
-//    }
-//}
-//
 
 
 

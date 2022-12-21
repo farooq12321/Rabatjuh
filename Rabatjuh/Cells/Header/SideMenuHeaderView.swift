@@ -13,6 +13,7 @@ class SideMenuHeaderView: UIView {
     
     var backGruondImage = UIImageView.Image(
         name: AppString.Image.logo
+       
     )
     
    
@@ -45,7 +46,8 @@ private extension SideMenuHeaderView {
     
     func activateConstrains() {
         backGruondImage.snp.makeConstraints{ (make) in
-            make.left.right.top.equalToSuperview()
+            make.left.top.equalTo(self.layoutMarginsGuide)
+            make.right.equalTo(self.layoutMarginsGuide).offset(-100)
             
     }
 

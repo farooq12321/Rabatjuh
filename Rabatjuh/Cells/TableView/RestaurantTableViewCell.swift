@@ -10,8 +10,7 @@ import UIKit
 class RestaurantTableViewCell: UITableViewCell {
 
         static var identifier = "RestaurantTableViewCell"
-        
-        
+    
         // MARK: - Body
 
         var restaurantImage = UIImageView.Image(
@@ -22,10 +21,12 @@ class RestaurantTableViewCell: UITableViewCell {
         text:AppString.Label.discount,
         textColor: UIColor.heading,
         backgroundColor: UIColor.dicountLabelBackground,
+        
         textAlignment: .center,
         height:UIConstant.Label.labelHeight,
         width:UIConstant.Label.labelWidth,
-        cornerRadius:UIConstant.TextField.cornerRadius
+        cornerRadius:UIConstant.TextField.cornerRadius,
+        maskedCorners: UIConstant.Label.maskedCorner
        
     
     )

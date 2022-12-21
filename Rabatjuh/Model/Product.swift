@@ -12,6 +12,7 @@ struct Product{
     
     let productName:[String]
     let productDescription:[String]
+    let productPrice:[String]
     
     
 }

@@ -10,11 +10,11 @@ import UIKit
 // MARK: - Data
 
 var ProductData = [
-  Product(sectionType:"Deals & Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
-  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
-  Product(sectionType:"Deals & Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
-  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
-  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"]),
+  Product(sectionType:"Deals & Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"],productPrice:["$5","$5","$5"]),
+  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"],productPrice:["$5","$5","$5"]),
+  Product(sectionType:"Deals & Discount",productImage:["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"],productPrice:["$5","$5","$5"]),
+  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"],productPrice:["$5","$5","$5"]),
+  Product(sectionType:"Deals & Discount",productImage: ["productImage","productImage","productImage"], productName: ["Mint Chocolate bomb","Mint Chocolate bomb","Mint Chocolate bomb"], productDescription: ["There are many situations when you want to create","There are many situations when you want to create","There are many situations when you want to create"],productPrice:["$5","$5","$5"]),
 
 ]
 
@@ -25,26 +25,11 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
         let vc = ReviewsViewController()
         self.present(vc, animated: true, completion: nil)
     }
-//
-
-        // MARK: - Background
-       
-        private lazy var productTableView = UITableView.TableVeiw()
-        
-       
-
-        // MARK: - Header
-
       
         // MARK: - Body
         
+    private lazy var productTableView = UITableView.TableVeiw()
        
-        // MARK: - Footer
-
-      
-        // MARK: - Variables
-        
-
         // MARK: - ViewController Life Cycle
         override func viewDidLoad() {
             super.viewDidLoad()

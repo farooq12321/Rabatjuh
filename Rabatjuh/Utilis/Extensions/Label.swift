@@ -132,7 +132,8 @@ extension UILabel {
         textAlignment: NSTextAlignment = .left,
         height:CGFloat = 0.0,
         width:CGFloat = 0.0,
-        cornerRadius: CGFloat = 0.0
+        cornerRadius: CGFloat = 0.0,
+        maskedCorners: CACornerMask = [.layerMaxXMaxYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner,.layerMaxXMinYCorner]
         
     ) -> UILabel {
         let label = UILabel()
@@ -150,7 +151,8 @@ extension UILabel {
         
         label.layer.masksToBounds = true
         label.layer.cornerRadius = cornerRadius
-        label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        //label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        label.layer.maskedCorners = maskedCorners
 
         //label.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 //        label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]

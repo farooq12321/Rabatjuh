@@ -50,6 +50,7 @@ struct AppString {
         
         static let productName = "".localized
         static let productDiscription = "".localized
+        static let productPrice = "".localized
         
         static let productTitle = "Hundreds of flvours under one roof".localized
         static let Title = "Gloria Jeans coffee".localized
@@ -64,6 +65,7 @@ struct AppString {
         static let userReviews = "".localized
         static let date = "".localized
         
+    
         
         
         
