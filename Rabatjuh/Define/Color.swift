@@ -50,10 +50,7 @@ extension UIColor {
     //Primary
     static let buttonPrimaryBackground = UIColor(named: "Button Primary Background")!
     static let buttonPrimaryForeground = UIColor(named: "Button Primary Foreground")!
-    
-    //Secondary
-    //static let buttonSecondaryBackground = UIColor(named: "Button Secondary Background")!
-    
+   
     static let buttonSecondaryBackground = UIColor.HexColor(hexString: "#F5B64D")
     static let buttonSecondaryForeground = UIColor(named: "Button Secondary Foreground")!
     static let buttonSecondaryBorder = UIColor(named: "Button Secondary Border")

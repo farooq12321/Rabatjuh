@@ -140,7 +140,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         profileimage.image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)
         profileimage.image = profileimage.image?.scaledImage(withSize: CGSize(width: UIConstant.image.profileimagewidth, height: UIConstant.image.profileimageheight))
-  
         dismiss(animated: true, completion: nil)
     }
     
@@ -246,15 +245,3 @@ private extension RegisterViewController {
 // MARK: - Extension
 
 
-// Setup ApiCalls
-private extension LoginViewController {
-    func LoginApi() {
-        
-    }
-    
-    
-    
-    
-    
-    
-}
