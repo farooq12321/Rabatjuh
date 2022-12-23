@@ -131,10 +131,10 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonTap(_ sender: Any) {
-        let vc = ContainerViewController()
-        //let nvc = UINavigationController(rootViewController: vc)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true,completion: nil)
+        let vc = HomeViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        nvc.modalPresentationStyle = .fullScreen
+        self.present(nvc, animated: true,completion: nil)
        
        self.view.endEditing(true)
     
@@ -151,6 +151,8 @@ class LoginViewController: UIViewController {
        self.view.endEditing(true)
       
     }
+    
+    
     
     
     

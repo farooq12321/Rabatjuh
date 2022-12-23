@@ -38,7 +38,7 @@ extension UIColor {
     
     static let labelPrimary = UIColor(named: "Label Primary")!
     static let labelSecondary = UIColor(named: "Label Secondary")!
-    static let dicountLabelBackground = UIColor.HexColor(hexString: "#F5B64D")
+    static let dicountLabelBackground = UIColor.HexColor(hexString: "#CEB387")
     
     static let priceLabel = UIColor.HexColor(hexString: "#F5B64D")
     

@@ -33,7 +33,7 @@ class ReviewsTableViewCell: UITableViewCell {
     
    var lblDate = UILabel.Secondary(
        text:AppString.Label.date,
-       textColor: UIColor.buttonPrimaryBackground,
+//       textColor: UIColor.buttonPrimaryBackground,
        textAlignment: .right
     )
     
@@ -95,7 +95,6 @@ private extension ReviewsTableViewCell {
     func configureViews() {
         
         self.addSubview(mainStack)
-        //self.addSubview(lblDate)
         activateConstrains()
         
     }
@@ -105,10 +104,6 @@ private extension ReviewsTableViewCell {
         mainStack.snp.makeConstraints{ (make) in
             make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
         }
-//        lblDate.snp.makeConstraints{ (make) in
-//            make.right.equalTo(self.layoutMarginsGuide)
-//            make.top.equalTo(mainStack.snp.bottom)
-//        }
     }
 }
 

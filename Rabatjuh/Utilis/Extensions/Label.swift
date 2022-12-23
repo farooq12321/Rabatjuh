@@ -22,7 +22,7 @@ extension UILabel {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.font = font
-       // label.font = .boldSystemFont(ofSize: 25.0)
+       
         
         label.textColor = textColor
         label.backgroundColor = backgroundColor
@@ -59,8 +59,7 @@ extension UILabel {
         backgroundColor: UIColor = .clear,
         numberOfLines: Int = 0,
         textAlignment: NSTextAlignment = .left
-//        height:CGFloat = 0.0,
-//        width:CGFloat = 0.0
+//
         
     ) -> UILabel {
         let label = UILabel()
@@ -71,12 +70,6 @@ extension UILabel {
         label.backgroundColor = backgroundColor
         label.numberOfLines = numberOfLines
         label.textAlignment = textAlignment
-//        label.snp.makeConstraints{ (make) in
-//            make.height.equalTo(height)
-//            make.width.equalTo(width)
-//        }
-        
-        
         return label
     }
     
@@ -151,13 +144,9 @@ extension UILabel {
         
         label.layer.masksToBounds = true
         label.layer.cornerRadius = cornerRadius
-        //label.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         label.layer.maskedCorners = maskedCorners
 
-        //label.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-//        label.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
 
-        
         return label
     }
     

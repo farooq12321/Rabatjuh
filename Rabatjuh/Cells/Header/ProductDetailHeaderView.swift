@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProductDetailHeaderViewDelegate {
     func didTapButton()
+    func didTapHeartButton()
 }
 
 
@@ -22,6 +23,24 @@ class ProductDetailHeaderView: UIView {
         print("buttonTap 1")
             delegate?.didTapButton()
         }
+    
+//    @objc func didTapHeartButton(){
+//        print("heart")
+//        delegate?.didTapHeartButton()
+    
+        
+//        if btnHeart.isSelected  == true
+//        {
+//            btnHeart.setImage(UIImage(named: "heartImage"), for: .normal)
+//
+//        }
+//        else if btnHeart.isSelected == false
+//        {
+//            btnHeart.setImage(UIImage(named: "UnselectedHeart"), for: .normal)
+//        }
+//    }
+    
+    
 
     
     
@@ -82,6 +101,7 @@ class ProductDetailHeaderView: UIView {
         imageName: AppString.Image.commet,
         target: self,
         action: #selector(didbuttonTapComment)
+        
 
     )
     
@@ -97,8 +117,11 @@ class ProductDetailHeaderView: UIView {
     )
     
     
-    private lazy var btnHeart = UIButton.Secondary(
-        imageName: AppString.Image.heart
+    lazy var btnHeart = UIButton.Secondary(
+         imageName: AppString.Image.unslectHeart,
+        target: self,
+        action: #selector(btnHeartPressed),
+        isSelect: true
     )
     
     private lazy var lblHeart = UILabel.PreSecondary(
@@ -145,17 +168,22 @@ class ProductDetailHeaderView: UIView {
     // MARK: - Actions
     
     
-//    @objc func viewReviews(_ sender: Any) {
-//       let vc = ReviewsViewController()
-//       vc.modalPresentationStyle = .fullScreen
-//
-    
-    
-        
-//        func didTapButton() {
-//                self.navigationController?.pushViewController(ReviewsViewController, animated: true)
-//            }
-    
+    @objc func btnHeartPressed()
+        {
+
+        if btnHeart.isSelected == true {
+                    btnHeart.setImage(UIImage(named: "heartImage"), for: .normal)
+            
+            btnHeart.isSelected = false
+
+                }
+        else
+                {
+                    btnHeart.isSelected = true
+                    btnHeart.setImage(UIImage(named: "UnselectedHeart"), for: .normal)
+                }
+           }
+
 }
 
 

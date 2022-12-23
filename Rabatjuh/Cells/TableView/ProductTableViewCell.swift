@@ -40,19 +40,7 @@ class ProductDetailTableViewCell: UITableViewCell {
             return collection
         
     }()
-    
-   
-    
-//
-//  lazy var mainStackViewContainer : UIStackView = {
-//        let stackView = UIStackView(arrangedSubviews: [view,productCollectionView])
-//        stackView.axis = .vertical
-//
-//
-//
-//        return stackView
-//    }()
-    
+
 
     lazy var mainStackViewContainer  = UIStackView(
         arrangedSubviews: [view,productCollectionView],

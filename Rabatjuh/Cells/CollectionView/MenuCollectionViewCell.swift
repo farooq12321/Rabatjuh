@@ -25,7 +25,8 @@ class MenuCollectionViewCell: UICollectionViewCell {
     // MARK: - MainStack
     
     private lazy var stack = UIStackView(arrangedSubviews: [lblCategory,view],
-    axis: .vertical
+    axis: .vertical,
+    spacing:-1
     )
     
     private lazy var mainStack = UIStackView(

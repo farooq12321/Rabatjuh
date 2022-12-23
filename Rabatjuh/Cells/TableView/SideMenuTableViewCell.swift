@@ -14,7 +14,9 @@ class SideMenuTableViewCell: UITableViewCell {
     
     // MARK: - Body
 
-    var icon = UIImageView.Image()
+    var icon = UIImageView.Image(
+       
+    )
     
     var lblName = UILabel.Primary(
         text: AppString.Label.restaurantName,
@@ -22,16 +24,6 @@ class SideMenuTableViewCell: UITableViewCell {
         textAlignment: .left
     )
    
-    
-    private lazy var Stack1 = UIStackView(
-        arrangedSubviews: [icon,lblName,UIView.spacer(for:.horizontal)],
-        axis: .horizontal,
-        spacing: UIConstant.TextField.spacing,
-//        alignment: .center,
-        distribution: .fill
-                                    
-        )
-    
 
 
     
@@ -65,15 +57,22 @@ class SideMenuTableViewCell: UITableViewCell {
 private extension SideMenuTableViewCell {
     func configureViews() {
         
-        self.addSubview(Stack1)
+        self.addSubview(icon)
+        self.addSubview(lblName)
         activateConstrains()
         
     }
     
     func activateConstrains() {
        
-        Stack1.snp.makeConstraints{ (make) in
-            make.top.left.right.bottom.equalTo(self.layoutMarginsGuide)
+        
+        icon.snp.makeConstraints{ (make) in
+            make.left.top.equalTo(self.layoutMarginsGuide)
+        }
+        
+        lblName.snp.makeConstraints{ (make) in
+            make.top.equalTo(self.layoutMarginsGuide)
+            make.left.equalTo(icon.layoutMarginsGuide).offset(40)
         }
     }
 }

@@ -52,7 +52,7 @@ struct UIConstant {
         static let height:CGFloat = 80.0
         static let cornerradius:CGFloat = 15.0
         static let viewheight:CGFloat = 30.0
-        static let viewhieght: CGFloat = 6.0
+        static let viewhieght: CGFloat = 8.0
         static let viewCornerRadius:CGFloat = 4.0
         
     }

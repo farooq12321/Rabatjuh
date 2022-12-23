@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SideMenuHeaderViewDelegate {
+    func didTapCancelButton()
+}
+
 class SideMenuHeaderView: UIView {
+    
+    var delegate: SideMenuHeaderViewDelegate?
     
     static var identifier = "SideMenuHeaderView"
     
@@ -15,6 +21,7 @@ class SideMenuHeaderView: UIView {
         name: AppString.Image.logo
        
     )
+    
     
    
     // MARK: -  // MARK: - ViewController Life Cycle
@@ -29,8 +36,7 @@ class SideMenuHeaderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
+    
 }
 
 // MARK: - Extension
@@ -47,7 +53,7 @@ private extension SideMenuHeaderView {
     func activateConstrains() {
         backGruondImage.snp.makeConstraints{ (make) in
             make.left.top.equalTo(self.layoutMarginsGuide)
-            make.right.equalTo(self.layoutMarginsGuide).offset(-100)
+            make.right.equalToSuperview()
             
     }
 

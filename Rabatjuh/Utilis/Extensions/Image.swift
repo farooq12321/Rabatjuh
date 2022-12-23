@@ -20,16 +20,6 @@ extension UIImageView {
         imageveiw.contentMode = .scaleAspectFill
         imageveiw.layer.cornerRadius = cornerRadius
         imageveiw.clipsToBounds = true
-//        imageveiw.snp.makeConstraints{ (make) in
-//            make.height.equalTo(height)
-//            make.width.equalTo(width)
-//        }
-        
-//        imageveiw.layer.masksToBounds = true
-//        imageveiw.layer.cornerRadius = cornerRadius
-//        imageveiw.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-
-        
         return imageveiw
         
     }

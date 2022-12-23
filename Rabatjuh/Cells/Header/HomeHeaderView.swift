@@ -69,7 +69,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     )
 
     private lazy var headerStack = UIStackView(
-        arrangedSubviews: [btnMenu,lblTitle],
+        arrangedSubviews: [lblTitle,btnMenu],
         axis: .horizontal,
         alignment: .fill,
         distribution: .equalSpacing

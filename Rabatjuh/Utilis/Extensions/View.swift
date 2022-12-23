@@ -45,14 +45,12 @@ extension UIView {
     ) -> UIView{
    
             let view = UIView()
-//            view.layer.cornerRadius = 10
-//            view.layer.borderWidth = 0.05
             view.backgroundColor = backgroundcolor
         view.layer.cornerRadius = cornerradius
         view.layer.borderWidth = borderwidth
             view.snp.makeConstraints{ (make) in
             make.height.equalTo(height)
-//            make.width.equalTo(300)
+
         }
         
             return view

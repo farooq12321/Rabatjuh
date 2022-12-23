@@ -14,12 +14,8 @@ protocol HomeViewControllerDelegate: AnyObject{
 }
 
 class HomeViewController: UIViewController, HeaderViewDelegate {
-    func didTapMenuButton() {
-       
-        
-        delegate?.didTapSideMenuButton()
-    }
     
+    var menuVC: SideMenuViewController!
 
     weak var delegate: HomeViewControllerDelegate?
     
@@ -47,22 +43,105 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
         super.viewDidLoad()
         
         
-        let containerVC = ContainerViewController()
-        containerVC.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
+       
         Setup()
         configureViews()
-
+        
+        menuVC =  SideMenuViewController()
+        
+        swipeGesture()
+  
+    }
+    
+    func swipeGesture(){
+        let MoveLeft = UISwipeGestureRecognizer(target: self, action: #selector(selectGesture))
+        MoveLeft.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(MoveLeft)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+       
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+     
       
     }
+    
+    
+    //MARK: - Action
+    
+    func didTapMenuButton() {
+       
+        if AppDelegate.menu_bool
+        {
+            showMenu()
+        }
+        else
+        {
+            hideMenu()
+        }
+         
+     }
+    
+    
+    @objc func selectGesture(gesture:UISwipeGestureRecognizer){
+        
+        switch gesture.direction {
+        case UISwipeGestureRecognizer.Direction.right:
+            closeMenu()
+        default:
+            break
+        }
+        
+    }
+    
+    
+    @objc func tapGesture(){
+        
+    }
+    
+    
+    
+    func closeMenu(){
+        if AppDelegate.menu_bool
+        {
+            //showMenu()
+        }
+        else
+        {
+            hideMenu()
+        }
+    }
+    
+    func showMenu()
+    {
+        UIView.animate(withDuration: 0.3){ ()->Void in
+            
+            self.menuVC.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+            self.menuVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            self.addChild(self.menuVC)
+            self.view.addSubview(self.menuVC.view)
+            AppDelegate.menu_bool = false
+        }
+       
+    }
+    func hideMenu()
+    {
+        UIView.animate(withDuration: 0.3, animations: { ()->Void in
+            self.menuVC.view.frame = CGRect(x: UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        }) { (finished) in
+            self.menuVC.view.removeFromSuperview()
+        }
+        
+        AppDelegate.menu_bool = true
+        
+    }
+    
+   
     
     
 }
@@ -83,8 +162,6 @@ private extension HomeViewController {
 
 private extension HomeViewController {
     func configureViews() {
-        
-        navigationController?.navigationBar.isHidden = true
         self.view.addSubview(resturantTableVeiw)
 
         activateConstrains()

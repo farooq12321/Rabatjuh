@@ -19,12 +19,22 @@ var ProductData = [
 ]
 
 class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewDelegate {
+    func didTapHeartButton() {
+    }
+    
     
     
     func didTapButton() {
         let vc = ReviewsViewController()
         self.present(vc, animated: true, completion: nil)
     }
+
+//
+//
+        
+            
+        
+    
       
         // MARK: - Body
         
@@ -93,8 +103,6 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
         
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let headerView = ProductDetailHeaderView()
-            
-            
             headerView.delegate = self
             return headerView
             }

@@ -17,7 +17,8 @@ extension UIButton {
         cornerRadius: CGFloat = UIConstant.Button.cornerRadius,
         height: CGFloat = UIConstant.Button.height,
         target: Any? = nil,
-        action: Selector? = nil
+        action: Selector? = nil,
+        isSelect: Bool = false
     ) -> UIButton {
         let button = UIButton()
        
@@ -35,41 +36,35 @@ extension UIButton {
             make.height.equalTo(height)
         }
         
-        return button
+      return button
     }
+    
     
     static func Secondary (
         title: String = "",
         titleColor: UIColor = .buttonPrimaryBackground,
-//        backgroundColor: UIColor = .buttonPrimaryBackground,
-//        cornerRadius: CGFloat = UIConstant.Button.btnsecondaryCornerRaidus,
-//        height:CGFloat = UIConstant.Button.height,
-//        width:CGFloat = UIConstant.Button.width,
         imageName: String = "",
         font: UIFont = .button,
         target: Any? = nil,
-        action: Selector? = nil
+        action: Selector? = nil,
+        isSelect: Bool = false
     ) -> UIButton {
         let button = UIButton()
         
         button.setTitle(title, for: .normal)
         button.setTitleColor(titleColor, for: .normal)
-//        button.backgroundColor = backgroundColor
-//        button.layer.cornerRadius = cornerRadius
         button.setImage(UIImage(named: imageName), for: .normal)
         button.titleLabel?.font = font
         if let action = action {
           button.addTarget(target, action: action, for: .touchUpInside)
         }
-//
-//        button.snp.makeConstraints { make in
-//            make.height.equalTo(height)
-//            make.width.equalTo(width)
-//        }
-      
+
+        if isSelect{
+            button.isSelected = isSelect
+        }
+        
         return button
     }
-    
     
     static func secondary (
         title: String = "",
