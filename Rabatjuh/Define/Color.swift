@@ -66,6 +66,8 @@ extension UIColor {
     //Link
     static let buttonLinkForeground = UIColor(named: "Button Link Foreground")!
     
+    static let backButtonColor = UIColor.HexColor(hexString: "#F5B64D")
+    
     
     
     
@@ -90,6 +92,10 @@ extension UIColor {
     //MARK: - Image
     
     static let viewbackgroungColor = UIColor.HexColor(hexString: "#2B2B2D")
+    
+    //MARK: - View
+    
+    static let viewbackGroundColor = UIColor.HexColor(hexString: "#2B2B2D")
     
     
     

@@ -15,6 +15,8 @@ struct UIConstant {
       static let spacing: CGFloat = 25.0
       static let leftmargin: CGFloat = 16.0
       static let rightmargin:CGFloat = -16.0
+    static let marginleft: CGFloat = 30.0
+    static let marginright: CGFloat = -30.0
     
   }
     

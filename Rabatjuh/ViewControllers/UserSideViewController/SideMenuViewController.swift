@@ -17,6 +17,8 @@ var SideMenuData = [
        SideMenu(buttonIcon: "Terms&Condition", buttonName: "Terms & Conditions"),
        SideMenu(buttonIcon: "Logout", buttonName: "Logout")
    ]
+    
+    var menuVC: SideMenuViewController!
 
 // MARK: - Header
 
@@ -25,6 +27,10 @@ lazy var headerView: SideMenuHeaderView = SideMenuHeaderView()
 // MARK: - Body
 
 private lazy var resturantTableVeiw = UITableView.TableVeiw()
+    
+    let veiw = UIView.veiw(
+        backgroundcolor: .clear
+    )
         
 
 // MARK: - ViewController Life Cycle
@@ -34,9 +40,8 @@ private lazy var resturantTableVeiw = UITableView.TableVeiw()
 
             Setup()
             configureViews()
-            
 
-            }
+    }
         
 }
 
@@ -60,6 +65,7 @@ func configureViews() {
     
     navigationController?.navigationBar.isHidden = true
     view.addSubview(resturantTableVeiw)
+    view.addSubview(veiw)
 
     activateConstrains()
 }
@@ -70,6 +76,10 @@ func activateConstrains() {
         make.left.equalToSuperview().offset(70)
     
      
+    }
+    veiw.snp.makeConstraints{ (make) in
+        make.right.equalTo(resturantTableVeiw.snp.left)
+        make.top.bottom.left.equalToSuperview()
     }
     
 }
@@ -111,18 +121,15 @@ func activateConstrains() {
             
             if indexPath.row == 0
             {
+                
               let vc = HomeViewController()
-              let nvc = UINavigationController(rootViewController: vc)
-              nvc.modalPresentationStyle = .fullScreen
-              self.present(nvc, animated: true,completion: nil)
-//
+                navigationController?.pushViewController(vc, animated: true)
+
             }
             if indexPath.row == 1
             {
                 let vc = HomeViewController()
-                let nvc = UINavigationController(rootViewController: vc)
-                nvc.modalPresentationStyle = .fullScreen
-                self.present(nvc, animated: true,completion: nil)
+                navigationController?.pushViewController(vc, animated: true)
             }
             
             if indexPath.row == 3

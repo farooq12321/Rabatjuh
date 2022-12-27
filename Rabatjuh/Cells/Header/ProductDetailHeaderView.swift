@@ -20,30 +20,9 @@ class ProductDetailHeaderView: UIView {
     var delegate: ProductDetailHeaderViewDelegate?
 
     @objc func didbuttonTapComment() {
-        print("buttonTap 1")
             delegate?.didTapButton()
         }
-    
-//    @objc func didTapHeartButton(){
-//        print("heart")
-//        delegate?.didTapHeartButton()
-    
-        
-//        if btnHeart.isSelected  == true
-//        {
-//            btnHeart.setImage(UIImage(named: "heartImage"), for: .normal)
-//
-//        }
-//        else if btnHeart.isSelected == false
-//        {
-//            btnHeart.setImage(UIImage(named: "UnselectedHeart"), for: .normal)
-//        }
-//    }
-    
-    
-
-    
-    
+ 
     // MARK: - Body
     
     var backGruondImage = UIImageView.Image(
@@ -217,18 +196,20 @@ private extension ProductDetailHeaderView {
         }
         
         mainStack.snp.makeConstraints{ (make) in
-            make.left.equalTo(headerImage).offset(30)
-            make.right.equalTo(headerImage).offset(-30)
+            make.left.equalTo(headerImage).offset(UIConstant.Default.marginleft)
+            make.right.equalTo(headerImage).offset(UIConstant.Default.marginright)
             make.top.equalTo(headerImage.snp.top).offset(50)
         
     }
         view.snp.makeConstraints{ (make) in
             make.centerX.equalTo(backGruondImage)
-            make.top.equalTo(backGruondImage.snp.bottom).offset(-30)
+            make.top.equalTo(backGruondImage.snp.bottom).offset(UIConstant.Default.marginright)
         }
         
         stack5.snp.makeConstraints{ (make) in
-            make.left.right.top.bottom.equalTo(view.layoutMarginsGuide)
+            make.top.bottom.equalTo(view.layoutMarginsGuide)
+            make.left.equalTo(view).offset(UIConstant.Default.leftmargin)
+            make.right.equalTo(view).offset(UIConstant.Default.rightmargin)
         }
         
 

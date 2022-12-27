@@ -24,9 +24,14 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
     static var identifier = "HeaderView"
     
-    private lazy var collectionview = UICollectionView.collectionView()
+    private lazy var collectionview = UICollectionView.collectionView(
+       
+    )
     
     var delegate: HeaderViewDelegate?
+    
+//    var selectIndex = 0
+//    var selectIndexSec = 0
 
    
     
@@ -93,6 +98,8 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         
         configureViews()
         Setup()
+        
+//        collectionview.scrollToItem(at: IndexPath(item: selectIndex, section: selectIndexSec), at: [] ,animated: false)
   
     }
 
@@ -125,7 +132,9 @@ private extension HeaderView {
         
         searchBar.delegate = self
 
-        collectionview.reloadData()
+//        collectionview.reloadData()
+        self.collectionview.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
+      
   
       }
 
@@ -164,6 +173,7 @@ private extension HeaderView {
             make.left.equalTo(UIConstant.Default.leftmargin)
             make.right.equalTo(UIConstant.Default.rightmargin)
             make.bottom.equalTo(backGruondImage.snp.bottom).offset(-50)
+        
             
     }
         
@@ -172,6 +182,7 @@ private extension HeaderView {
             make.left.right.equalTo(mainStack)
             make.top.equalTo(backGruondImage.snp.bottom).offset(-5)
             make.height.equalTo(50)
+           
     }
 
     }
@@ -185,40 +196,57 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
     return Data.count
 }
 
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
 
-        cell.lblCategory.text = Data[indexPath.row]
-        cell.view.isHidden = true
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    if (indexPath.row == 0){
-            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
-        cell.lblCategory.textColor = UIColor.selectMenuColor
-        cell.view.isHidden = false
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:MenuCollectionViewCell.identifier,for:indexPath)as! MenuCollectionViewCell
     
+    cell.lblCategory.text = Data[indexPath.item]
+    
+
+           
+            cell.selectItem()
+
              return cell
     
-}
+    
+    
+    
+    
 
+}
+    
+    
+   
+
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
-            cell.lblCategory.textColor = UIColor.selectMenuColor
-            cell.view.isHidden = false
-
-        }
         
-}
-
-
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell{
-            cell.lblCategory.textColor = UIColor.labelSecondary
-            cell.view.isHidden = true
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell
+          
+        cell?.selectItem()
+        print(indexPath.row)
+       
+        
+        
+        
+        
+  
         }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? MenuCollectionViewCell
+
+     
+        cell?.selectItem()
+       
+    
     }
-    
-    
+
 
 }
+
 
