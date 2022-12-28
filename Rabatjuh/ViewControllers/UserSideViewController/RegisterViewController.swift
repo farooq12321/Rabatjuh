@@ -143,6 +143,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         dismiss(animated: true, completion: nil)
     }
     
+   
+    
     // MARK: - Actions
     
     @objc
@@ -159,14 +161,59 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     func BrowseButtonType(_ sender: Any)
     {
         
-            let imagep = UIImagePickerController()
-            imagep.delegate = self
-            imagep.sourceType = UIImagePickerController.SourceType.photoLibrary
-            imagep.allowsEditing = false
-            self.present(imagep,animated: true)
-            {
-            }
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+               alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                   self.openCamera()
+               }))
+
+               alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                   self.openGallery()
+               }))
+
+        alert.addAction(UIAlertAction.init(title: "Cancel",style: .cancel, handler: nil))
+
+               self.present(alert, animated: true, completion: nil)
+
     }
+    
+    func openCamera()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallery()
+   {
+       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+           let imagePicker = UIImagePickerController()
+           imagePicker.delegate = self
+           imagePicker.allowsEditing = true
+           imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+           self.present(imagePicker, animated: true, completion: nil)
+       }
+       else
+       {
+           let alert  = UIAlertController(title: "Warning", message: "You don't have picture in gallery.", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+       }
+   
+
+    }
+    
+    
+  
 }
 
   //MARK: - Extension
@@ -239,6 +286,9 @@ private extension RegisterViewController {
         }
     }
 }
+
+
+
 
 
 

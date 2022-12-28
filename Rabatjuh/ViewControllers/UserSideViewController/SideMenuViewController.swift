@@ -122,8 +122,8 @@ func activateConstrains() {
             if indexPath.row == 0
             {
                 
-              let vc = HomeViewController()
-                navigationController?.pushViewController(vc, animated: true)
+//              let vc = HomeViewController()
+//                navigationController?.pushViewController(vc, animated: true)
 
             }
             if indexPath.row == 1

@@ -41,49 +41,15 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        self.navigationController?.navigationBar.isHidden = true
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-        navigationController?.navigationBar.tintColor = UIColor.backButtonColor
 
-        
         Setup()
         configureViews()
-        
         menuVC =  SideMenuViewController()
-        
-       
-        
         swipeGesture()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hidMenu(_:)))
-        menuVC.veiw.addGestureRecognizer(tap)
-        
-  
+        TapGesture()
+
     
 }
-
-@objc func hidMenu(_ sender: UITapGestureRecognizer? = nil)
-{
-    UIView.animate(withDuration: 0.3, animations: { ()->Void in
-        self.menuVC.view.frame = CGRect(x: UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-    }) { (finished) in
-        self.menuVC.view.removeFromSuperview()
-    }
-
-    AppDelegate.menu_bool = true
-
-}
-  
-    
-    
-    func swipeGesture(){
-        let MoveLeft = UISwipeGestureRecognizer(target: self, action: #selector(selectGesture))
-        MoveLeft.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(MoveLeft)
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -110,6 +76,12 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
         }
          
      }
+    
+    func swipeGesture(){
+        let MoveLeft = UISwipeGestureRecognizer(target: self, action: #selector(selectGesture))
+        MoveLeft.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(MoveLeft)
+    }
     
     
     @objc func selectGesture(gesture:UISwipeGestureRecognizer){
@@ -165,6 +137,24 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
         
     }
     
+    
+    func TapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.hidMenu(_:)))
+        menuVC.veiw.addGestureRecognizer(tap)
+    }
+
+@objc func hidMenu(_ sender: UITapGestureRecognizer? = nil)
+{
+    UIView.animate(withDuration: 0.3, animations: { ()->Void in
+        self.menuVC.view.frame = CGRect(x: UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+    }) { (finished) in
+        self.menuVC.view.removeFromSuperview()
+    }
+
+    AppDelegate.menu_bool = true
+
+}
+    
    
     
     
@@ -174,6 +164,10 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
 
 private extension HomeViewController {
     func Setup() {
+        
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        navigationController?.navigationBar.tintColor = UIColor.backButtonColor
       resturantTableVeiw.delegate = self
       resturantTableVeiw.dataSource = self
       resturantTableVeiw.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)

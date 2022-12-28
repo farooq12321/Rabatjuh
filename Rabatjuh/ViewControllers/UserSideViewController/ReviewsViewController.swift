@@ -73,6 +73,9 @@ class ReviewsViewController: UIViewController {
 
         Setup()
         configureViews()
+        
+       
+        
 
     }
 
@@ -150,8 +153,12 @@ private extension ReviewsViewController {
             cell.lblReviews.text = ReviewData[indexPath.row].Reviews
         cell.lblDate.text =  ReviewData[indexPath.row].Date
             cell.selectionStyle = .none
+        
+        
             return cell
      }
+    
+    
 }
 
 

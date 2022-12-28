@@ -9,8 +9,7 @@ import UIKit
 import SwiftyJSON
 
 class LoginViewController: UIViewController {
-    
-    
+
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
         name:AppString.Image.backImage
@@ -19,9 +18,7 @@ class LoginViewController: UIViewController {
     private lazy var bgImage = UIImageView.Image(
         name: AppString.Image.bgImage
     )
-    
-    
-    
+
     // MARK: - Header
     private lazy var lblTitle = UILabel.Heading(
         text: AppString.Label.loginTitle,
@@ -35,10 +32,7 @@ class LoginViewController: UIViewController {
     
     private lazy var headerStack = UIStackView(arrangedSubviews: [lblTitle,lblSubTitle], axis: .vertical
     )
-    
-    
-    
-    
+
     // MARK: - Body
     
     //Form
@@ -56,10 +50,7 @@ class LoginViewController: UIViewController {
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
     )
-    
-    
-    
-    
+
     // MARK: - Footer
     
     private lazy var btnLogin = UIButton.Primary(
@@ -67,9 +58,7 @@ class LoginViewController: UIViewController {
         target: self,
         action: #selector(loginButtonTap)
     )
-    
-    
-    
+
     private lazy var lbldontHaveAnAccount = UILabel.Secondary(
         text: AppString.Label.dontHaveAnAccount,
         textColor:UIColor.heading,
@@ -86,36 +75,22 @@ class LoginViewController: UIViewController {
         target: self,
         action: #selector(signupButtonTap)
     )
-    
-    
+
     private lazy var footer1 = UIStackView(
         arrangedSubviews: [lbldontHaveAnAccount,btnSignup],
         axis: .horizontal,
         alignment: .fill,
         distribution: .fill
-        
-       
     )
-    
-   
-    
 
     // MARK: - MainStack
-    
-    
+ 
     private lazy var mainStack = UIStackView(
         arrangedSubviews: [headerStack,bodyStack,btnLogin],
         axis: .vertical,
         spacing: UIConstant.Default.spacing
     )
-    
-    
-    
-    // MARK: - Variables
-    
-    
-    
-    
+
     // MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,28 +113,17 @@ class LoginViewController: UIViewController {
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen
         self.present(nvc, animated: true,completion: nil)
-       
        self.view.endEditing(true)
-    
-}
+   }
 
-
-   
-    
     @objc private func signupButtonTap(){
         let vc = RegisterViewController()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true,completion: nil)
-       
        self.view.endEditing(true)
       
     }
-    
-    
-    
-    
-    
-    
+
 }
 
 
@@ -171,12 +135,10 @@ private extension LoginViewController {
     func configureViews() {
         
         navigationController?.navigationBar.isHidden = true
-        
         view.addSubview(backgroundImage)
         view.addSubview(bgImage)
         view.addSubview(mainStack)
         view.addSubview(footer1)
-        
         activateConstrains()
     }
     

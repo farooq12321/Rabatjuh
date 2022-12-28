@@ -65,6 +65,11 @@ struct AppString {
         static let userReviews = "".localized
         static let date = "".localized
         
+        
+        //MARK: Privacy
+        
+        static let privacyTitle = "Privacy View Controller".localized
+        
     
         
         

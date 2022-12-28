@@ -10,9 +10,9 @@ import UIKit
 class PrivacyViewController: UIViewController {
 
     private let label = UILabel.Primary(
-        text: "Privacy Controller",
-        font: UIFont.systemFont(ofSize: 30),
-        textColor: UIColor.red,
+        text: AppString.Label.privacyTitle,
+        font: .heading,
+        textColor: UIColor.buttonPrimaryBackground,
         textAlignment: .center
     )
     
