@@ -128,7 +128,7 @@ func activateConstrains() {
             }
             if indexPath.row == 1
             {
-                let vc = HomeViewController()
+                let vc = FavouriteViewController()
                 navigationController?.pushViewController(vc, animated: true)
             }
             

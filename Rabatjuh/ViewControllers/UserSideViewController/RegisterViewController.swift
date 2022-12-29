@@ -83,7 +83,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     private lazy var btnSignUp = UIButton.Primary(
         title: AppString.Button.signup,
         target: self,
-        action: #selector(loginButtonTap)
+        action: #selector(SignUpTap)
     )
     
     private lazy var lblAlready = UILabel.Secondary(
@@ -147,6 +147,116 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     // MARK: - Actions
     
+    
+    //MARK: SignUp
+    
+    @objc
+    func SignUpTap(_ sender: Any)
+    {
+        if txtName.text?.isEmpty == true && txtEmail.text?.isEmpty == true && txtSchool.text?.isEmpty == true && txtPassword.text?.isEmpty == true
+        {
+           
+           let alert = UIAlertController(title: "Alert!", message: "Please Fill All Field", preferredStyle: .alert)
+                                   
+                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                       action in
+                                      
+                                       
+                                   }))
+                                    
+                                   present (alert , animated: true)
+ 
+        }
+        
+            else if txtName.text?.isEmpty == true
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Please Fill Name Field", preferredStyle: .alert)
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                        
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+            }
+            
+            
+            else if txtEmail.text?.isEmpty == true
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Please Fill Email Field", preferredStyle: .alert)
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+            }
+            
+            else if txtSchool.text?.isEmpty == true
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Please Fill School Field", preferredStyle: .alert)
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+            }
+            
+            else if txtPassword.text?.isEmpty == true
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Please Fill Password Field", preferredStyle: .alert)
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+            }
+   
+            else if ((txtEmail.text?.isValidEmail()) == false)
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Email is not Correct", preferredStyle: .alert)
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+                
+            }
+            else if ((txtPassword.text?.isPasswordFormatted()) == false)
+            {
+                let alert = UIAlertController(title: "Alert!", message: "Password should be 8 characters!! 1 upperCase,1 digit and LowerCase", preferredStyle: .alert)
+                
+                                        
+                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
+                                            action in
+                                            
+                                        }))
+                                         
+                                        present (alert , animated: true)
+                
+            }
+            
+        
+        else
+        {
+            let vc = LoginViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            self.view.endEditing(true)
+        }
+    }
+    
+  
+    //MARK: - LogIn
+    
     @objc
     func loginButtonTap(_ sender: Any) {
      
@@ -156,6 +266,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         self.view.endEditing(true)
       
     }
+    
+    //MARK: - ImageBrowse
     
     @objc
     func BrowseButtonType(_ sender: Any)
@@ -286,6 +398,7 @@ private extension RegisterViewController {
         }
     }
 }
+
 
 
 

@@ -22,7 +22,7 @@ class PrivacyViewController: UIViewController {
        
         setup()
         
-        navigationController?.navigationBar.tintColor = .black
+//        navigationController?.navigationBar.tintColor = .black
        
 
       
@@ -31,6 +31,15 @@ class PrivacyViewController: UIViewController {
     
     func setup(){
         view.addSubview(label)
+        activateConstraint()
+        
+//        label.snp.makeConstraints{ (make) in
+//            make.centerX.centerY.equalToSuperview()
+//
+//        }
+    }
+    
+    func activateConstraint(){
         label.snp.makeConstraints{ (make) in
             make.centerX.centerY.equalToSuperview()
             

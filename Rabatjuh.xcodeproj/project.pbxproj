@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181A87AC294368AB005686B7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */; };
 		1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839B7C829558E49006D334C /* PrivacyViewController.swift */; };
+		183A1DD2295D5A86002ABCCB /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */; };
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
 		1840C23929362D570045999D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C23829362D570045999D /* RegisterViewController.swift */; };
 		1840C23E29363A4E0045999D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.debug.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.debug.xcconfig"; sourceTree = "<group>"; };
 		181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		1839B7C829558E49006D334C /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1840C23829362D570045999D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */,
 				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
 				1839B7C829558E49006D334C /* PrivacyViewController.swift */,
+				183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */,
 			);
 			path = UserSideViewController;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				E2B4D08E293392490024345B /* UserDefaults.swift in Sources */,
 				18B80137293DC1FE00EB18A7 /* RestaurantTableViewCell.swift in Sources */,
 				185AE9D5293A07B700B745A9 /* MenuCollectionViewCell.swift in Sources */,
+				183A1DD2295D5A86002ABCCB /* FavouriteViewController.swift in Sources */,
 				1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */,
 				185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */,
 				18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */,

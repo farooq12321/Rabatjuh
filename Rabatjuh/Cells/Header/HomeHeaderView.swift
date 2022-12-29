@@ -132,7 +132,6 @@ private extension HeaderView {
         
         searchBar.delegate = self
 
-//        collectionview.reloadData()
         self.collectionview.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
       
   
