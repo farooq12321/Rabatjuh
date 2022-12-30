@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/apple/Documents/Swift-Boiler-Plate/Rabatjuh.xcodeproj">
+      location = "group:Rabatjuh.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Rabatjuh.xcodeproj">
    </FileRef>
 </Workspace>

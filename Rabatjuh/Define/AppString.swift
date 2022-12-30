@@ -26,6 +26,16 @@ struct AppString {
         static let regsiterSubTitle = "you are in good hands with us!".localized
         static let alreadyHaveAnAccount = "Already have an account?".localized
         
+        static let Alert = "Alert!".localized
+        static let checkAllField = "Please Fill All Field".localized
+        static let emptyName = "Please Fill Name Field".localized
+        static let emptyEmail = "Please Fill Email Field".localized
+        static let emptySchool = "Please Fill School Field".localized
+        static let emptyPassword = "Please Fill Password Field".localized
+        static let checkEmailMessage = "Email is not Correct".localized
+        static let checkPasswordMessage = "Password should be 8 characters!! 1 upperCase,1 digit and LowerCase".localized
+        static let txtOk = "Ok".localized
+        
         // MARK: Home
         //Cell
         static let restaurantName = "".localized
@@ -196,6 +206,7 @@ struct AppString {
         static let menuImage = "MenuImage".localized
         static let userImage = "UserImage".localized
         static let ProfileImage = "ProfileImage".localized
+        static let presonImage = "PersonImage"
         
         //MARK:- SideMenu
         static let logo = "logoImage".localized

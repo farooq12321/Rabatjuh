@@ -9,7 +9,6 @@ import UIKit
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
-    // Mark: - backGroundImage
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
         name: AppString.Image.backImage
@@ -35,7 +34,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     )
     
     private lazy var profileimage = UIImageView.UserImage(
-        name: AppString.Image.ProfileImage,
+        name:AppString.Image.presonImage,
         cornerRadius: UIConstant.image.profileimageCornerRadius,
         height:UIConstant.image.profileimageheight,
         width: UIConstant.image.profileimagewidth
@@ -108,6 +107,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         alignment: .fill,
         distribution: .fill
         
+        
        
     )
     
@@ -143,6 +143,19 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         dismiss(animated: true, completion: nil)
     }
     
+    func Validate(Alerttitle:String,Alertmessage:String,actionTitle:String)
+    {
+        let alert = UIAlertController(title: Alerttitle, message: Alertmessage, preferredStyle: .alert)
+                               
+                    alert.addAction(UIAlertAction(title: actionTitle, style: .cancel, handler: {
+                                   action in
+                                  
+                                   
+                               }))
+                                
+                               present (alert , animated: true)
+
+    }
    
     
     // MARK: - Actions
@@ -155,95 +168,32 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     {
         if txtName.text?.isEmpty == true && txtEmail.text?.isEmpty == true && txtSchool.text?.isEmpty == true && txtPassword.text?.isEmpty == true
         {
-           
-           let alert = UIAlertController(title: "Alert!", message: "Please Fill All Field", preferredStyle: .alert)
-                                   
-                        alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                       action in
-                                      
-                                       
-                                   }))
-                                    
-                                   present (alert , animated: true)
- 
+            Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkAllField, actionTitle: Alert.Title.ok)
         }
-        
-            else if txtName.text?.isEmpty == true
-            {
-                let alert = UIAlertController(title: "Alert!", message: "Please Fill Name Field", preferredStyle: .alert)
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                        
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
+         else if txtName.text?.isEmpty == true
+         {
+             Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyName, actionTitle: Alert.Title.ok)
             }
-            
-            
             else if txtEmail.text?.isEmpty == true
             {
-                let alert = UIAlertController(title: "Alert!", message: "Please Fill Email Field", preferredStyle: .alert)
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
+               Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyEmail, actionTitle: Alert.Title.ok)
             }
-            
             else if txtSchool.text?.isEmpty == true
             {
-                let alert = UIAlertController(title: "Alert!", message: "Please Fill School Field", preferredStyle: .alert)
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
-            }
-            
+                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptySchool, actionTitle: Alert.Title.ok)
+             }
             else if txtPassword.text?.isEmpty == true
             {
-                let alert = UIAlertController(title: "Alert!", message: "Please Fill Password Field", preferredStyle: .alert)
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
-            }
-   
+                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyPassword, actionTitle: Alert.Title.ok)
+             }
             else if ((txtEmail.text?.isValidEmail()) == false)
             {
-                let alert = UIAlertController(title: "Alert!", message: "Email is not Correct", preferredStyle: .alert)
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
-                
+                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkEmailMessage, actionTitle: Alert.Title.ok)
             }
             else if ((txtPassword.text?.isPasswordFormatted()) == false)
             {
-                let alert = UIAlertController(title: "Alert!", message: "Password should be 8 characters!! 1 upperCase,1 digit and LowerCase", preferredStyle: .alert)
-                
-                                        
-                             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: {
-                                            action in
-                                            
-                                        }))
-                                         
-                                        present (alert , animated: true)
-                
+                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkPasswordMessage, actionTitle: Alert.Title.ok)
             }
-            
         
         else
         {
@@ -272,17 +222,16 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     @objc
     func BrowseButtonType(_ sender: Any)
     {
-        
-        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
-               alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+         let alert = UIAlertController(title: Alert.Message.chooseImagetitle, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: Alert.Message.titleCamera, style: .default, handler: { _ in
                    self.openCamera()
                }))
-
-               alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+         
+        alert.addAction(UIAlertAction(title: Alert.Message.titleGallery, style: .default, handler: { _ in
                    self.openGallery()
                }))
 
-        alert.addAction(UIAlertAction.init(title: "Cancel",style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.init(title: Alert.Message.titleCancel,style: .cancel, handler: nil))
 
                self.present(alert, animated: true, completion: nil)
 
@@ -299,8 +248,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         }
         else
         {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert  = UIAlertController(title: Alert.Title.warning, message: Alert.Message.dontHaveCamera, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: Alert.Title.ok, style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -316,8 +265,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
        }
        else
        {
-           let alert  = UIAlertController(title: "Warning", message: "You don't have picture in gallery.", preferredStyle: .alert)
-           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert  = UIAlertController(title: Alert.Title.warning, message: Alert.Message.dontHavePicture, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.Title.ok, style: .default, handler: nil))
            self.present(alert, animated: true, completion: nil)
        }
    

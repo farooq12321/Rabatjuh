@@ -154,3 +154,11 @@ extension UILabel {
     
 }
 
+extension Alert{
+    static func alert(title:String,
+                      message:String)
+    {
+        
+    }
+}
+
