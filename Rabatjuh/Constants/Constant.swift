@@ -39,8 +39,9 @@ struct Alert {
         static let emptyEmail = "Please Fill Email Field".localized
         static let emptySchool = "Please Fill School Field".localized
         static let emptyPassword = "Please Fill Password Field".localized
-        static let checkEmailMessage = "Email is not Correct".localized
-        static let checkPasswordMessage = "Password should be 8 characters!! 1 upperCase,1 digit and LowerCase".localized
+        static let checkEmailMessage = "Email is not in Correct Format".localized
+        static let checkPasswordMessage = "8 characters!! 1 upperCase,1 digit and LowerCase".localized
+        static let addSuccesfully = "AddedSuccesfully".localized
         
         static let chooseImagetitle = "Choose Image".localized
         static let titleCamera = "Camera".localized

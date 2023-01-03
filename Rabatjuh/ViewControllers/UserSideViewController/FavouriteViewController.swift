@@ -21,15 +21,7 @@ class FavouriteViewController: UIViewController,UICollectionViewDataSource, UICo
     private lazy var collectionview = UICollectionView.collectionView(
        
     )
-    
-//    private let label = UILabel.primary(
-//        text:"heading",
-//        font:.systemFont(ofSize: 40),
-//        textColor: .red,
-//        backgroundColor: .red,
-//        textAlignment: .center
-//    )
-    
+
     // MARK: - Data
     var ResturantData = [
         Resturant(resturantImage: "restaurantImage", resturantName: "Golria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
@@ -123,19 +115,6 @@ private extension FavouriteViewController {
 // MARK: - Extension
 
  extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource{
-
-
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = HeaderView()
-//        headerView.backgroundColor = .white
-//        headerView.delegate = self
-//        return headerView
-//        }
-//    
-//    func tableView(_ tableView: UITableView,heightForHeaderInSection section: Int
-//    ) -> CGFloat{
-//        return 260
-//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        

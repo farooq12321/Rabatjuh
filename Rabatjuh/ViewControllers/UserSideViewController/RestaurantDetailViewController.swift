@@ -46,27 +46,10 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
 
             Setup()
             configureViews()
-            
-//            navigationController?.navigationBar.isHidden = true
-            
-//            
-//            self.navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "BackButtonImage") 
-//               self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "BackButtonImage")
-//            navigationItem.leftBarButtonItem?.tintColor = .red
-            
+
             self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "close")
             self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "close")
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-            
-//            navigationController?.navigationBar.barTintColor = UIColor.red
-//
-//            self.navigationController?.navigationBar.shadowImage = UIImage()
-//               self.navigationController?.navigationBar.isTranslucent = true
-//               self.navigationController?.view.backgroundColor = .clear
-            
-//            navigationItem.leftBarButtonItem?.tintColor = .red
-//            self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "BackButtonImage")
-//               self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "BackButtonImage")
             
             navigationItem.title = "Restaurant Detail"
             

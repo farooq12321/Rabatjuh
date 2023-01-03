@@ -26,6 +26,10 @@
 		185FD33B293761FC009D7274 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33A293761FC009D7274 /* CollectionView.swift */; };
 		185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33E29376B9F009D7274 /* ReviewsViewController.swift */; };
 		185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */; };
+		18768BF92962BF5700E63AAC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768BF82962BF5700E63AAC /* RegisterViewModel.swift */; };
+		18768C0A2962EF2800E63AAC /* userRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768C092962EF2800E63AAC /* userRegister.swift */; };
+		18768C0D2962EFB400E63AAC /* RegisterValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768C0C2962EFB400E63AAC /* RegisterValidation.swift */; };
+		18768C202963FE7300E63AAC /* RegisterVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768C1F2963FE7300E63AAC /* RegisterVCExtension.swift */; };
 		18B80137293DC1FE00EB18A7 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80136293DC1FE00EB18A7 /* RestaurantTableViewCell.swift */; };
 		18B80141293DD19D00EB18A7 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */; };
 		18FECEC829386C9C00857885 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECEC729386C9C00857885 /* HomeViewController.swift */; };
@@ -78,6 +82,10 @@
 		185FD33A293761FC009D7274 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		185FD33E29376B9F009D7274 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewsTableViewCell.swift; path = Rabatjuh/ViewControllers/ReviewsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		18768BF82962BF5700E63AAC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		18768C092962EF2800E63AAC /* userRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRegister.swift; sourceTree = "<group>"; };
+		18768C0C2962EFB400E63AAC /* RegisterValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterValidation.swift; sourceTree = "<group>"; };
+		18768C1F2963FE7300E63AAC /* RegisterVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVCExtension.swift; sourceTree = "<group>"; };
 		18B80136293DC1FE00EB18A7 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		18B80140293DD19D00EB18A7 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		18FECEC729386C9C00857885 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18768BF52962B96600E63AAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18768BF82962BF5700E63AAC /* RegisterViewModel.swift */,
+				18768C0C2962EFB400E63AAC /* RegisterValidation.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18768C1E2963FE3700E63AAC /* ViewControllerExtension */ = {
+			isa = PBXGroup;
+			children = (
+				18768C1F2963FE7300E63AAC /* RegisterVCExtension.swift */,
+			);
+			path = ViewControllerExtension;
+			sourceTree = "<group>";
+		};
 		18B80149293DE18B00EB18A7 /* UserSideViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +178,7 @@
 				18FECF0F2938C2F800857885 /* Reviews.swift */,
 				185AE9D7293A0B0C00B745A9 /* Restaurant.swift */,
 				184D23E0293F08A7000A8CDD /* SideMenu.swift */,
+				18768C092962EF2800E63AAC /* userRegister.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,8 +269,10 @@
 				E2B4D0A22933F4A90024345B /* NetworkManager */,
 				606AD9842935F55000131937 /* Components */,
 				E2B4D08B29338A160024345B /* ViewControllers */,
+				18768C1E2963FE3700E63AAC /* ViewControllerExtension */,
 				606AD9852935F55800131937 /* Cells */,
 				18FECF072938C2B900857885 /* Model */,
+				18768BF52962B96600E63AAC /* ViewModel */,
 			);
 			path = Rabatjuh;
 			sourceTree = "<group>";
@@ -478,6 +506,7 @@
 				185AE9E3293A201C00B745A9 /* ProductDetailHeaderView.swift in Sources */,
 				185AE9D22939E1E100B745A9 /* SearchBar.swift in Sources */,
 				E2B4D0972933B6720024345B /* View.swift in Sources */,
+				18768C202963FE7300E63AAC /* RegisterVCExtension.swift in Sources */,
 				1840C23929362D570045999D /* RegisterViewController.swift in Sources */,
 				18B80141293DD19D00EB18A7 /* SideMenuViewController.swift in Sources */,
 				18FECF132938C33100857885 /* ProductTableViewCell.swift in Sources */,
@@ -508,8 +537,11 @@
 				185AE9D8293A0B0C00B745A9 /* Restaurant.swift in Sources */,
 				E2B4D08E293392490024345B /* UserDefaults.swift in Sources */,
 				18B80137293DC1FE00EB18A7 /* RestaurantTableViewCell.swift in Sources */,
+				18768C0A2962EF2800E63AAC /* userRegister.swift in Sources */,
 				185AE9D5293A07B700B745A9 /* MenuCollectionViewCell.swift in Sources */,
 				183A1DD2295D5A86002ABCCB /* FavouriteViewController.swift in Sources */,
+				18768C0D2962EFB400E63AAC /* RegisterValidation.swift in Sources */,
+				18768BF92962BF5700E63AAC /* RegisterViewModel.swift in Sources */,
 				1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */,
 				185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */,
 				18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */,

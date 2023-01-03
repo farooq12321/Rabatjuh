@@ -53,7 +53,9 @@ class ReviewsViewController: UIViewController {
     
     
     var btnaddreview = UIButton.PreSecondary(backgroundColor: UIColor.buttonSecondaryBackground, cornerRadius: UIConstant.Button.btnsecondaryCornerRaidus,
-        imageName: AppString.Image.addreview
+        imageName: AppString.Image.addreview,
+        target: self,
+        action: #selector(addReview)
     )
     
     private lazy var Footerstack = UIStackView(arrangedSubviews: [userImage,txtReview,btnaddreview],
@@ -74,17 +76,31 @@ class ReviewsViewController: UIViewController {
         Setup()
         configureViews()
         
-       
+        reviewsTableVeiw.reloadData()
         
 
     }
 
- }
+ 
 
     
     // MARK: - Actions
-    
 
+@objc
+func addReview(_ sender: Any){
+    
+    guard let data = txtReview.text
+    else{
+        return
+    }
+ 
+    ReviewData.append(Review.init(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: data, Date: "12-12-2022"))
+    reviewsTableVeiw.reloadData()
+    txtReview.text = ""
+  
+}
+    
+}
 
 // MARK: - Extension
 
@@ -153,7 +169,7 @@ private extension ReviewsViewController {
             cell.lblReviews.text = ReviewData[indexPath.row].Reviews
         cell.lblDate.text =  ReviewData[indexPath.row].Date
             cell.selectionStyle = .none
-        
+     
         
             return cell
      }

@@ -8,6 +8,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    var registerviewmodel = RegisterViewModel()
 
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
@@ -82,7 +84,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     private lazy var btnSignUp = UIButton.Primary(
         title: AppString.Button.signup,
         target: self,
-        action: #selector(SignUpTap)
+        action: #selector(sign)
     )
     
     private lazy var lblAlready = UILabel.Secondary(
@@ -134,6 +136,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        
+        registerviewmodel.delegate = self
  
     }
 
@@ -143,66 +147,73 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         dismiss(animated: true, completion: nil)
     }
     
-    func Validate(Alerttitle:String,Alertmessage:String,actionTitle:String)
-    {
-        let alert = UIAlertController(title: Alerttitle, message: Alertmessage, preferredStyle: .alert)
-                               
-                    alert.addAction(UIAlertAction(title: actionTitle, style: .cancel, handler: {
-                                   action in
-                                  
-                                   
-                               }))
-                                
-                               present (alert , animated: true)
-
-    }
-   
     
     // MARK: - Actions
     
     
     //MARK: SignUp
     
+    
     @objc
-    func SignUpTap(_ sender: Any)
+    func sign(_ sender: Any)
     {
-        if txtName.text?.isEmpty == true && txtEmail.text?.isEmpty == true && txtSchool.text?.isEmpty == true && txtPassword.text?.isEmpty == true
-        {
-            Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkAllField, actionTitle: Alert.Title.ok)
-        }
-         else if txtName.text?.isEmpty == true
-         {
-             Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyName, actionTitle: Alert.Title.ok)
-            }
-            else if txtEmail.text?.isEmpty == true
-            {
-               Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyEmail, actionTitle: Alert.Title.ok)
-            }
-            else if txtSchool.text?.isEmpty == true
-            {
-                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptySchool, actionTitle: Alert.Title.ok)
-             }
-            else if txtPassword.text?.isEmpty == true
-            {
-                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.emptyPassword, actionTitle: Alert.Title.ok)
-             }
-            else if ((txtEmail.text?.isValidEmail()) == false)
-            {
-                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkEmailMessage, actionTitle: Alert.Title.ok)
-            }
-            else if ((txtPassword.text?.isPasswordFormatted()) == false)
-            {
-                Validate(Alerttitle: Alert.Message.alertTitle, Alertmessage: Alert.Message.checkPasswordMessage, actionTitle: Alert.Title.ok)
-            }
-        
-        else
-        {
-            let vc = LoginViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            self.view.endEditing(true)
-        }
+        let request = userRegister(userName: txtName.text, userEmail: txtEmail.text, userSchool: txtSchool.text, userPassword: txtPassword.text)
+        registerviewmodel.Users(userRequest: request)
     }
+    
+//    @objc
+//    func SignUpTap(_ sender: Any)
+//    {
+//
+//
+//
+//          if txtName.text?.isEmpty == true
+//            {
+//                 showToast(message: Alert.Message.emptyName, type: .warning)
+//                  return
+//            }
+//
+//            if txtEmail.text?.isEmpty == true
+//            {
+//
+//                showToast(message: Alert.Message.emptyEmail, type: .warning)
+//                return
+//            }
+//           if txtSchool.text?.isEmpty == true
+//            {
+//
+//                showToast(message: Alert.Message.emptySchool, type: .warning)
+//                return
+//             }
+//           if txtPassword.text?.isEmpty == true
+//            {
+//
+//                showToast(message: Alert.Message.emptyPassword, type: .warning)
+//                return
+//
+//             }
+//            if ((txtEmail.text?.isValidEmail()) == false)
+//            {
+//                showToast(message: Alert.Message.checkEmailMessage, type: .error)
+//                return
+//            }
+//            if ((txtPassword.text?.isPasswordFormatted()) == false)
+//            {
+//
+//                showToast(message: Alert.Message.checkPasswordMessage, type: .info)
+//                return
+//            }
+//
+//        else
+//        {
+//            let vc = LoginViewController()
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true, completion: nil)
+//            self.view.endEditing(true)
+//            showToast(message: Alert.Message.addSuccesfully, type: .success)
+//             return
+//        }
+//    }
     
   
     //MARK: - LogIn

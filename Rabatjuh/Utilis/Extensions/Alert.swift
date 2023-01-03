@@ -75,3 +75,9 @@ extension  UIViewController {
     
 }
 
+struct ValidationResult
+{
+    let success: Bool
+    let error : String?
+}
+
