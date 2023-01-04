@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
     var menuVC: SideMenuViewController!
 
     weak var delegate: HomeViewControllerDelegate?
-    
+
     // MARK: - Data
     var ResturantData = [
         Resturant(resturantImage: "restaurantImage", resturantName: "Gloria jeens Cofee's", resturantDistance: "25 km", resturantDiscription: "There are many situations when you want to create",discount:"25% OFF"),
@@ -63,7 +63,7 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
     
     
     //MARK: - Action
-    
+
     func didTapMenuButton() {
        
         if AppDelegate.menu_bool
@@ -78,9 +78,9 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
      }
     
     func swipeGesture(){
-        let MoveLeft = UISwipeGestureRecognizer(target: self, action: #selector(selectGesture))
-        MoveLeft.direction = UISwipeGestureRecognizer.Direction.right
-        self.view.addGestureRecognizer(MoveLeft)
+        let MoveRight = UISwipeGestureRecognizer(target: self, action: #selector(selectGesture))
+        MoveRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(MoveRight)
     }
     
     
@@ -247,12 +247,10 @@ private extension HomeViewController {
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-
+     
             let vc = RestaurantDetailViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-            
-        }
+
             
     }
  

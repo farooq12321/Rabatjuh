@@ -185,11 +185,11 @@ struct AppString {
         //
         
         // MARK: -  Home
-        static let heart = "heartImage".localized
+        static let heart = "heartImage"
         static let unslectHeart = "UnselectedHeart"
-        static let commet = "commentImage".localized
-        static let headerImage = "backGroundImage".localized
-        static let colorImage = "backGround".localized
+        static let commet = "commentImage"
+        static let headerImage = "backGroundImage"
+        static let colorImage = "backGround"
         static let btnMenu = "Menu".localized
         
         

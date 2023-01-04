@@ -84,7 +84,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     private lazy var btnSignUp = UIButton.Primary(
         title: AppString.Button.signup,
         target: self,
-        action: #selector(sign)
+        action: #selector(signUpButtonTap)
     )
     
     private lazy var lblAlready = UILabel.Secondary(
@@ -152,70 +152,14 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     
     //MARK: SignUp
-    
-    
+ 
     @objc
-    func sign(_ sender: Any)
+    func signUpButtonTap(_ sender: Any)
     {
         let request = userRegister(userName: txtName.text, userEmail: txtEmail.text, userSchool: txtSchool.text, userPassword: txtPassword.text)
         registerviewmodel.Users(userRequest: request)
     }
-    
-//    @objc
-//    func SignUpTap(_ sender: Any)
-//    {
-//
-//
-//
-//          if txtName.text?.isEmpty == true
-//            {
-//                 showToast(message: Alert.Message.emptyName, type: .warning)
-//                  return
-//            }
-//
-//            if txtEmail.text?.isEmpty == true
-//            {
-//
-//                showToast(message: Alert.Message.emptyEmail, type: .warning)
-//                return
-//            }
-//           if txtSchool.text?.isEmpty == true
-//            {
-//
-//                showToast(message: Alert.Message.emptySchool, type: .warning)
-//                return
-//             }
-//           if txtPassword.text?.isEmpty == true
-//            {
-//
-//                showToast(message: Alert.Message.emptyPassword, type: .warning)
-//                return
-//
-//             }
-//            if ((txtEmail.text?.isValidEmail()) == false)
-//            {
-//                showToast(message: Alert.Message.checkEmailMessage, type: .error)
-//                return
-//            }
-//            if ((txtPassword.text?.isPasswordFormatted()) == false)
-//            {
-//
-//                showToast(message: Alert.Message.checkPasswordMessage, type: .info)
-//                return
-//            }
-//
-//        else
-//        {
-//            let vc = LoginViewController()
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true, completion: nil)
-//            self.view.endEditing(true)
-//            showToast(message: Alert.Message.addSuccesfully, type: .success)
-//             return
-//        }
-//    }
-    
-  
+
     //MARK: - LogIn
     
     @objc
@@ -366,5 +310,28 @@ private extension RegisterViewController {
 
 
 // MARK: - Extension
+
+extension RegisterViewController : RegisterViewModelDelegate
+{
+    
+   
+    func didReceiveRegisterResponse(registerResponse: RegisterResponse?){
+        
+        
+        if (registerResponse?.errorMessage != nil)
+        {
+            showToast(message: (registerResponse?.errorMessage)!, type: .warning)
+        }
+        
+        else
+        {
+            let vc = LoginViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            showToast(message: Alert.Message.addSuccesfully, type: .success)
+            return
+        }
+    }
+}
 
 
