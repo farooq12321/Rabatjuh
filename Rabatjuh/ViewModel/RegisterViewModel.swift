@@ -31,3 +31,43 @@ struct RegisterViewModel
 
 
 }
+
+class SignupViewModel: NSObject {
+    private let user: userSigup
+    
+    
+    
+    public init(users: userSigup) {
+        self.user = users
+    }
+    
+    public var name: String {
+        return user.userName!
+    }
+    
+
+    
+    public var email: String {
+        return user.userEmail!
+    }
+    
+    public var school: String {
+        return user.userSchool!
+    }
+    
+    public var image: String {
+        return user.userImage!
+    }
+    
+    
+    public var password: String {
+        return user.userPassword!
+    }
+    public var confirmpassword: String {
+        return user.userConfirmPassword!
+    }
+    
+    
+    
+}
+

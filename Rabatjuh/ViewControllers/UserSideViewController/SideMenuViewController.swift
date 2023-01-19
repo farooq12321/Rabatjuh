@@ -121,6 +121,7 @@ func activateConstrains() {
             
             if indexPath.row == 0
             {
+            
             }
             if indexPath.row == 1
             {

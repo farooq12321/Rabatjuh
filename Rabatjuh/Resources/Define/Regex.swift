@@ -14,7 +14,8 @@ struct Regex {
     static var phone = "^((\\+)|(00))[0-9]{11,14}$"
     
       // one uppercase, one digit, one lower case, 8 characters
-  static var password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8}$"
+//  static var password = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8}$"
+    static var password = "^(?=.*[a-zA-Z0-9]).{6}$"
     
   static var captital = "(?s)[^A-Z]*[A-Z].*"
   static var special = "(?s)[^$@$#!%*?&]*[$@$#!%*?&].*"

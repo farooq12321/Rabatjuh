@@ -16,3 +16,11 @@ struct Resturants{
     
     
 }
+
+
+
+//    init(roleid:Int,Email:String,Password:String) {
+//       role = 2
+//       email = Email
+//       password = Password
+//    }

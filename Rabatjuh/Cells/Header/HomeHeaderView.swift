@@ -9,7 +9,11 @@ import UIKit
 
 protocol HeaderViewDelegate {
     func didTapMenuButton()
+    func SearchText()
 }
+
+
+
 
 class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UITextFieldDelegate{
 
@@ -18,7 +22,7 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
     
 
     //MARK: - data
-    var Data  = ["All", "Bistro", "Dinner", "Buffet","Cafe", "FastFood"]
+    var Data  = ["All", "Bistro", "Dinner", "Buffet","Cafe", "FastFood","All", "Bistro", "Dinner", "Buffet","Cafe", "FastFood"]
 
     //MARK: - Header
     
@@ -73,6 +77,15 @@ class HeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate,U
         placeholder: AppString.Textfield.search
     )
 
+
+
+    @objc func textFieldDidChange(textField: UITextField) {
+
+        delegate?.SearchText()
+//        print(textField.text!)
+    }
+    
+    
     private lazy var headerStack = UIStackView(
         arrangedSubviews: [lblTitle,btnMenu],
         axis: .horizontal,
@@ -135,6 +148,8 @@ private extension HeaderView {
         self.collectionview.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
       
   
+        
+        searchBar.addTarget(self, action: #selector(textFieldDidChange),for: UIControl.Event.editingChanged)
       }
 
   }

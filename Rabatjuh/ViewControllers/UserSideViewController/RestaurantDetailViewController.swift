@@ -54,8 +54,15 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
             navigationItem.title = "Restaurant Detail"
             
           
-                
+            
         }
+    
+    @objc
+    func OnTabeMoreButton(){
+        let vc = ProductDetailCollectionViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    
+    }
     }
 
         // MARK: - Actions
@@ -126,6 +133,7 @@ class RestaurantDetailViewController: UIViewController, ProductDetailHeaderViewD
             let cell = productTableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as! ProductDetailTableViewCell
             cell.productCollectionView.tag  = indexPath.section
             cell.lblHeader.text = ProductData[indexPath.row].sectionType
+            cell.viewMore.addTarget(self, action: #selector(OnTabeMoreButton), for: .touchUpInside)
             return cell
         }
 

@@ -7,8 +7,18 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class LoginViewController: UIViewController {
+    
+    
+    var userViewModel = UserViewModel()
+    
+    
+    var signinViewModel = SignInViewModel()
+    
+    
+    private var serviceViewModel: [ServiceViewModel] = []
 
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
@@ -36,11 +46,11 @@ class LoginViewController: UIViewController {
     // MARK: - Body
     
     //Form
-    private lazy var txtEmail = UITextField.Primary(
+    var txtEmail = UITextField.Primary(
        placeholder: AppString.Textfield.email
     )
     
-    private lazy var txtPassword = UITextField.Primary(
+    var txtPassword = UITextField.Primary(
         placeholder: AppString.Textfield.password,
         isPassword: true
     )
@@ -109,12 +119,34 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginButtonTap(_ sender: Any) {
-        let vc = HomeViewController()
-        let nvc = UINavigationController(rootViewController: vc)
-        nvc.modalPresentationStyle = .fullScreen
-        self.present(nvc, animated: true,completion: nil)
-       self.view.endEditing(true)
-   }
+        
+        
+//
+        userViewModel.signinCredentials(email: txtEmail.text!, password: txtPassword.text!)
+
+                switch userViewModel.credentialsInput() {
+
+                case .Success:
+                    login()
+                case .Failed:
+                    print(userViewModel.errorMessage.value)
+                    
+                    return
+                }
+            }
+
+
+
+
+        func login() {
+            userViewModel.login()
+            print(userViewModel.name)
+            
+
+        }
+        
+        
+
 
     @objc private func signupButtonTap(){
         let vc = RegisterViewController()
@@ -161,18 +193,6 @@ private extension LoginViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(mainStack.snp.bottom)
         }
-    }
-}
-
-
-
-// MARK: - Extension
-
-
-// Setup ApiCalls
-private extension LoginViewController {
-    func LoginApi() {
-        
     }
 }
 

@@ -93,8 +93,27 @@ func addReview(_ sender: Any){
     else{
         return
     }
+    
+    let date = Date()
+    let dateFormatter = DateFormatter()
+     
+    dateFormatter.dateFormat = "dd-MM-yyyy"
+     
+    let result = dateFormatter.string(from: date)
+    print("result\(result)")
  
-    ReviewData.append(Review.init(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: data, Date: "12-12-2022"))
+    let today = Date()
+    // 2. Pick the date components
+    let hours   = (Calendar.current.component(.hour, from: today))
+    let minutes = (Calendar.current.component(.minute, from: today))
+    let seconds = (Calendar.current.component(.second, from: today))
+    // 3. Show the time
+    print("today is \(hours):\(minutes):\(seconds)")
+    print("today date is\(today)")
+    
+    ReviewData.append(Review.init(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: data, Date: result))//("\(today)\(hours):\(minutes):\(seconds)")))
+    
+//    ReviewData.append(Review.init(userImage: "userImage", userName: "Sheraz Ahmed", Reviews: data, Date: "\(result):\(hours):\(minutes):\(seconds)"))//("\(today)\(hours):\(minutes):\(seconds)")))
     reviewsTableVeiw.reloadData()
     txtReview.text = ""
   

@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     var registerviewmodel = RegisterViewModel()
+    
+    private var signupViewModel: [SignupViewModel] = []
 
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
@@ -35,7 +38,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         axis: .vertical
     )
     
-    private lazy var profileimage = UIImageView.UserImage(
+   var profileimage = UIImageView.UserImage(
         name:AppString.Image.presonImage,
         cornerRadius: UIConstant.image.profileimageCornerRadius,
         height:UIConstant.image.profileimageheight,
@@ -52,25 +55,30 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     // MARK: - Body
 
     //Form
-    private lazy var txtName = UITextField.Primary(
+   var txtName = UITextField.Primary(
         placeholder: AppString.Textfield.registerName
     )
     
-    private lazy var txtEmail = UITextField.Primary(
+   var txtEmail = UITextField.Primary(
         placeholder: AppString.Textfield.registeremail
     )
     
-    private lazy var txtSchool = UITextField.Primary(
+   var txtSchool = UITextField.Primary(
         placeholder: AppString.Textfield.registerSchool
     )
     
-    private lazy var txtPassword = UITextField.Primary(
+   var txtPassword = UITextField.Primary(
         placeholder: AppString.Textfield.registerpassword,
+        isPassword: true
+    )
+    
+   var txtConfirmPassword = UITextField.Primary(
+        placeholder: AppString.Textfield.registerConfimpassword,
         isPassword: true
     )
 
     private lazy var bodyStack = UIStackView(
-        arrangedSubviews: [txtName,txtEmail,txtSchool,txtPassword],
+        arrangedSubviews: [txtEmail,txtName,txtSchool,txtPassword,txtConfirmPassword],
         axis: .vertical,
         spacing: UIConstant.TextField.spacing
     )
@@ -156,8 +164,9 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     @objc
     func signUpButtonTap(_ sender: Any)
     {
-        let request = userRegister(userName: txtName.text, userEmail: txtEmail.text, userSchool: txtSchool.text, userPassword: txtPassword.text)
+        let request = userRegister(userName: txtName.text, userEmail: txtEmail.text, userSchool: txtSchool.text, userPassword: txtPassword.text,userConfirmPassword: txtConfirmPassword.text)
         registerviewmodel.Users(userRequest: request)
+        
     }
 
     //MARK: - LogIn
@@ -299,37 +308,6 @@ private extension RegisterViewController {
         footer1.snp.makeConstraints{ (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(mainStack.snp.bottom)
-        }
-    }
-}
-
-
-
-
-
-
-
-// MARK: - Extension
-
-extension RegisterViewController : RegisterViewModelDelegate
-{
-    
-   
-    func didReceiveRegisterResponse(registerResponse: RegisterResponse?){
-        
-        
-        if (registerResponse?.errorMessage != nil)
-        {
-            showToast(message: (registerResponse?.errorMessage)!, type: .warning)
-        }
-        
-        else
-        {
-            let vc = LoginViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
-            showToast(message: Alert.Message.addSuccesfully, type: .success)
-            return
         }
     }
 }

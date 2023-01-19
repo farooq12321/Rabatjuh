@@ -59,6 +59,8 @@ class NetworkManager {
     //MARK: Post Request
     func PostRequest(ApiURl: String, parameters: Parameters, completion:@escaping (JSON) -> ())  {
         
+   
+        
         DispatchQueue.main.async {
             
             

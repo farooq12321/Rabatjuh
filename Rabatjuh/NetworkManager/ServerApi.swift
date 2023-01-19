@@ -12,7 +12,7 @@ struct ServerApi {
     //MARK: Base URL
     
     private static let ApiScheme = "https://"
-    private static let ApiHost = "showroomdepot.fr/app"
+    private static let ApiHost = "www.rabatjuh.online"
     
     private static let BaseURL = ApiScheme + ApiHost
     

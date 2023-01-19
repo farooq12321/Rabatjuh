@@ -9,11 +9,52 @@ import UIKit
 
 protocol HomeViewControllerDelegate: AnyObject{
     func didTapSideMenuButton() 
-   
-    
+  
 }
 
 class HomeViewController: UIViewController, HeaderViewDelegate {
+    
+    var AllList = [Resturant]()
+    var filterSearchList = [Resturant]()
+    var searcing = false
+    var header:HeaderView = HeaderView()
+    
+    func SearchText() {
+        print("abc")
+        self.filterSearchList.removeAll()
+        let searchData: Int = header.searchBar.text!.count
+        print(header.searchBar.text!)
+        if searchData != 0
+        {
+            print("search")
+            searcing = true
+            var i: Int = 0
+            for menu in AllList {
+//            if let Menusearch = header.textfiled.text
+                
+                if let Menusearch = header.searchBar.text
+                
+                
+                {
+                    let range = menu.resturantName.lowercased().range(of: Menusearch, options: .caseInsensitive, range: nil, locale: nil)
+                    if range != nil
+                    {
+                        self.filterSearchList.append(menu)
+                    }
+                }
+                i=i+1
+            }
+        }
+        else
+        {
+            filterSearchList = AllList
+            searcing = false
+        }
+        
+        resturantTableVeiw.reloadData()
+    }
+    
+    
     
     var menuVC: SideMenuViewController!
 
@@ -138,6 +179,8 @@ class HomeViewController: UIViewController, HeaderViewDelegate {
     }
     
     
+    // Tap Gesture Working
+
     func TapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.hidMenu(_:)))
         menuVC.veiw.addGestureRecognizer(tap)

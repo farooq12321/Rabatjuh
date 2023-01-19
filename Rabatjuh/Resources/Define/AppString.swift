@@ -101,6 +101,9 @@ struct AppString {
         static let registerSchool = "School Name".localized
         
         static let registerpassword = "Password".localized
+        static let registerConfimpassword = "ConfirmPassword".localized
+        
+        static let userRegister = "user registered successfully".localized
         
        
         
@@ -149,6 +152,8 @@ struct AppString {
          static let menu = ""
         static let btnHeart = "heartImage"
         static let btnComment = "commentImage"
+        
+        static let viewMore = "ViewMore".localized
         
         
         // MARK: EditScreen

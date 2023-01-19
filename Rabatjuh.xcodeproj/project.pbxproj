@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		181A87AC294368AB005686B7 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */; };
+		1822C2322979343F00602FC6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2312979343F00602FC6 /* Observable.swift */; };
+		1822C2352979423000602FC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2342979423000602FC6 /* User.swift */; };
+		1822C2382979427000602FC6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2372979427000602FC6 /* UserViewModel.swift */; };
 		1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839B7C829558E49006D334C /* PrivacyViewController.swift */; };
 		183A1DD2295D5A86002ABCCB /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */; };
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
 		1840C23929362D570045999D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C23829362D570045999D /* RegisterViewController.swift */; };
 		1840C23E29363A4E0045999D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2A58BF329335E9B009268C8 /* Assets.xcassets */; };
+		18439216296FD5EA00A49C38 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18439215296FD5EA00A49C38 /* SignIn.swift */; };
 		184D23DE293F055B000A8CDD /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */; };
 		184D23E1293F08A7000A8CDD /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23E0293F08A7000A8CDD /* SideMenu.swift */; };
 		184D23E4293F1194000A8CDD /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D23E3293F1194000A8CDD /* SideMenuHeaderView.swift */; };
@@ -26,6 +30,10 @@
 		185FD33B293761FC009D7274 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33A293761FC009D7274 /* CollectionView.swift */; };
 		185FD33F29376B9F009D7274 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD33E29376B9F009D7274 /* ReviewsViewController.swift */; };
 		185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */; };
+		1861FB24297523F2006A8D0D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861FB23297523F2006A8D0D /* LoginViewModel.swift */; };
+		1861FB2729752411006A8D0D /* LoginValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861FB2629752411006A8D0D /* LoginValidation.swift */; };
+		1861FB2A29757458006A8D0D /* LoginVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1861FB2929757458006A8D0D /* LoginVCExtension.swift */; };
+		1870AEC929683B6100E27119 /* ProductDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870AEC829683B6100E27119 /* ProductDetailCollectionViewController.swift */; };
 		18768BF92962BF5700E63AAC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768BF82962BF5700E63AAC /* RegisterViewModel.swift */; };
 		18768C0A2962EF2800E63AAC /* userRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768C092962EF2800E63AAC /* userRegister.swift */; };
 		18768C0D2962EFB400E63AAC /* RegisterValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18768C0C2962EFB400E63AAC /* RegisterValidation.swift */; };
@@ -65,10 +73,14 @@
 /* Begin PBXFileReference section */
 		0C7D692390A19DFECB922B25 /* Pods-Rabatjuh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabatjuh.debug.xcconfig"; path = "Target Support Files/Pods-Rabatjuh/Pods-Rabatjuh.debug.xcconfig"; sourceTree = "<group>"; };
 		181A87AB294368AA005686B7 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		1822C2312979343F00602FC6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		1822C2342979423000602FC6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1822C2372979427000602FC6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		1839B7C829558E49006D334C /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1840C23829362D570045999D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		18439215296FD5EA00A49C38 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		184D23DD293F055B000A8CDD /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		184D23E0293F08A7000A8CDD /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		184D23E3293F1194000A8CDD /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
@@ -82,6 +94,10 @@
 		185FD33A293761FC009D7274 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		185FD33E29376B9F009D7274 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		185FD34129376DC7009D7274 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReviewsTableViewCell.swift; path = Rabatjuh/ViewControllers/ReviewsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		1861FB23297523F2006A8D0D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1861FB2629752411006A8D0D /* LoginValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidation.swift; sourceTree = "<group>"; };
+		1861FB2929757458006A8D0D /* LoginVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVCExtension.swift; sourceTree = "<group>"; };
+		1870AEC829683B6100E27119 /* ProductDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		18768BF82962BF5700E63AAC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18768C092962EF2800E63AAC /* userRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRegister.swift; sourceTree = "<group>"; };
 		18768C0C2962EFB400E63AAC /* RegisterValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterValidation.swift; sourceTree = "<group>"; };
@@ -142,6 +158,9 @@
 			children = (
 				18768BF82962BF5700E63AAC /* RegisterViewModel.swift */,
 				18768C0C2962EFB400E63AAC /* RegisterValidation.swift */,
+				1861FB23297523F2006A8D0D /* LoginViewModel.swift */,
+				1861FB2629752411006A8D0D /* LoginValidation.swift */,
+				1822C2372979427000602FC6 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -150,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				18768C1F2963FE7300E63AAC /* RegisterVCExtension.swift */,
+				1861FB2929757458006A8D0D /* LoginVCExtension.swift */,
 			);
 			path = ViewControllerExtension;
 			sourceTree = "<group>";
@@ -166,6 +186,7 @@
 				185FD33E29376B9F009D7274 /* ReviewsViewController.swift */,
 				1839B7C829558E49006D334C /* PrivacyViewController.swift */,
 				183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */,
+				1870AEC829683B6100E27119 /* ProductDetailCollectionViewController.swift */,
 			);
 			path = UserSideViewController;
 			sourceTree = "<group>";
@@ -179,6 +200,9 @@
 				185AE9D7293A0B0C00B745A9 /* Restaurant.swift */,
 				184D23E0293F08A7000A8CDD /* SideMenu.swift */,
 				18768C092962EF2800E63AAC /* userRegister.swift */,
+				18439215296FD5EA00A49C38 /* SignIn.swift */,
+				1822C2312979343F00602FC6 /* Observable.swift */,
+				1822C2342979423000602FC6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,7 +287,6 @@
 			children = (
 				E2B4D07C293364970024345B /* Application */,
 				E2A58BFE29335FFC009268C8 /* Resources */,
-				E2B4D07D293367C40024345B /* Define */,
 				E2B4D0992933D1260024345B /* Constants */,
 				E2B4D0982933CFD40024345B /* Utilis */,
 				E2B4D0A22933F4A90024345B /* NetworkManager */,
@@ -280,6 +303,7 @@
 		E2A58BFE29335FFC009268C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2B4D07D293367C40024345B /* Define */,
 				E2A58BF329335E9B009268C8 /* Assets.xcassets */,
 				E2A58BF829335E9B009268C8 /* Info.plist */,
 				E2B4D07A293363C80024345B /* Localizable.strings */,
@@ -510,6 +534,7 @@
 				1840C23929362D570045999D /* RegisterViewController.swift in Sources */,
 				18B80141293DD19D00EB18A7 /* SideMenuViewController.swift in Sources */,
 				18FECF132938C33100857885 /* ProductTableViewCell.swift in Sources */,
+				1861FB24297523F2006A8D0D /* LoginViewModel.swift in Sources */,
 				184D23DE293F055B000A8CDD /* SideMenuTableViewCell.swift in Sources */,
 				E2A58BEF29335E99009268C8 /* LoginViewController.swift in Sources */,
 				E2B4D0B92935B2960024345B /* Alert.swift in Sources */,
@@ -521,14 +546,21 @@
 				185FD329293736A6009D7274 /* TableView.swift in Sources */,
 				18FECF102938C2F800857885 /* Reviews.swift in Sources */,
 				E2B4D07F293368010024345B /* Key.swift in Sources */,
+				1822C2352979423000602FC6 /* User.swift in Sources */,
 				E2B4D09B2933D13C0024345B /* UIConstant.swift in Sources */,
 				E2B4D083293368220024345B /* Font.swift in Sources */,
 				184D23E1293F08A7000A8CDD /* SideMenu.swift in Sources */,
+				1861FB2A29757458006A8D0D /* LoginVCExtension.swift in Sources */,
+				1822C2382979427000602FC6 /* UserViewModel.swift in Sources */,
+				1861FB2729752411006A8D0D /* LoginValidation.swift in Sources */,
+				1822C2322979343F00602FC6 /* Observable.swift in Sources */,
 				1840C1EC293611A60045999D /* Image.swift in Sources */,
 				E2A58BEB29335E99009268C8 /* AppDelegate.swift in Sources */,
 				E2B4D0B72935B0C90024345B /* Constant.swift in Sources */,
+				1870AEC929683B6100E27119 /* ProductDetailCollectionViewController.swift in Sources */,
 				181A87AC294368AB005686B7 /* RestaurantDetailViewController.swift in Sources */,
 				E2B4D0932933B0B40024345B /* Textfield.swift in Sources */,
+				18439216296FD5EA00A49C38 /* SignIn.swift in Sources */,
 				E2B4D0852933683D0024345B /* String.swift in Sources */,
 				E2B4D0912933A39C0024345B /* AppString.swift in Sources */,
 				E2B4D0A52933F5770024345B /* ServerApi.swift in Sources */,

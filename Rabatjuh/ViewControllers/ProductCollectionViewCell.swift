@@ -93,6 +93,7 @@ private extension ProductCollectionViewCell {
         mainStack.snp.makeConstraints{ (make) in
         make.left.equalTo(UIConstant.Default.leftmargin)
         make.right.equalTo(UIConstant.Default.rightmargin)
+            make.top.equalTo(contentView).offset(3)
         }
         
         lblPrice.snp.makeConstraints{ (make) in

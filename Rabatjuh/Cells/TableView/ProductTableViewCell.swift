@@ -22,6 +22,18 @@ class ProductDetailTableViewCell: UITableViewCell {
     var lblHeader = UILabel.Primary(
         font:UIFont.heading
     )
+    var viewMore = UIButton.secondary(
+        title: AppString.Button.viewMore,
+        width: UIConstant.Button.width
+
+    )
+    
+    lazy var headerStack  = UIStackView(
+        arrangedSubviews: [lblHeader,viewMore],
+        axis: .horizontal,
+        spacing: UIConstant.TextField.spacing,
+        distribution: .fillEqually
+    )
     
 
      let productCollectionView: UICollectionView = {
@@ -59,6 +71,7 @@ class ProductDetailTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
+
     
     func setupView(){
         productCollectionView.dataSource = self
@@ -72,9 +85,9 @@ class ProductDetailTableViewCell: UITableViewCell {
             make.edges.equalTo(self)
         }
         
-        view.addSubview(lblHeader)
-        lblHeader.snp.makeConstraints{ (make) in
-            make.left.equalTo(UIConstant.Default.leftmargin)
+        view.addSubview(headerStack)
+        headerStack.snp.makeConstraints{ (make) in
+            make.left.right.equalTo(UIConstant.Default.leftmargin)
             make.top.equalTo(view.layoutMarginsGuide)
         }
         
