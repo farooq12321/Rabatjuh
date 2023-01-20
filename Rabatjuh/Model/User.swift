@@ -37,3 +37,15 @@ struct LoginCredentials {
     var password: String = ""
 }
 
+struct RegisterCredentials {
+    var role: String = "1"
+    var email: String = ""
+    var full_name: String = ""
+    var school_name: String = ""
+    var userImage: UIImage?
+    var password: String = ""
+    var confirm_password: String = ""
+}
+
+
+

@@ -11,6 +11,8 @@
 		1822C2322979343F00602FC6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2312979343F00602FC6 /* Observable.swift */; };
 		1822C2352979423000602FC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2342979423000602FC6 /* User.swift */; };
 		1822C2382979427000602FC6 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822C2372979427000602FC6 /* UserViewModel.swift */; };
+		18348E69297A66CC0044980C /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18348E68297A66CC0044980C /* Status.swift */; };
+		18348E72297A6AE70044980C /* UserSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18348E71297A6AE70044980C /* UserSignupViewModel.swift */; };
 		1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1839B7C829558E49006D334C /* PrivacyViewController.swift */; };
 		183A1DD2295D5A86002ABCCB /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */; };
 		1840C1EC293611A60045999D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C1EB293611A60045999D /* Image.swift */; };
@@ -76,6 +78,8 @@
 		1822C2312979343F00602FC6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		1822C2342979423000602FC6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1822C2372979427000602FC6 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		18348E68297A66CC0044980C /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		18348E71297A6AE70044980C /* UserSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignupViewModel.swift; sourceTree = "<group>"; };
 		1839B7C829558E49006D334C /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		183A1DD1295D5A85002ABCCB /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		1840C1EB293611A60045999D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -156,10 +160,6 @@
 		18768BF52962B96600E63AAC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18768BF82962BF5700E63AAC /* RegisterViewModel.swift */,
-				18768C0C2962EFB400E63AAC /* RegisterValidation.swift */,
-				1861FB23297523F2006A8D0D /* LoginViewModel.swift */,
-				1861FB2629752411006A8D0D /* LoginValidation.swift */,
 				1822C2372979427000602FC6 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -170,6 +170,13 @@
 			children = (
 				18768C1F2963FE7300E63AAC /* RegisterVCExtension.swift */,
 				1861FB2929757458006A8D0D /* LoginVCExtension.swift */,
+				18768C092962EF2800E63AAC /* userRegister.swift */,
+				18439215296FD5EA00A49C38 /* SignIn.swift */,
+				18768BF82962BF5700E63AAC /* RegisterViewModel.swift */,
+				18768C0C2962EFB400E63AAC /* RegisterValidation.swift */,
+				1861FB23297523F2006A8D0D /* LoginViewModel.swift */,
+				1861FB2629752411006A8D0D /* LoginValidation.swift */,
+				18348E71297A6AE70044980C /* UserSignupViewModel.swift */,
 			);
 			path = ViewControllerExtension;
 			sourceTree = "<group>";
@@ -199,9 +206,6 @@
 				18FECF0F2938C2F800857885 /* Reviews.swift */,
 				185AE9D7293A0B0C00B745A9 /* Restaurant.swift */,
 				184D23E0293F08A7000A8CDD /* SideMenu.swift */,
-				18768C092962EF2800E63AAC /* userRegister.swift */,
-				18439215296FD5EA00A49C38 /* SignIn.swift */,
-				1822C2312979343F00602FC6 /* Observable.swift */,
 				1822C2342979423000602FC6 /* User.swift */,
 			);
 			path = Model;
@@ -370,6 +374,8 @@
 		E2B4D0982933CFD40024345B /* Utilis */ = {
 			isa = PBXGroup;
 			children = (
+				1822C2312979343F00602FC6 /* Observable.swift */,
+				18348E68297A66CC0044980C /* Status.swift */,
 				E2B4D08C293391E80024345B /* UserDefaults */,
 				E2B4D088293388FC0024345B /* Extensions */,
 			);
@@ -541,6 +547,7 @@
 				E2B4D0AF2933F79C0024345B /* NetworkManager.swift in Sources */,
 				18FECEC829386C9C00857885 /* HomeViewController.swift in Sources */,
 				185FD33529375F76009D7274 /* ProductCollectionViewCell.swift in Sources */,
+				18348E69297A66CC0044980C /* Status.swift in Sources */,
 				185FD3212937198B009D7274 /* SplashViewController.swift in Sources */,
 				18FECF092938C2DA00857885 /* Product.swift in Sources */,
 				185FD329293736A6009D7274 /* TableView.swift in Sources */,
@@ -575,6 +582,7 @@
 				18768C0D2962EFB400E63AAC /* RegisterValidation.swift in Sources */,
 				18768BF92962BF5700E63AAC /* RegisterViewModel.swift in Sources */,
 				1839B7C929558E49006D334C /* PrivacyViewController.swift in Sources */,
+				18348E72297A6AE70044980C /* UserSignupViewModel.swift in Sources */,
 				185FD34229376DC7009D7274 /* ReviewsTableViewCell.swift in Sources */,
 				18FECF0D2938C2EC00857885 /* Restaurants.swift in Sources */,
 				18FECF192938DCE800857885 /* HomeHeaderView.swift in Sources */,

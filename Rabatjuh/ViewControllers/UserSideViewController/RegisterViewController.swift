@@ -10,9 +10,10 @@ import Alamofire
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var registerviewmodel = RegisterViewModel()
     
-    private var signupViewModel: [SignupViewModel] = []
+    var userViewModel = UserViewModel()
+    
+//    var userSignupViewModel = UserSignupViewModel()
 
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
@@ -144,8 +145,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
-        
-        registerviewmodel.delegate = self
  
     }
 
@@ -164,10 +163,29 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     @objc
     func signUpButtonTap(_ sender: Any)
     {
-        let request = userRegister(userName: txtName.text, userEmail: txtEmail.text, userSchool: txtSchool.text, userPassword: txtPassword.text,userConfirmPassword: txtConfirmPassword.text)
-        registerviewmodel.Users(userRequest: request)
         
-    }
+        userViewModel.signupCredentials(email: txtEmail.text!,name:txtName.text!,school:txtSchool.text!,image: profileimage.image!, password: txtPassword.text!,confirmpassword: txtConfirmPassword.text!)
+
+                switch userViewModel.credentialsSignupInput() {
+
+                case .Success:
+                    signup()
+                case .Failed:
+                    showToast(message: userViewModel.errorMessage.value!, type: .warning)
+                    
+                    return
+                }
+            }
+
+
+
+
+        func signup() {
+            userViewModel.signUp()
+
+        }
+
+    
 
     //MARK: - LogIn
     

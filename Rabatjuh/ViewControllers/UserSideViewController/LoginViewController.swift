@@ -14,11 +14,6 @@ class LoginViewController: UIViewController {
     
     var userViewModel = UserViewModel()
     
-    
-    var signinViewModel = SignInViewModel()
-    
-    
-    private var serviceViewModel: [ServiceViewModel] = []
 
     // MARK: - Background
     private lazy var backgroundImage = UIImageView.Image(
@@ -129,7 +124,7 @@ class LoginViewController: UIViewController {
                 case .Success:
                     login()
                 case .Failed:
-                    print(userViewModel.errorMessage.value)
+                    showToast(message: userViewModel.errorMessage.value!, type: .warning)
                     
                     return
                 }

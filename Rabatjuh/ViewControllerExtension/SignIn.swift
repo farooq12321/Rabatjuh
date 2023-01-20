@@ -5,14 +5,14 @@
 //  Created by Apple on 12/01/2023.
 //
 
-import Foundation
-import SwiftyJSON
-struct SigninModel:Encodable {
-    let role: Int = 1
-    let email: String
-    let password: String
-    
-}
+//import Foundation
+//import SwiftyJSON
+//struct SigninModel:Encodable {
+//    let role: Int = 1
+//    let email: String
+//    let password: String
+//    
+//}
 
 
 

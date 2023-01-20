@@ -91,7 +91,7 @@ class NetworkManager {
     }
     
     //MARK: Post Multiart Request
-    func PostRequestWithMultipart(ApiURl: String, parameters: Parameters,image : UIImage, completion:@escaping (JSON) -> ())  {
+    func PostRequestWithMultipart(ApiURl: String, parameters: Parameters,image : UIImage, completion:@escaping (JSON) -> ()) {
 
         DispatchQueue.main.async {
 

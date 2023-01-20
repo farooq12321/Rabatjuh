@@ -30,7 +30,7 @@ struct Alert {
         
         static let emailNotExist = "The email does not exit".localized
         static let incorrectPassword = "The password you entered is incorrect. Please try again".localized
-        static let incorrectEmail = "The selected email is invalid".localized
+        static let incorrectEmail = "The selected email is invalid.".localized
         static let invalidPassword = "Invalid password or account doesn't exist".localized
         
         static let loginsuccessfully = "User logged in successfully".localized
